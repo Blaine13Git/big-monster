@@ -3,16 +3,20 @@ package com.muyi.bigMonster.controller;
 import com.ggj.hqbs.live.api.RoomApi;
 import com.ggj.platform.gsf.result.PlainResult;
 import com.muyi.bigMonster.result.Result;
+import com.muyi.bigMonster.service.DataService;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 
 @RestController
-@RequestMapping("/live/tools")
+@RequestMapping("live")
 public class LiveToolsController {
 
     @Resource(name = "roomApi")
     private RoomApi roomApi;
+
+    @Resource
+    private DataService dataService;
 
     /**
      * 创建直播间
@@ -21,7 +25,7 @@ public class LiveToolsController {
      * @param roomId    房间ID
      * @return
      */
-    @PostMapping("/creatLiveRoom")
+    @PostMapping("creatLiveRoom")
     @ResponseBody
     public Result creatLiveRoom(@RequestParam Integer accountId, @RequestParam String roomId) {
 
@@ -35,6 +39,19 @@ public class LiveToolsController {
 //            log.info("Data:" + room.getData());
 
             return Result.Success(room);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return Result.Failure("服务异常：" + e.getMessage());
+        }
+    }
+
+    @GetMapping("case01")
+    @ResponseBody
+    public Result case01() {
+
+        try {
+            dataService.case01();
+            return Result.Success("OK");
         } catch (Exception e) {
             e.printStackTrace();
             return Result.Failure("服务异常：" + e.getMessage());

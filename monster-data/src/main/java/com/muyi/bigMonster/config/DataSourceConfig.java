@@ -9,16 +9,16 @@ import org.springframework.context.annotation.Configuration;
 import java.util.ArrayList;
 import java.util.List;
 
-@Configuration
+//@Configuration
 public class DataSourceConfig {
 
-    @Bean
-    public void generateArtifacts() throws Exception {
-        List<String> warnings = new ArrayList<>();
-        ConfigurationParser cp = new ConfigurationParser(warnings);
-        org.mybatis.generator.config.Configuration config = cp.parseConfiguration(this.getClass().getResourceAsStream("/mybatis-generator.xml"));
-        DefaultShellCallback callback = new DefaultShellCallback(true);
-        MyBatisGenerator myBatisGenerator = new MyBatisGenerator(config, callback, warnings);
-        myBatisGenerator.generate(null);
-    }
+//    @Bean
+//    public void generateArtifacts() throws Exception {
+//        List<String> warnings = new ArrayList<>();
+//        ConfigurationParser cp = new ConfigurationParser(warnings);
+//        org.mybatis.generator.config.Configuration config = cp.parseConfiguration(this.getClass().getResourceAsStream("/mybatis-generator.xml"));
+//        DefaultShellCallback callback = new DefaultShellCallback(true);
+//        MyBatisGenerator myBatisGenerator = new MyBatisGenerator(config, callback, warnings);
+//        myBatisGenerator.generate(null);
+//    }
 }

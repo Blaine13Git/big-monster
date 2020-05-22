@@ -7,7 +7,7 @@
     <!--    <classPathEntry-->
     <!--            location="/Users/changfeng/.m2/repository/mysql/mysql-connector-java/8.0.19/mysql-connector-java-8.0.19.jar"/>-->
 
-    <context id="daily2DRDS" targetRuntime="MyBatis3">
+    <context id="daily1" targetRuntime="MyBatis3">
 
         <plugin type="org.mybatis.generator.plugins.FluentBuilderMethodsPlugin"/>
         <plugin type="org.mybatis.generator.plugins.ToStringPlugin"/>
@@ -29,7 +29,7 @@
         </javaModelGenerator>
 
         <!-- 生成映射文件-Mapper.xml-的包名和位置-->
-        <sqlMapGenerator targetPackage="mapper.webTools"
+        <sqlMapGenerator targetPackage="mapper.zebra"
                          targetProject="src/main/resources">
             <property name="enableSubPackages" value="true"/>
         </sqlMapGenerator>
@@ -37,7 +37,7 @@
         <!-- 数据访问对象-DAO-Java Mapper-生成的包名和位置-->
         <javaClientGenerator type="MIXEDMAPPER"
                              targetPackage="com.muyi.bigMonster.mapper"
-                             targetProject="rc/main/java">
+                             targetProject="src/main/java">
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
 
