@@ -4,10 +4,12 @@ import com.ggj.hqbs.live.api.RoomApi;
 import com.ggj.platform.gsf.result.PlainResult;
 import com.muyi.bigMonster.result.Result;
 import com.muyi.bigMonster.service.DataService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 
+@Slf4j
 @RestController
 @RequestMapping("live")
 public class LiveToolsController {
@@ -29,14 +31,14 @@ public class LiveToolsController {
     @ResponseBody
     public Result creatLiveRoom(@RequestParam Integer accountId, @RequestParam String roomId) {
 
-//        log.info("accountId:" + accountId);
-//        log.info("roomId:" + roomId);
+        log.info("accountId:" + accountId);
+        log.info("roomId:" + roomId);
         try {
 
             PlainResult room = roomApi.createRoom(accountId, roomId);
-//            log.info("Code:" + room.getCode());
-//            log.info("Message:" + room.getMessage());
-//            log.info("Data:" + room.getData());
+            log.info("Code:" + room.getCode());
+            log.info("Message:" + room.getMessage());
+            log.info("Data:" + room.getData());
 
             return Result.Success(room);
         } catch (Exception e) {
