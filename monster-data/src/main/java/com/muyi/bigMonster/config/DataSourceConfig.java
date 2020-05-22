@@ -1,24 +1,38 @@
 package com.muyi.bigMonster.config;
 
-import org.mybatis.generator.api.MyBatisGenerator;
-import org.mybatis.generator.config.xml.ConfigurationParser;
-import org.mybatis.generator.internal.DefaultShellCallback;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceProperties;
+import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import java.util.ArrayList;
-import java.util.List;
+import javax.sql.DataSource;
 
 @Configuration
 public class DataSourceConfig {
 
     @Bean
-    public void generateArtifacts() throws Exception {
-        List<String> warnings = new ArrayList<>();
-        ConfigurationParser cp = new ConfigurationParser(warnings);
-        org.mybatis.generator.config.Configuration config = cp.parseConfiguration(this.getClass().getResourceAsStream("/mybatis-generator.xml"));
-        DefaultShellCallback callback = new DefaultShellCallback(true);
-        MyBatisGenerator myBatisGenerator = new MyBatisGenerator(config, callback, warnings);
-        myBatisGenerator.generate(null);
+    @ConfigurationProperties("spring.datasource.daily1")
+    public DataSourceProperties daily1DataSourceProperties() {
+        return new DataSourceProperties();
+    }
+
+    @Bean
+    public DataSource daily1DataSource() {
+        DataSourceProperties dataSourceProperties = daily1DataSourceProperties();
+        System.out.println("daily1DataSource: " + dataSourceProperties.getUrl());
+        return dataSourceProperties.initializeDataSourceBuilder().build();
+    }
+
+    @Bean
+    @ConfigurationProperties("spring.datasource.daily2drds")
+    public DataSourceProperties daily2drdsDataSourceProperties() {
+        return new DataSourceProperties();
+    }
+
+    @Bean
+    public DataSource daily2drdsDataSource() {
+        DataSourceProperties dataSourceProperties = daily2drdsDataSourceProperties();
+        System.out.println("daily2drdsDataSource: " + dataSourceProperties.getUrl());
+        return dataSourceProperties.initializeDataSourceBuilder().build();
     }
 }

@@ -12,6 +12,11 @@
     <artifactId>monster-service</artifactId>
 
     <dependencies>
+        <dependency>
+            <groupId>com.muyi</groupId>
+            <artifactId>monster-data</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
         <!-- ********************业务依赖******************** -->
         <!--抽奖依赖-->
         <!--        <dependency>-->

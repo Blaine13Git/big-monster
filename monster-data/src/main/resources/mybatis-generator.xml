@@ -4,10 +4,8 @@
         "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 
 <generatorConfiguration>
-    <!--    <classPathEntry-->
-    <!--            location="/Users/changfeng/.m2/repository/mysql/mysql-connector-java/8.0.19/mysql-connector-java-8.0.19.jar"/>-->
 
-    <context id="daily2DRDS" targetRuntime="MyBatis3">
+    <context id="daily1" targetRuntime="MyBatis3">
 
         <plugin type="org.mybatis.generator.plugins.FluentBuilderMethodsPlugin"/>
         <plugin type="org.mybatis.generator.plugins.ToStringPlugin"/>
@@ -22,26 +20,64 @@
         </jdbcConnection>
 
         <!-- 生成模型-model-的包名和位置-->
-        <javaModelGenerator targetPackage="com.muyi.bigMonster.model"
+        <javaModelGenerator targetPackage="com.muyi.bigMonster.model.zebra"
                             targetProject="src/main/java">
             <property name="enableSubPackages" value="true"/>
             <property name="trimStrings" value="true"/>
         </javaModelGenerator>
 
         <!-- 生成映射文件-Mapper.xml-的包名和位置-->
-        <sqlMapGenerator targetPackage="mapper.webTools"
+        <sqlMapGenerator targetPackage="mappers.zebra"
                          targetProject="src/main/resources">
             <property name="enableSubPackages" value="true"/>
         </sqlMapGenerator>
 
-        <!-- 数据访问对象-DAO-Java Mapper-生成的包名和位置-->
-        <javaClientGenerator type="MIXEDMAPPER"
-                             targetPackage="com.muyi.bigMonster.mapper"
-                             targetProject="rc/main/java">
+        <!-- 数据访问对象-DAO-Java Mapper-生成的包名和位置-type="MIXEDMAPPER"-->
+        <javaClientGenerator type="MAPPER"
+                             targetPackage="com.muyi.bigMonster.mapper.zebra"
+                             targetProject="src/main/java">
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
 
         <table tableName="live_video_attribute"/>
+
+    </context>
+
+    <context id="daily2DRDS" targetRuntime="MyBatis3">
+
+        <plugin type="org.mybatis.generator.plugins.FluentBuilderMethodsPlugin"/>
+        <plugin type="org.mybatis.generator.plugins.ToStringPlugin"/>
+        <plugin type="org.mybatis.generator.plugins.SerializablePlugin"/>
+        <plugin type="org.mybatis.generator.plugins.RowBoundsPlugin"/>
+
+        <!-- 配置数据库连接 driverClass="org.gjt.mm.mysql.Driver" -->
+        <jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
+                        connectionURL="jdbc:mysql://drdshbga3gjsy83cpublic.drds.aliyuncs.com:3306/promotion_platform"
+                        userId="muyi"
+                        password="k2Tp4SF834phWKO1">
+        </jdbcConnection>
+
+        <!-- 生成模型-model-的包名和位置-->
+        <javaModelGenerator targetPackage="com.muyi.bigMonster.model.promotion_platform"
+                            targetProject="src/main/java">
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+
+        <!-- 生成映射文件-Mapper.xml-的包名和位置-->
+        <sqlMapGenerator targetPackage="mappers.promotion_platform"
+                         targetProject="src/main/resources">
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+
+        <!-- 数据访问对象-DAO-Java Mapper-生成的包名和位置-type="MIXEDMAPPER"-->
+        <javaClientGenerator type="MAPPER"
+                             targetPackage="com.muyi.bigMonster.mapper.promotion_platform"
+                             targetProject="src/main/java">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+
+        <table tableName="p_buyer_resource"/>
 
     </context>
 

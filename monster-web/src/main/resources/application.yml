@@ -23,12 +23,18 @@ spring:
     name: big-monster
   #数据库连接相关配置
   datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://rm-bp11d50m31tbdlv0h2o.mysql.rds.aliyuncs.com:3306/zebra
-    username: muyi
-    password: k2Tp4SF834phWKO1
+    daily1:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://rm-bp11d50m31tbdlv0h2o.mysql.rds.aliyuncs.com:3306/zebra
+      username: muyi
+      password: k2Tp4SF834phWKO1
+    daily2drds:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://drdshbga3gjsy83cpublic.drds.aliyuncs.com:3306/promotion_platform
+      username: muyi
+      password: k2Tp4SF834phWKO1
 
 # mybatis
 mybatis:
-  mapper-locations: classpath*:/mapper/**/*.xml  #
+  mapper-locations: classpath*:/mappers/**/*.xml  #
 
