@@ -13,7 +13,6 @@ public class DataService {
     private LiveVideoAttributeMapper liveVideoAttributeMapper;
 
     public void case01() {
-
         LiveVideoAttribute liveVideoAttribute = liveVideoAttributeMapper.selectByPrimaryKey(1);
         Integer accountId = liveVideoAttribute.getAccountId();
         System.out.println("accountId:" + accountId);
