@@ -27,7 +27,7 @@
         </javaModelGenerator>
 
         <!-- 生成映射文件-Mapper.xml-的包名和位置-->
-        <sqlMapGenerator targetPackage="mappers.zebra"
+        <sqlMapGenerator targetPackage="mapper.zebra"
                          targetProject="src/main/resources">
             <property name="enableSubPackages" value="true"/>
         </sqlMapGenerator>
@@ -65,7 +65,7 @@
         </javaModelGenerator>
 
         <!-- 生成映射文件-Mapper.xml-的包名和位置-->
-        <sqlMapGenerator targetPackage="mappers.promotion_platform"
+        <sqlMapGenerator targetPackage="mapper.promotion_platform"
                          targetProject="src/main/resources">
             <property name="enableSubPackages" value="true"/>
         </sqlMapGenerator>

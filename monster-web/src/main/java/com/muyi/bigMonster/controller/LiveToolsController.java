@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.annotation.Resource;
 
 @RestController
-@RequestMapping("/live/tools")
+@RequestMapping("live")
 public class LiveToolsController {
 
     @Resource(name = "roomApi")
@@ -21,7 +21,7 @@ public class LiveToolsController {
      * @param roomId    房间ID
      * @return
      */
-    @PostMapping("/creatLiveRoom")
+    @PostMapping("creatLiveRoom")
     @ResponseBody
     public Result creatLiveRoom(@RequestParam Integer accountId, @RequestParam String roomId) {
 

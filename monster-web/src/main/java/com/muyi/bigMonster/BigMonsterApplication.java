@@ -11,7 +11,7 @@ import org.springframework.boot.autoconfigure.jdbc.JdbcTemplateAutoConfiguration
         scanBasePackages = {"com.muyi.bigMonster"},
         exclude = {DataSourceAutoConfiguration.class, DataSourceTransactionManagerAutoConfiguration.class, JdbcTemplateAutoConfiguration.class}
 )
-@MapperScan("com.muyi.bigMonster.mappers")
+@MapperScan("com.muyi.bigMonster.mapper")
 public class BigMonsterApplication {
 
     public static void main(String[] args) {
