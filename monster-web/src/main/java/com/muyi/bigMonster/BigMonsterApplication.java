@@ -8,8 +8,8 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerA
 import org.springframework.boot.autoconfigure.jdbc.JdbcTemplateAutoConfiguration;
 
 @SpringBootApplication(
-        scanBasePackages = {"com.muyi.bigMonster"},
-        exclude = {DataSourceAutoConfiguration.class, DataSourceTransactionManagerAutoConfiguration.class, JdbcTemplateAutoConfiguration.class}
+        scanBasePackages = {"com.muyi.bigMonster"}
+        , exclude = {DataSourceAutoConfiguration.class, DataSourceTransactionManagerAutoConfiguration.class, JdbcTemplateAutoConfiguration.class}
 )
 @MapperScan("com.muyi.bigMonster.mapper")
 public class BigMonsterApplication {

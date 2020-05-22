@@ -1,8 +1,11 @@
 package com.muyi.bigMonster.model.promotion_platform;
 
+import lombok.Data;
+
 import java.io.Serializable;
 import java.util.Date;
 
+@Data
 public class PBuyerResource implements Serializable {
     /**
      *

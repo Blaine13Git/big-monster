@@ -8,6 +8,7 @@
         <module>monster-service</module>
         <module>monster-data</module>
         <module>monster-web</module>
+        <module>monster-config</module>
     </modules>
 
     <parent>
