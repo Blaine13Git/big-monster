@@ -16,7 +16,7 @@ import javax.sql.DataSource;
 
 
 @Configuration
-@MapperScan(basePackages = {"com.muyi.bigMonster.daily2drds",}, sqlSessionFactoryRef = "daily2drdsSqlSessionFactory")
+@MapperScan(basePackages = {"com.muyi.bigMonster.mapper.daily2drds",}, sqlSessionFactoryRef = "daily2drdsSqlSessionFactory")
 public class DataSource02Config {
 
     // 创建数据源

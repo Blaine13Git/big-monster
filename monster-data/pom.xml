@@ -73,7 +73,7 @@
                 </executions>
                 <configuration>
                     <verbose>true</verbose><!--允许移动生成文件，默认是不允许的-->
-                    <overwrite>false</overwrite><!--允许自动覆盖,默认不覆盖，实际的项目开发中不配置这段-->
+                    <overwrite>true</overwrite><!--允许自动覆盖,默认不覆盖，实际的项目开发中不配置这段-->
                     <!--mybatis generator 配置文件的路径-->
                     <configurationFile>
                         src/main/resources/mybatis-generator.xml

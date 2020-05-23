@@ -7,13 +7,17 @@
     <!--    <classPathEntry-->
     <!--            location="/Users/changfeng/.m2/repository/mysql/mysql-connector-java/8.0.19/mysql-connector-java-8.0.19.jar"/>-->
 
-    <!--daily1数据源-->
-    <context id="daily1" targetRuntime="MyBatis3">
 
+    <context id="daily1" targetRuntime="MyBatis3">
         <plugin type="org.mybatis.generator.plugins.FluentBuilderMethodsPlugin"/>
         <plugin type="org.mybatis.generator.plugins.ToStringPlugin"/>
         <plugin type="org.mybatis.generator.plugins.SerializablePlugin"/>
         <plugin type="org.mybatis.generator.plugins.RowBoundsPlugin"/>
+
+        <!--不要注释-->
+        <commentGenerator>
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator>
 
         <!-- 配置数据库连接 driverClass="org.gjt.mm.mysql.Driver" -->
         <jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
@@ -23,7 +27,7 @@
         </jdbcConnection>
 
         <!-- 生成模型-model-的包名和位置-->
-        <javaModelGenerator targetPackage="com.muyi.bigMonster.daily1.model"
+        <javaModelGenerator targetPackage="com.muyi.bigMonster.model.daily1"
                             targetProject="src/main/java">
             <property name="enableSubPackages" value="true"/>
             <property name="trimStrings" value="true"/>
@@ -36,8 +40,8 @@
         </sqlMapGenerator>
 
         <!-- 数据访问对象-DAO-Java Mapper-生成的包名和位置-->
-        <javaClientGenerator type="MIXEDMAPPER"
-                             targetPackage="com.muyi.bigMonster.daily1.mapper"
+        <javaClientGenerator type="ANNOTATEDMAPPER"
+                             targetPackage="com.muyi.bigMonster.mapper.daily1"
                              targetProject="src/main/java">
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
@@ -48,11 +52,15 @@
 
     <!--daily2drds数据源-->
     <context id="daily2drds" targetRuntime="MyBatis3">
-
         <plugin type="org.mybatis.generator.plugins.FluentBuilderMethodsPlugin"/>
         <plugin type="org.mybatis.generator.plugins.ToStringPlugin"/>
         <plugin type="org.mybatis.generator.plugins.SerializablePlugin"/>
         <plugin type="org.mybatis.generator.plugins.RowBoundsPlugin"/>
+
+        <!--不要注释-->
+        <commentGenerator>
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator>
 
         <!-- 配置数据库连接 driverClass="org.gjt.mm.mysql.Driver" -->
         <jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
@@ -62,7 +70,7 @@
         </jdbcConnection>
 
         <!-- 生成模型-model-的包名和位置-->
-        <javaModelGenerator targetPackage="com.muyi.bigMonster.daily2drds.model"
+        <javaModelGenerator targetPackage="com.muyi.bigMonster.model.daily2drds"
                             targetProject="src/main/java">
             <property name="enableSubPackages" value="true"/>
             <property name="trimStrings" value="true"/>
@@ -75,8 +83,8 @@
         </sqlMapGenerator>
 
         <!-- 数据访问对象-DAO-Java Mapper-生成的包名和位置-->
-        <javaClientGenerator type="MIXEDMAPPER"
-                             targetPackage="com.muyi.bigMonster.daily2drds.mapper"
+        <javaClientGenerator type="ANNOTATEDMAPPER"
+                             targetPackage="com.muyi.bigMonster.mapper.daily2drds"
                              targetProject="src/main/java">
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>

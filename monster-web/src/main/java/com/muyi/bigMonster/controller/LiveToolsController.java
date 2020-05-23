@@ -5,19 +5,18 @@ import com.ggj.platform.gsf.result.PlainResult;
 import com.muyi.bigMonster.result.Result;
 import com.muyi.bigMonster.service.DataService;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
-import javax.annotation.Resource;
 
 @Slf4j
 @RestController
 @RequestMapping("live")
 public class LiveToolsController {
 
-    @Resource(name = "roomApi")
+    @Autowired
     private RoomApi roomApi;
 
-    @Resource
+    @Autowired
     private DataService dataService;
 
     /**
@@ -53,6 +52,19 @@ public class LiveToolsController {
 
         try {
             dataService.case01();
+            return Result.Success("OK");
+        } catch (Exception e) {
+            e.printStackTrace();
+            return Result.Failure("服务异常：" + e.getMessage());
+        }
+    }
+
+    @GetMapping("case02")
+    @ResponseBody
+    public Result case02() {
+
+        try {
+            dataService.case02();
             return Result.Success("OK");
         } catch (Exception e) {
             e.printStackTrace();
