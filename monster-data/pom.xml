@@ -13,6 +13,11 @@
 
     <dependencies>
         <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-jdbc</artifactId>
+        </dependency>
+
+        <dependency>
             <groupId>org.mybatis.spring.boot</groupId>
             <artifactId>mybatis-spring-boot-starter</artifactId>
             <version>2.1.2</version>
@@ -23,12 +28,6 @@
             <artifactId>mysql-connector-java</artifactId>
             <version>8.0.19</version>
         </dependency>
-
-        <!--<dependency>
-            <groupId>org.mybatis</groupId>
-            <artifactId>mybatis-spring</artifactId>
-            <version>2.0.4</version>
-        </dependency>-->
 
         <dependency>
             <groupId>org.mybatis.generator</groupId>
@@ -74,7 +73,7 @@
                 </executions>
                 <configuration>
                     <verbose>true</verbose><!--允许移动生成文件，默认是不允许的-->
-                    <overwrite>false</overwrite><!--允许自动覆盖,默认不覆盖，实际的项目开发中不配置这段-->
+                    <overwrite>true</overwrite><!--允许自动覆盖,默认不覆盖，实际的项目开发中不配置这段-->
                     <!--mybatis generator 配置文件的路径-->
                     <configurationFile>
                         src/main/resources/mybatis-generator.xml
