@@ -1,8 +1,12 @@
 package com.muyi.bigMonster.model;
 
+import lombok.Data;
+import org.springframework.stereotype.Repository;
+
 import java.io.Serializable;
 import java.util.Date;
 
+@Data
 public class LiveVideoAttribute implements Serializable {
     /**
      *
