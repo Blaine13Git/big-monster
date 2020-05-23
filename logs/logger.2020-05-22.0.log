@@ -1,0 +1,1048 @@
+2020-05-22 10:25:05,598 INFO com.alibaba.boot.dubbo.context.event.WelcomeLogoApplicationListener [main] 
+
+ :: Dubbo Spring Boot (v0.2.0) : https://github.com/apache/incubator-dubbo-spring-boot-project
+ :: Dubbo (v2.6.2) : https://github.com/apache/incubator-dubbo
+ :: Google group : dev@dubbo.incubator.apache.org
+
+2020-05-22 10:25:05,604 INFO com.alibaba.boot.dubbo.context.event.OverrideDubboConfigApplicationListener [main] Dubbo Config was overridden by externalized configuration {dubbo.application.author=muyi, dubbo.application.name=big-monster, dubbo.consumer.timeout=5000, dubbo.monitor.protocol=registry, dubbo.protocol.name=dubbo, dubbo.protocol.port=20880, dubbo.provider.cluster=failover, dubbo.provider.delay=-1, dubbo.provider.dispatcher=message, dubbo.provider.retries=0, dubbo.provider.threads=300, dubbo.provider.timeout=5000, dubbo.registry.address=47.99.2.51:2181,47.99.2.51:2182,47.99.2.51:2183}
+2020-05-22 10:25:10,761 WARN org.springframework.boot.StartupInfoLogger [main] InetAddress.getLocalHost().getHostName() took 5004 milliseconds to respond. Please verify your network configuration (macOS machines may need to add entries to /etc/hosts).
+2020-05-22 10:25:15,773 INFO org.springframework.boot.StartupInfoLogger [main] Starting BigMonsterApplication on MacBook-Pro-2.local with PID 94121 (/Users/changfeng/work/code/big-monster/monster-web/target/classes started by changfeng in /Users/changfeng/work/code/big-monster)
+2020-05-22 10:25:15,774 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2020-05-22 10:25:17,026 WARN org.mybatis.logging.Logger [main] No MyBatis mapper was found in '[com.muyi.bigMonster.mapper]' package. Please check your configuration.
+2020-05-22 10:25:17,169 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'com.alibaba.boot.dubbo.autoconfigure.DubboAutoConfiguration' of type [com.alibaba.boot.dubbo.autoconfigure.DubboAutoConfiguration$$EnhancerBySpringCGLIB$$9f93ecac] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-22 10:25:17,236 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'com.ggj.platform.gsf.monitor.config.GsfMonitorFilterAutoConfiguration' of type [com.ggj.platform.gsf.monitor.config.GsfMonitorFilterAutoConfiguration$$EnhancerBySpringCGLIB$$4e7722d4] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-22 10:25:17,283 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'xconfClientConfiguration' of type [com.muyi.bigMonster.config.XconfClientConfiguration$$EnhancerBySpringCGLIB$$88fcb6ef] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-22 10:25:17,361 INFO com.ggj.platform.xconf.client.entry.connection.XconfClient [main] sqlite存储目录为:/Users/changfeng/.xconf
+2020-05-22 10:25:17,470 INFO com.ggj.platform.xconf.client.store.persistence.SqliteStoreHelper [main] 初始化表成功(如果表存在,不会重新创建)
+2020-05-22 10:25:22,819 INFO com.ggj.platform.xconf.client.netty.channel.ServerChannelHolder [main] connect 120.55.196.18:16520 server success
+2020-05-22 10:25:22,823 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client->server 通道连接成功
+2020-05-22 10:25:22,959 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-05-22 10:25:22,982 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:483
+2020-05-22 10:25:23,151 INFO com.ggj.platform.xconf.client.netty.sync.ClientSyncData [main] await sync done
+2020-05-22 10:25:23,151 INFO com.ggj.platform.xconf.client.netty.sync.ClientSyncData$1 [XconfClient-NioEventLoopGroup-pool-0] await sync complete
+2020-05-22 10:25:23,151 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-05-22 10:25:23,151 INFO com.ggj.platform.xconf.client.netty.NettyClient [main] 同步数据结果:true
+2020-05-22 10:25:23,170 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'relaxedDubboConfigBinder' of type [com.alibaba.boot.dubbo.autoconfigure.RelaxedDubboConfigBinder] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-22 10:25:23,173 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'relaxedDubboConfigBinder' of type [com.alibaba.boot.dubbo.autoconfigure.RelaxedDubboConfigBinder] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-22 10:25:23,176 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'relaxedDubboConfigBinder' of type [com.alibaba.boot.dubbo.autoconfigure.RelaxedDubboConfigBinder] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-22 10:25:23,177 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'relaxedDubboConfigBinder' of type [com.alibaba.boot.dubbo.autoconfigure.RelaxedDubboConfigBinder] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-22 10:25:23,179 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'relaxedDubboConfigBinder' of type [com.alibaba.boot.dubbo.autoconfigure.RelaxedDubboConfigBinder] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-22 10:25:23,180 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'relaxedDubboConfigBinder' of type [com.alibaba.boot.dubbo.autoconfigure.RelaxedDubboConfigBinder] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-22 10:25:23,858 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 9999 (http)
+2020-05-22 10:25:23,873 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-9999"]
+2020-05-22 10:25:23,874 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2020-05-22 10:25:23,874 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-05-22 10:25:24,008 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2020-05-22 10:25:24,008 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 8105 ms
+2020-05-22 10:25:26,156 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-05-22 10:25:26,163 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-05-22 10:25:26,166 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-05-22 10:25:34,922 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-22 10:25:35,220 ERROR com.zaxxer.hikari.HikariConfig [main] Failed to load driver class com.mysql.cj.jdbc.Driver from HikariConfig class classloader sun.misc.Launcher$AppClassLoader@18b4aac2
+2020-05-22 10:25:35,227 WARN org.springframework.context.support.AbstractApplicationContext [main] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception; nested exception is org.springframework.boot.context.properties.bind.BindException: Failed to bind properties under '' to com.zaxxer.hikari.HikariDataSource
+2020-05-22 10:25:35,229 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-22 10:25:35,229 WARN com.ggj.platform.xconf.client.entry.connection.XconfClient [main] xconfClient destory
+2020-05-22 10:25:35,232 INFO org.apache.juli.logging.DirectJDKLog [main] Stopping service [Tomcat]
+2020-05-22 10:25:35,243 INFO org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener [main] 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-05-22 10:25:35,248 ERROR org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter [main] 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to bind properties under '' to com.zaxxer.hikari.HikariDataSource:
+
+    Property: driver-class-name
+    Value: com.mysql.cj.jdbc.Driver
+    Origin: "driverClassName" from property source "source"
+    Reason: Failed to load driver class com.mysql.cj.jdbc.Driver in either of HikariConfig class loader or Thread context classloader
+
+Action:
+
+Update your application's configuration
+
+2020-05-22 10:25:35,254 WARN org.springframework.boot.SpringApplication [main] Unable to close ApplicationContext
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.boot.autoconfigure.admin.SpringApplicationAdminJmxAutoConfiguration': Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration': Initialization of bean failed; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'org.springframework.context.annotation.ConfigurationClassPostProcessor.importRegistry' available
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:603)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:409)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1338)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1177)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:557)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207)
+	at org.springframework.context.event.AbstractApplicationEventMulticaster.retrieveApplicationListeners(AbstractApplicationEventMulticaster.java:245)
+	at org.springframework.context.event.AbstractApplicationEventMulticaster.getApplicationListeners(AbstractApplicationEventMulticaster.java:197)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:134)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:403)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:360)
+	at org.springframework.boot.availability.AvailabilityChangeEvent.publish(AvailabilityChangeEvent.java:81)
+	at org.springframework.boot.availability.AvailabilityChangeEvent.publish(AvailabilityChangeEvent.java:67)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:167)
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:978)
+	at org.springframework.boot.SpringApplication.handleRunFailure(SpringApplication.java:814)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:325)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at com.muyi.bigMonster.BigMonsterApplication.main(BigMonsterApplication.java:12)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration': Initialization of bean failed; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'org.springframework.context.annotation.ConfigurationClassPostProcessor.importRegistry' available
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:603)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:409)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1338)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1177)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:557)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207)
+	at org.springframework.aop.framework.autoproxy.BeanFactoryAdvisorRetrievalHelper.findAdvisorBeans(BeanFactoryAdvisorRetrievalHelper.java:91)
+	at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.findCandidateAdvisors(AbstractAdvisorAutoProxyCreator.java:109)
+	at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.findEligibleAdvisors(AbstractAdvisorAutoProxyCreator.java:94)
+	at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.getAdvicesAndAdvisorsForBean(AbstractAdvisorAutoProxyCreator.java:76)
+	at org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator.wrapIfNecessary(AbstractAutoProxyCreator.java:347)
+	at org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator.postProcessAfterInitialization(AbstractAutoProxyCreator.java:299)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsAfterInitialization(AbstractAutowireCapableBeanFactory.java:431)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:595)
+	... 28 common frames omitted
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'org.springframework.context.annotation.ConfigurationClassPostProcessor.importRegistry' available
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanDefinition(DefaultListableBeanFactory.java:814)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getMergedLocalBeanDefinition(AbstractBeanFactory.java:1282)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:297)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor$ImportAwareBeanPostProcessor.postProcessBeforeInitialization(ConfigurationClassPostProcessor.java:456)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:416)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1788)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:595)
+	... 51 common frames omitted
+2020-05-22 10:25:35,259 WARN com.ggj.platform.xconf.client.netty.NettyClient [Thread-206] client socket close
+2020-05-22 10:25:35,259 WARN com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client->server 通道断开了
+2020-05-22 10:26:43,913 INFO com.alibaba.boot.dubbo.context.event.WelcomeLogoApplicationListener [main] 
+
+ :: Dubbo Spring Boot (v0.2.0) : https://github.com/apache/incubator-dubbo-spring-boot-project
+ :: Dubbo (v2.6.2) : https://github.com/apache/incubator-dubbo
+ :: Google group : dev@dubbo.incubator.apache.org
+
+2020-05-22 10:26:43,918 INFO com.alibaba.boot.dubbo.context.event.OverrideDubboConfigApplicationListener [main] Dubbo Config was overridden by externalized configuration {dubbo.application.author=muyi, dubbo.application.name=big-monster, dubbo.consumer.timeout=5000, dubbo.registry.address=47.99.2.51:2181,47.99.2.51:2182,47.99.2.51:2183}
+2020-05-22 10:26:48,980 WARN org.springframework.boot.StartupInfoLogger [main] InetAddress.getLocalHost().getHostName() took 5003 milliseconds to respond. Please verify your network configuration (macOS machines may need to add entries to /etc/hosts).
+2020-05-22 10:26:53,989 INFO org.springframework.boot.StartupInfoLogger [main] Starting BigMonsterApplication on MacBook-Pro-2.local with PID 94182 (/Users/changfeng/work/code/big-monster/monster-web/target/classes started by changfeng in /Users/changfeng/work/code/big-monster)
+2020-05-22 10:26:53,990 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2020-05-22 10:26:54,595 WARN org.mybatis.logging.Logger [main] No MyBatis mapper was found in '[com.muyi.bigMonster.mapper]' package. Please check your configuration.
+2020-05-22 10:26:54,688 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'com.alibaba.boot.dubbo.autoconfigure.DubboAutoConfiguration' of type [com.alibaba.boot.dubbo.autoconfigure.DubboAutoConfiguration$$EnhancerBySpringCGLIB$$d8a66796] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-22 10:26:54,719 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'com.ggj.platform.gsf.monitor.config.GsfMonitorFilterAutoConfiguration' of type [com.ggj.platform.gsf.monitor.config.GsfMonitorFilterAutoConfiguration$$EnhancerBySpringCGLIB$$87899dbe] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-22 10:26:54,747 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'xconfClientConfiguration' of type [com.muyi.bigMonster.config.XconfClientConfiguration$$EnhancerBySpringCGLIB$$c20f31d9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-22 10:26:54,784 INFO com.ggj.platform.xconf.client.entry.connection.XconfClient [main] sqlite存储目录为:/Users/changfeng/.xconf
+2020-05-22 10:26:54,849 INFO com.ggj.platform.xconf.client.store.persistence.SqliteStoreHelper [main] 初始化表成功(如果表存在,不会重新创建)
+2020-05-22 10:27:00,008 INFO com.ggj.platform.xconf.client.netty.channel.ServerChannelHolder [main] connect 120.55.196.18:16520 server success
+2020-05-22 10:27:00,009 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client->server 通道连接成功
+2020-05-22 10:27:00,075 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-05-22 10:27:00,116 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-05-22 10:27:00,200 INFO com.ggj.platform.xconf.client.netty.sync.ClientSyncData$1 [XconfClient-NioEventLoopGroup-pool-0] await sync complete
+2020-05-22 10:27:00,200 INFO com.ggj.platform.xconf.client.netty.sync.ClientSyncData [main] await sync done
+2020-05-22 10:27:00,201 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-05-22 10:27:00,201 INFO com.ggj.platform.xconf.client.netty.NettyClient [main] 同步数据结果:true
+2020-05-22 10:27:00,216 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'relaxedDubboConfigBinder' of type [com.alibaba.boot.dubbo.autoconfigure.RelaxedDubboConfigBinder] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-22 10:27:00,218 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'relaxedDubboConfigBinder' of type [com.alibaba.boot.dubbo.autoconfigure.RelaxedDubboConfigBinder] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-22 10:27:00,219 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'relaxedDubboConfigBinder' of type [com.alibaba.boot.dubbo.autoconfigure.RelaxedDubboConfigBinder] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-22 10:27:00,519 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 9999 (http)
+2020-05-22 10:27:00,527 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-9999"]
+2020-05-22 10:27:00,527 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2020-05-22 10:27:00,527 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-05-22 10:27:00,659 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2020-05-22 10:27:00,660 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 6597 ms
+2020-05-22 10:27:03,204 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-05-22 10:27:03,231 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-05-22 10:27:03,233 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-05-22 10:27:11,234 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-22 10:27:11,407 ERROR com.zaxxer.hikari.HikariConfig [main] Failed to load driver class com.mysql.cj.jdbc.Driver from HikariConfig class classloader sun.misc.Launcher$AppClassLoader@18b4aac2
+2020-05-22 10:27:11,411 WARN org.springframework.context.support.AbstractApplicationContext [main] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception; nested exception is org.springframework.boot.context.properties.bind.BindException: Failed to bind properties under '' to com.zaxxer.hikari.HikariDataSource
+2020-05-22 10:27:11,411 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-22 10:27:11,412 WARN com.ggj.platform.xconf.client.entry.connection.XconfClient [main] xconfClient destory
+2020-05-22 10:27:11,415 INFO org.apache.juli.logging.DirectJDKLog [main] Stopping service [Tomcat]
+2020-05-22 10:27:11,423 INFO org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener [main] 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-05-22 10:27:11,427 ERROR org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter [main] 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to bind properties under '' to com.zaxxer.hikari.HikariDataSource:
+
+    Property: driver-class-name
+    Value: com.mysql.cj.jdbc.Driver
+    Origin: "driverClassName" from property source "source"
+    Reason: Failed to load driver class com.mysql.cj.jdbc.Driver in either of HikariConfig class loader or Thread context classloader
+
+Action:
+
+Update your application's configuration
+
+2020-05-22 10:27:11,440 WARN org.springframework.boot.SpringApplication [main] Unable to close ApplicationContext
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.boot.autoconfigure.admin.SpringApplicationAdminJmxAutoConfiguration': Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration': Initialization of bean failed; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'org.springframework.context.annotation.ConfigurationClassPostProcessor.importRegistry' available
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:603)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:409)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1338)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1177)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:557)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207)
+	at org.springframework.context.event.AbstractApplicationEventMulticaster.retrieveApplicationListeners(AbstractApplicationEventMulticaster.java:245)
+	at org.springframework.context.event.AbstractApplicationEventMulticaster.getApplicationListeners(AbstractApplicationEventMulticaster.java:197)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:134)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:403)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:360)
+	at org.springframework.boot.availability.AvailabilityChangeEvent.publish(AvailabilityChangeEvent.java:81)
+	at org.springframework.boot.availability.AvailabilityChangeEvent.publish(AvailabilityChangeEvent.java:67)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:167)
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:978)
+	at org.springframework.boot.SpringApplication.handleRunFailure(SpringApplication.java:814)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:325)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at com.muyi.bigMonster.BigMonsterApplication.main(BigMonsterApplication.java:12)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration': Initialization of bean failed; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'org.springframework.context.annotation.ConfigurationClassPostProcessor.importRegistry' available
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:603)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:409)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1338)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1177)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:557)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207)
+	at org.springframework.aop.framework.autoproxy.BeanFactoryAdvisorRetrievalHelper.findAdvisorBeans(BeanFactoryAdvisorRetrievalHelper.java:91)
+	at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.findCandidateAdvisors(AbstractAdvisorAutoProxyCreator.java:109)
+	at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.findEligibleAdvisors(AbstractAdvisorAutoProxyCreator.java:94)
+	at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.getAdvicesAndAdvisorsForBean(AbstractAdvisorAutoProxyCreator.java:76)
+	at org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator.wrapIfNecessary(AbstractAutoProxyCreator.java:347)
+	at org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator.postProcessAfterInitialization(AbstractAutoProxyCreator.java:299)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsAfterInitialization(AbstractAutowireCapableBeanFactory.java:431)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:595)
+	... 28 common frames omitted
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'org.springframework.context.annotation.ConfigurationClassPostProcessor.importRegistry' available
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanDefinition(DefaultListableBeanFactory.java:814)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getMergedLocalBeanDefinition(AbstractBeanFactory.java:1282)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:297)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor$ImportAwareBeanPostProcessor.postProcessBeforeInitialization(ConfigurationClassPostProcessor.java:456)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:416)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1788)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:595)
+	... 51 common frames omitted
+2020-05-22 10:27:11,470 WARN com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client->server 通道断开了
+2020-05-22 10:27:11,473 WARN com.ggj.platform.xconf.client.netty.NettyClient [Thread-205] client socket close
+2020-05-22 12:54:15,702 INFO com.alibaba.boot.dubbo.context.event.WelcomeLogoApplicationListener [main] 
+
+ :: Dubbo Spring Boot (v0.2.0) : https://github.com/apache/incubator-dubbo-spring-boot-project
+ :: Dubbo (v2.6.2) : https://github.com/apache/incubator-dubbo
+ :: Google group : dev@dubbo.incubator.apache.org
+
+2020-05-22 12:54:15,707 INFO com.alibaba.boot.dubbo.context.event.OverrideDubboConfigApplicationListener [main] Dubbo Config was overridden by externalized configuration {dubbo.application.author=muyi, dubbo.application.name=big-monster, dubbo.consumer.timeout=5000, dubbo.registry.address=47.99.2.51:2181,47.99.2.51:2182,47.99.2.51:2183}
+2020-05-22 12:54:20,793 WARN org.springframework.boot.StartupInfoLogger [main] InetAddress.getLocalHost().getHostName() took 5001 milliseconds to respond. Please verify your network configuration (macOS machines may need to add entries to /etc/hosts).
+2020-05-22 12:54:25,796 INFO org.springframework.boot.StartupInfoLogger [main] Starting BigMonsterApplication on MacBook-Pro-2.local with PID 97896 (/Users/changfeng/work/code/big-monster/monster-web/target/classes started by changfeng in /Users/changfeng/work/code/big-monster)
+2020-05-22 12:54:25,798 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2020-05-22 12:54:26,512 WARN org.mybatis.logging.Logger [main] No MyBatis mapper was found in '[com.muyi.bigMonster.mapper]' package. Please check your configuration.
+2020-05-22 12:54:26,598 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'com.alibaba.boot.dubbo.autoconfigure.DubboAutoConfiguration' of type [com.alibaba.boot.dubbo.autoconfigure.DubboAutoConfiguration$$EnhancerBySpringCGLIB$$b0222575] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-22 12:54:26,640 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'com.ggj.platform.gsf.monitor.config.GsfMonitorFilterAutoConfiguration' of type [com.ggj.platform.gsf.monitor.config.GsfMonitorFilterAutoConfiguration$$EnhancerBySpringCGLIB$$5f055b9d] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-22 12:54:26,672 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'xconfClientConfiguration' of type [com.muyi.bigMonster.config.XconfClientConfiguration$$EnhancerBySpringCGLIB$$998aefb8] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-22 12:54:26,717 INFO com.ggj.platform.xconf.client.entry.connection.XconfClient [main] sqlite存储目录为:/Users/changfeng/.xconf
+2020-05-22 12:54:26,793 INFO com.ggj.platform.xconf.client.store.persistence.SqliteStoreHelper [main] 初始化表成功(如果表存在,不会重新创建)
+2020-05-22 12:54:32,086 INFO com.ggj.platform.xconf.client.netty.channel.ServerChannelHolder [main] connect 120.55.196.18:16520 server success
+2020-05-22 12:54:32,088 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client->server 通道连接成功
+2020-05-22 12:54:32,158 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-05-22 12:54:32,176 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-05-22 12:54:32,266 INFO com.ggj.platform.xconf.client.netty.sync.ClientSyncData [main] await sync done
+2020-05-22 12:54:32,266 INFO com.ggj.platform.xconf.client.netty.sync.ClientSyncData$1 [XconfClient-NioEventLoopGroup-pool-0] await sync complete
+2020-05-22 12:54:32,267 INFO com.ggj.platform.xconf.client.netty.NettyClient [main] 同步数据结果:true
+2020-05-22 12:54:32,267 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-05-22 12:54:32,280 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'relaxedDubboConfigBinder' of type [com.alibaba.boot.dubbo.autoconfigure.RelaxedDubboConfigBinder] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-22 12:54:32,281 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'relaxedDubboConfigBinder' of type [com.alibaba.boot.dubbo.autoconfigure.RelaxedDubboConfigBinder] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-22 12:54:32,282 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'relaxedDubboConfigBinder' of type [com.alibaba.boot.dubbo.autoconfigure.RelaxedDubboConfigBinder] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-22 12:54:32,638 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 9999 (http)
+2020-05-22 12:54:32,649 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-9999"]
+2020-05-22 12:54:32,650 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2020-05-22 12:54:32,650 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-05-22 12:54:32,771 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2020-05-22 12:54:32,771 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 6897 ms
+2020-05-22 12:54:35,269 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-05-22 12:54:35,333 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-05-22 12:54:35,336 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-05-22 12:54:43,547 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-22 12:54:43,775 ERROR com.zaxxer.hikari.HikariConfig [main] Failed to load driver class com.mysql.cj.jdbc.Driver from HikariConfig class classloader sun.misc.Launcher$AppClassLoader@18b4aac2
+2020-05-22 12:54:43,778 WARN org.springframework.context.support.AbstractApplicationContext [main] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception; nested exception is org.springframework.boot.context.properties.bind.BindException: Failed to bind properties under '' to com.zaxxer.hikari.HikariDataSource
+2020-05-22 12:54:43,779 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-22 12:54:43,780 WARN com.ggj.platform.xconf.client.entry.connection.XconfClient [main] xconfClient destory
+2020-05-22 12:54:43,783 INFO org.apache.juli.logging.DirectJDKLog [main] Stopping service [Tomcat]
+2020-05-22 12:54:43,792 INFO org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener [main] 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-05-22 12:54:43,795 ERROR org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter [main] 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to bind properties under '' to com.zaxxer.hikari.HikariDataSource:
+
+    Property: driver-class-name
+    Value: com.mysql.cj.jdbc.Driver
+    Origin: "driverClassName" from property source "source"
+    Reason: Failed to load driver class com.mysql.cj.jdbc.Driver in either of HikariConfig class loader or Thread context classloader
+
+Action:
+
+Update your application's configuration
+
+2020-05-22 12:54:43,801 WARN org.springframework.boot.SpringApplication [main] Unable to close ApplicationContext
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.boot.autoconfigure.admin.SpringApplicationAdminJmxAutoConfiguration': Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration': Initialization of bean failed; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'org.springframework.context.annotation.ConfigurationClassPostProcessor.importRegistry' available
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:603)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:409)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1338)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1177)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:557)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207)
+	at org.springframework.context.event.AbstractApplicationEventMulticaster.retrieveApplicationListeners(AbstractApplicationEventMulticaster.java:245)
+	at org.springframework.context.event.AbstractApplicationEventMulticaster.getApplicationListeners(AbstractApplicationEventMulticaster.java:197)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:134)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:403)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:360)
+	at org.springframework.boot.availability.AvailabilityChangeEvent.publish(AvailabilityChangeEvent.java:81)
+	at org.springframework.boot.availability.AvailabilityChangeEvent.publish(AvailabilityChangeEvent.java:67)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:167)
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:978)
+	at org.springframework.boot.SpringApplication.handleRunFailure(SpringApplication.java:814)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:325)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at com.muyi.bigMonster.BigMonsterApplication.main(BigMonsterApplication.java:12)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration': Initialization of bean failed; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'org.springframework.context.annotation.ConfigurationClassPostProcessor.importRegistry' available
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:603)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:409)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1338)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1177)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:557)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207)
+	at org.springframework.aop.framework.autoproxy.BeanFactoryAdvisorRetrievalHelper.findAdvisorBeans(BeanFactoryAdvisorRetrievalHelper.java:91)
+	at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.findCandidateAdvisors(AbstractAdvisorAutoProxyCreator.java:109)
+	at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.findEligibleAdvisors(AbstractAdvisorAutoProxyCreator.java:94)
+	at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.getAdvicesAndAdvisorsForBean(AbstractAdvisorAutoProxyCreator.java:76)
+	at org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator.wrapIfNecessary(AbstractAutoProxyCreator.java:347)
+	at org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator.postProcessAfterInitialization(AbstractAutoProxyCreator.java:299)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsAfterInitialization(AbstractAutowireCapableBeanFactory.java:431)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:595)
+	... 28 common frames omitted
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'org.springframework.context.annotation.ConfigurationClassPostProcessor.importRegistry' available
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanDefinition(DefaultListableBeanFactory.java:814)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getMergedLocalBeanDefinition(AbstractBeanFactory.java:1282)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:297)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor$ImportAwareBeanPostProcessor.postProcessBeforeInitialization(ConfigurationClassPostProcessor.java:456)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:416)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1788)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:595)
+	... 51 common frames omitted
+2020-05-22 12:54:43,805 WARN com.ggj.platform.xconf.client.netty.NettyClient [Thread-205] client socket close
+2020-05-22 12:54:43,818 WARN com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client->server 通道断开了
+2020-05-22 12:55:33,515 INFO com.alibaba.boot.dubbo.context.event.WelcomeLogoApplicationListener [main] 
+
+ :: Dubbo Spring Boot (v0.2.0) : https://github.com/apache/incubator-dubbo-spring-boot-project
+ :: Dubbo (v2.6.2) : https://github.com/apache/incubator-dubbo
+ :: Google group : dev@dubbo.incubator.apache.org
+
+2020-05-22 12:55:33,519 INFO com.alibaba.boot.dubbo.context.event.OverrideDubboConfigApplicationListener [main] Dubbo Config was overridden by externalized configuration {dubbo.application.author=muyi, dubbo.application.name=big-monster, dubbo.consumer.timeout=5000, dubbo.registry.address=47.99.2.51:2181,47.99.2.51:2182,47.99.2.51:2183}
+2020-05-22 12:55:38,576 WARN org.springframework.boot.StartupInfoLogger [main] InetAddress.getLocalHost().getHostName() took 5004 milliseconds to respond. Please verify your network configuration (macOS machines may need to add entries to /etc/hosts).
+2020-05-22 12:55:43,584 INFO org.springframework.boot.StartupInfoLogger [main] Starting BigMonsterApplication on MacBook-Pro-2.local with PID 97932 (/Users/changfeng/work/code/big-monster/monster-web/target/classes started by changfeng in /Users/changfeng/work/code/big-monster)
+2020-05-22 12:55:43,588 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2020-05-22 12:55:44,200 WARN org.mybatis.logging.Logger [main] No MyBatis mapper was found in '[com.muyi.bigMonster.mapper]' package. Please check your configuration.
+2020-05-22 12:55:44,287 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'com.alibaba.boot.dubbo.autoconfigure.DubboAutoConfiguration' of type [com.alibaba.boot.dubbo.autoconfigure.DubboAutoConfiguration$$EnhancerBySpringCGLIB$$e69cf9d1] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-22 12:55:44,342 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'com.ggj.platform.gsf.monitor.config.GsfMonitorFilterAutoConfiguration' of type [com.ggj.platform.gsf.monitor.config.GsfMonitorFilterAutoConfiguration$$EnhancerBySpringCGLIB$$95802ff9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-22 12:55:44,372 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'xconfClientConfiguration' of type [com.muyi.bigMonster.config.XconfClientConfiguration$$EnhancerBySpringCGLIB$$d005c414] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-22 12:55:44,406 INFO com.ggj.platform.xconf.client.entry.connection.XconfClient [main] sqlite存储目录为:/Users/changfeng/.xconf
+2020-05-22 12:55:44,490 INFO com.ggj.platform.xconf.client.store.persistence.SqliteStoreHelper [main] 初始化表成功(如果表存在,不会重新创建)
+2020-05-22 12:55:49,630 INFO com.ggj.platform.xconf.client.netty.channel.ServerChannelHolder [main] connect 120.55.196.18:16520 server success
+2020-05-22 12:55:49,631 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client->server 通道连接成功
+2020-05-22 12:55:49,695 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-05-22 12:55:49,711 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-05-22 12:55:49,803 INFO com.ggj.platform.xconf.client.netty.sync.ClientSyncData [main] await sync done
+2020-05-22 12:55:49,803 INFO com.ggj.platform.xconf.client.netty.sync.ClientSyncData$1 [XconfClient-NioEventLoopGroup-pool-0] await sync complete
+2020-05-22 12:55:49,804 INFO com.ggj.platform.xconf.client.netty.NettyClient [main] 同步数据结果:true
+2020-05-22 12:55:49,804 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-05-22 12:55:49,816 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'relaxedDubboConfigBinder' of type [com.alibaba.boot.dubbo.autoconfigure.RelaxedDubboConfigBinder] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-22 12:55:49,818 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'relaxedDubboConfigBinder' of type [com.alibaba.boot.dubbo.autoconfigure.RelaxedDubboConfigBinder] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-22 12:55:49,818 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'relaxedDubboConfigBinder' of type [com.alibaba.boot.dubbo.autoconfigure.RelaxedDubboConfigBinder] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-22 12:55:50,173 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 9999 (http)
+2020-05-22 12:55:50,186 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-9999"]
+2020-05-22 12:55:50,186 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2020-05-22 12:55:50,187 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-05-22 12:55:50,350 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2020-05-22 12:55:50,350 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 6693 ms
+2020-05-22 12:55:52,808 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-05-22 12:55:52,823 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-05-22 12:55:52,825 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-05-22 12:56:00,941 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-22 12:56:01,139 ERROR com.zaxxer.hikari.HikariConfig [main] Failed to load driver class com.mysql.cj.jdbc.Driver from HikariConfig class classloader sun.misc.Launcher$AppClassLoader@18b4aac2
+2020-05-22 12:56:01,142 WARN org.springframework.context.support.AbstractApplicationContext [main] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception; nested exception is org.springframework.boot.context.properties.bind.BindException: Failed to bind properties under '' to com.zaxxer.hikari.HikariDataSource
+2020-05-22 12:56:01,143 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-22 12:56:01,143 WARN com.ggj.platform.xconf.client.entry.connection.XconfClient [main] xconfClient destory
+2020-05-22 12:56:01,146 INFO org.apache.juli.logging.DirectJDKLog [main] Stopping service [Tomcat]
+2020-05-22 12:56:01,156 INFO org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener [main] 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-05-22 12:56:01,159 ERROR org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter [main] 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to bind properties under '' to com.zaxxer.hikari.HikariDataSource:
+
+    Property: driver-class-name
+    Value: com.mysql.cj.jdbc.Driver
+    Origin: "driverClassName" from property source "source"
+    Reason: Failed to load driver class com.mysql.cj.jdbc.Driver in either of HikariConfig class loader or Thread context classloader
+
+Action:
+
+Update your application's configuration
+
+2020-05-22 12:56:01,166 WARN org.springframework.boot.SpringApplication [main] Unable to close ApplicationContext
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.boot.autoconfigure.admin.SpringApplicationAdminJmxAutoConfiguration': Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration': Initialization of bean failed; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'org.springframework.context.annotation.ConfigurationClassPostProcessor.importRegistry' available
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:603)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:409)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1338)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1177)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:557)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207)
+	at org.springframework.context.event.AbstractApplicationEventMulticaster.retrieveApplicationListeners(AbstractApplicationEventMulticaster.java:245)
+	at org.springframework.context.event.AbstractApplicationEventMulticaster.getApplicationListeners(AbstractApplicationEventMulticaster.java:197)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:134)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:403)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:360)
+	at org.springframework.boot.availability.AvailabilityChangeEvent.publish(AvailabilityChangeEvent.java:81)
+	at org.springframework.boot.availability.AvailabilityChangeEvent.publish(AvailabilityChangeEvent.java:67)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:167)
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:978)
+	at org.springframework.boot.SpringApplication.handleRunFailure(SpringApplication.java:814)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:325)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at com.muyi.bigMonster.BigMonsterApplication.main(BigMonsterApplication.java:12)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration': Initialization of bean failed; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'org.springframework.context.annotation.ConfigurationClassPostProcessor.importRegistry' available
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:603)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:409)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1338)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1177)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:557)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207)
+	at org.springframework.aop.framework.autoproxy.BeanFactoryAdvisorRetrievalHelper.findAdvisorBeans(BeanFactoryAdvisorRetrievalHelper.java:91)
+	at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.findCandidateAdvisors(AbstractAdvisorAutoProxyCreator.java:109)
+	at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.findEligibleAdvisors(AbstractAdvisorAutoProxyCreator.java:94)
+	at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.getAdvicesAndAdvisorsForBean(AbstractAdvisorAutoProxyCreator.java:76)
+	at org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator.wrapIfNecessary(AbstractAutoProxyCreator.java:347)
+	at org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator.postProcessAfterInitialization(AbstractAutoProxyCreator.java:299)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsAfterInitialization(AbstractAutowireCapableBeanFactory.java:431)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:595)
+	... 28 common frames omitted
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'org.springframework.context.annotation.ConfigurationClassPostProcessor.importRegistry' available
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanDefinition(DefaultListableBeanFactory.java:814)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getMergedLocalBeanDefinition(AbstractBeanFactory.java:1282)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:297)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor$ImportAwareBeanPostProcessor.postProcessBeforeInitialization(ConfigurationClassPostProcessor.java:456)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:416)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1788)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:595)
+	... 51 common frames omitted
+2020-05-22 12:56:01,170 WARN com.ggj.platform.xconf.client.netty.NettyClient [Thread-204] client socket close
+2020-05-22 12:56:01,183 WARN com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client->server 通道断开了
+2020-05-22 13:02:07,419 INFO com.alibaba.boot.dubbo.context.event.WelcomeLogoApplicationListener [main] 
+
+ :: Dubbo Spring Boot (v0.2.0) : https://github.com/apache/incubator-dubbo-spring-boot-project
+ :: Dubbo (v2.6.2) : https://github.com/apache/incubator-dubbo
+ :: Google group : dev@dubbo.incubator.apache.org
+
+2020-05-22 13:02:07,423 INFO com.alibaba.boot.dubbo.context.event.OverrideDubboConfigApplicationListener [main] Dubbo Config was overridden by externalized configuration {dubbo.application.author=muyi, dubbo.application.name=big-monster, dubbo.consumer.timeout=5000, dubbo.registry.address=47.99.2.51:2181,47.99.2.51:2182,47.99.2.51:2183}
+2020-05-22 13:02:12,481 WARN org.springframework.boot.StartupInfoLogger [main] InetAddress.getLocalHost().getHostName() took 5006 milliseconds to respond. Please verify your network configuration (macOS machines may need to add entries to /etc/hosts).
+2020-05-22 13:02:17,486 INFO org.springframework.boot.StartupInfoLogger [main] Starting BigMonsterApplication on MacBook-Pro-2.local with PID 98134 (/Users/changfeng/work/code/big-monster/monster-web/target/classes started by changfeng in /Users/changfeng/work/code/big-monster)
+2020-05-22 13:02:17,487 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2020-05-22 13:02:18,073 WARN org.mybatis.logging.Logger [main] No MyBatis mapper was found in '[com.muyi.bigMonster.mapper]' package. Please check your configuration.
+2020-05-22 13:02:18,163 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'com.alibaba.boot.dubbo.autoconfigure.DubboAutoConfiguration' of type [com.alibaba.boot.dubbo.autoconfigure.DubboAutoConfiguration$$EnhancerBySpringCGLIB$$72b27162] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-22 13:02:18,195 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'com.ggj.platform.gsf.monitor.config.GsfMonitorFilterAutoConfiguration' of type [com.ggj.platform.gsf.monitor.config.GsfMonitorFilterAutoConfiguration$$EnhancerBySpringCGLIB$$2195a78a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-22 13:02:18,227 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'xconfClientConfiguration' of type [com.muyi.bigMonster.config.XconfClientConfiguration$$EnhancerBySpringCGLIB$$5c1b3ba5] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-22 13:02:18,265 INFO com.ggj.platform.xconf.client.entry.connection.XconfClient [main] sqlite存储目录为:/Users/changfeng/.xconf
+2020-05-22 13:02:18,337 INFO com.ggj.platform.xconf.client.store.persistence.SqliteStoreHelper [main] 初始化表成功(如果表存在,不会重新创建)
+2020-05-22 13:02:23,507 INFO com.ggj.platform.xconf.client.netty.channel.ServerChannelHolder [main] connect 120.55.196.18:16520 server success
+2020-05-22 13:02:23,508 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client->server 通道连接成功
+2020-05-22 13:02:23,574 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-05-22 13:02:23,590 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-05-22 13:02:23,663 INFO com.ggj.platform.xconf.client.netty.sync.ClientSyncData [main] await sync done
+2020-05-22 13:02:23,663 INFO com.ggj.platform.xconf.client.netty.sync.ClientSyncData$1 [XconfClient-NioEventLoopGroup-pool-0] await sync complete
+2020-05-22 13:02:23,664 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-05-22 13:02:23,664 INFO com.ggj.platform.xconf.client.netty.NettyClient [main] 同步数据结果:true
+2020-05-22 13:02:23,677 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'relaxedDubboConfigBinder' of type [com.alibaba.boot.dubbo.autoconfigure.RelaxedDubboConfigBinder] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-22 13:02:23,678 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'relaxedDubboConfigBinder' of type [com.alibaba.boot.dubbo.autoconfigure.RelaxedDubboConfigBinder] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-22 13:02:23,679 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'relaxedDubboConfigBinder' of type [com.alibaba.boot.dubbo.autoconfigure.RelaxedDubboConfigBinder] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-22 13:02:23,962 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 9999 (http)
+2020-05-22 13:02:23,968 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-9999"]
+2020-05-22 13:02:23,969 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2020-05-22 13:02:23,969 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-05-22 13:02:24,085 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2020-05-22 13:02:24,085 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 6529 ms
+2020-05-22 13:02:26,668 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-05-22 13:02:26,683 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-05-22 13:02:26,685 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-05-22 13:02:34,693 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-22 13:02:35,074 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-9999"]
+2020-05-22 13:02:35,087 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 9999 (http) with context path '/monster'
+2020-05-22 13:02:35,100 INFO org.springframework.boot.StartupInfoLogger [main] Started BigMonsterApplication in 38.034 seconds (JVM running for 43.621)
+2020-05-22 13:03:11,694 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-05-22 13:03:26,673 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-05-22 13:03:26,681 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-05-22 13:03:26,683 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-05-22 13:03:39,327 WARN com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client->server 通道断开了
+2020-05-22 13:03:39,330 WARN com.ggj.platform.xconf.client.netty.NettyClient [Thread-204] client socket close
+2020-05-22 13:03:39,355 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-22 13:03:39,355 WARN com.ggj.platform.xconf.client.entry.connection.XconfClient [SpringContextShutdownHook] xconfClient destory
+2020-05-22 19:41:34,993 INFO com.alibaba.boot.dubbo.context.event.WelcomeLogoApplicationListener [main] 
+
+ :: Dubbo Spring Boot (v0.2.0) : https://github.com/apache/incubator-dubbo-spring-boot-project
+ :: Dubbo (v2.6.2) : https://github.com/apache/incubator-dubbo
+ :: Google group : dev@dubbo.incubator.apache.org
+
+2020-05-22 19:41:34,999 INFO com.alibaba.boot.dubbo.context.event.OverrideDubboConfigApplicationListener [main] Dubbo Config was overridden by externalized configuration {dubbo.application.author=muyi, dubbo.application.name=big-monster, dubbo.consumer.timeout=5000, dubbo.registry.address=47.99.2.51:2181,47.99.2.51:2182,47.99.2.51:2183}
+2020-05-22 19:41:40,136 WARN org.springframework.boot.StartupInfoLogger [main] InetAddress.getLocalHost().getHostName() took 5004 milliseconds to respond. Please verify your network configuration (macOS machines may need to add entries to /etc/hosts).
+2020-05-22 19:41:45,144 INFO org.springframework.boot.StartupInfoLogger [main] Starting BigMonsterApplication on MacBook-Pro-2.local with PID 9672 (/Users/changfeng/work/code/big-monster/monster-web/target/classes started by changfeng in /Users/changfeng/work/code/big-monster)
+2020-05-22 19:41:45,145 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2020-05-22 19:41:46,105 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'com.alibaba.boot.dubbo.autoconfigure.DubboAutoConfiguration' of type [com.alibaba.boot.dubbo.autoconfigure.DubboAutoConfiguration$$EnhancerBySpringCGLIB$$faea203a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-22 19:41:46,158 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'com.ggj.platform.gsf.monitor.config.GsfMonitorFilterAutoConfiguration' of type [com.ggj.platform.gsf.monitor.config.GsfMonitorFilterAutoConfiguration$$EnhancerBySpringCGLIB$$a9cd5662] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-22 19:41:46,190 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'xconfClientConfiguration' of type [com.muyi.bigMonster.config.XconfClientConfiguration$$EnhancerBySpringCGLIB$$e452ea7d] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-22 19:41:46,250 INFO com.ggj.platform.xconf.client.entry.connection.XconfClient [main] sqlite存储目录为:/Users/changfeng/.xconf
+2020-05-22 19:41:46,360 INFO com.ggj.platform.xconf.client.store.persistence.SqliteStoreHelper [main] 初始化表成功(如果表存在,不会重新创建)
+2020-05-22 19:41:51,593 INFO com.ggj.platform.xconf.client.netty.channel.ServerChannelHolder [main] connect 120.55.196.18:16520 server success
+2020-05-22 19:41:51,595 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client->server 通道连接成功
+2020-05-22 19:41:51,738 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-05-22 19:41:51,751 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-05-22 19:41:51,847 INFO com.ggj.platform.xconf.client.netty.sync.ClientSyncData$1 [XconfClient-NioEventLoopGroup-pool-0] await sync complete
+2020-05-22 19:41:51,847 INFO com.ggj.platform.xconf.client.netty.sync.ClientSyncData [main] await sync done
+2020-05-22 19:41:51,848 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-05-22 19:41:51,848 INFO com.ggj.platform.xconf.client.netty.NettyClient [main] 同步数据结果:true
+2020-05-22 19:41:51,860 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'relaxedDubboConfigBinder' of type [com.alibaba.boot.dubbo.autoconfigure.RelaxedDubboConfigBinder] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-22 19:41:51,861 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'relaxedDubboConfigBinder' of type [com.alibaba.boot.dubbo.autoconfigure.RelaxedDubboConfigBinder] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-22 19:41:51,862 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'relaxedDubboConfigBinder' of type [com.alibaba.boot.dubbo.autoconfigure.RelaxedDubboConfigBinder] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-22 19:41:52,240 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 9999 (http)
+2020-05-22 19:41:52,253 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-9999"]
+2020-05-22 19:41:52,254 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2020-05-22 19:41:52,254 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-05-22 19:41:52,465 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2020-05-22 19:41:52,466 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 7231 ms
+2020-05-22 19:41:54,853 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-05-22 19:41:54,860 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-05-22 19:41:54,863 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-05-22 19:42:03,577 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-22 19:42:03,910 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-9999"]
+2020-05-22 19:42:03,926 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 9999 (http) with context path '/monster'
+2020-05-22 19:42:03,936 INFO org.springframework.boot.StartupInfoLogger [main] Started BigMonsterApplication in 39.422 seconds (JVM running for 45.084)
+2020-05-22 19:42:38,703 INFO org.apache.juli.logging.DirectJDKLog [http-nio-9999-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-22 19:42:38,710 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-9999-exec-1] Initializing Servlet 'dispatcherServlet'
+2020-05-22 19:42:38,755 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-9999-exec-1] Completed initialization in 44 ms
+2020-05-22 19:42:38,881 INFO com.zaxxer.hikari.HikariDataSource [http-nio-9999-exec-1] HikariPool-1 - Starting...
+2020-05-22 19:42:39,908 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-05-22 19:42:41,398 INFO com.zaxxer.hikari.HikariDataSource [http-nio-9999-exec-1] HikariPool-1 - Start completed.
+2020-05-22 19:42:54,859 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-05-22 19:42:54,869 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-05-22 19:42:54,870 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-05-22 19:43:39,877 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-05-22 19:43:54,866 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-05-22 19:43:54,875 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-05-22 19:43:54,878 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-05-22 19:44:39,880 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-05-22 19:44:54,871 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-05-22 19:44:54,987 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-05-22 19:44:54,989 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-05-22 19:45:39,994 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-05-22 19:45:54,878 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-05-22 19:45:54,885 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-05-22 19:45:54,887 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-05-22 19:46:39,896 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-05-22 19:46:54,885 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-05-22 19:46:54,895 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-05-22 19:46:54,899 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-05-22 19:47:39,904 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-05-22 19:47:54,888 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-05-22 19:47:54,899 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-05-22 19:47:54,901 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-05-22 19:48:39,908 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-05-22 19:48:54,893 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-05-22 19:48:54,901 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-05-22 19:48:54,903 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-05-22 19:49:39,909 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-05-22 19:49:54,901 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-05-22 19:49:54,933 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-05-22 19:49:54,935 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-05-22 19:50:39,943 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-05-22 19:50:54,907 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-05-22 19:50:54,917 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-05-22 19:50:54,919 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-05-22 19:51:39,924 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-05-22 19:51:54,911 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-05-22 19:51:54,919 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-05-22 19:51:54,921 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-05-22 19:52:39,925 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-05-22 19:52:54,914 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-05-22 19:52:54,923 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-05-22 19:52:54,927 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-05-22 19:53:39,933 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-05-22 19:53:54,918 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-05-22 19:53:54,925 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-05-22 19:53:54,926 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-05-22 19:54:39,932 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-05-22 19:54:54,926 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-05-22 19:54:54,935 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-05-22 19:54:54,937 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-05-22 19:55:39,940 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-05-22 19:55:54,929 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-05-22 19:55:54,938 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-05-22 19:55:54,940 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-05-22 19:56:39,947 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-05-22 19:56:54,938 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-05-22 19:56:54,948 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-05-22 19:56:54,949 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-05-22 19:57:39,954 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-05-22 19:57:54,942 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-05-22 19:57:54,952 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-05-22 19:57:54,953 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-05-22 19:58:39,960 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-05-22 19:58:54,957 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-05-22 19:58:54,966 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-05-22 19:58:54,970 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-05-22 19:59:39,978 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-05-22 19:59:54,963 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-05-22 19:59:54,993 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-05-22 19:59:55,002 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-05-22 20:00:40,008 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-05-22 20:00:54,994 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-05-22 20:00:55,004 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-05-22 20:00:55,005 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-05-22 20:01:40,010 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-05-22 20:01:55,005 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-05-22 20:01:55,015 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-05-22 20:01:55,016 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-05-22 20:02:40,021 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-05-22 20:02:55,012 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-05-22 20:02:55,034 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-05-22 20:02:55,036 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-05-22 20:03:40,041 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-05-22 20:03:55,015 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-05-22 20:03:55,032 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-05-22 20:03:55,033 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-05-22 20:04:40,038 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-05-22 20:04:55,029 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-05-22 20:04:55,036 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-05-22 20:04:55,038 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-05-22 20:05:40,044 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-05-22 20:05:55,034 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-05-22 20:05:55,041 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-05-22 20:05:55,043 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-05-22 20:06:40,047 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-05-22 20:06:55,040 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-05-22 20:06:55,048 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-05-22 20:06:55,050 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-05-22 20:07:40,055 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-05-22 20:07:55,047 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-05-22 20:07:55,057 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-05-22 20:07:55,062 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-05-22 20:08:40,071 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-05-22 20:08:55,053 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-05-22 20:08:55,062 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-05-22 20:08:55,064 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-05-22 20:09:40,069 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-05-22 20:09:55,056 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-05-22 20:09:55,063 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-05-22 20:09:55,064 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-05-22 20:10:40,072 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-05-22 20:10:55,063 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-05-22 20:10:55,078 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-05-22 20:10:55,080 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-05-22 20:11:40,088 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-05-22 20:11:55,077 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-05-22 20:11:55,087 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-05-22 20:11:55,089 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-05-22 20:12:40,094 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-05-22 20:12:55,083 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-05-22 20:12:55,100 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-05-22 20:12:55,102 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-05-22 20:13:40,109 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-05-22 20:13:55,097 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-05-22 20:13:55,104 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-05-22 20:13:55,109 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-05-22 20:14:40,115 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-05-22 20:14:55,103 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-05-22 20:14:55,111 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-05-22 20:14:55,112 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-05-22 20:15:40,118 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-05-22 20:15:55,107 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-05-22 20:15:55,114 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-05-22 20:15:55,116 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-05-22 20:16:40,122 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-05-22 20:16:55,111 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-05-22 20:16:55,121 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-05-22 20:16:55,124 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-05-22 20:17:40,130 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-05-22 20:17:55,121 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-05-22 20:17:55,129 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-05-22 20:17:55,131 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-05-22 20:18:40,139 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-05-22 20:18:55,133 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-05-22 20:18:55,143 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-05-22 20:18:55,147 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-05-22 20:19:40,152 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-05-22 20:19:55,138 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-05-22 20:19:55,147 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-05-22 20:19:55,148 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-05-22 20:20:40,153 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-05-22 20:20:55,148 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-05-22 20:20:55,172 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-05-22 20:20:55,178 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-05-22 20:21:40,183 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-05-22 20:21:55,168 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-05-22 20:21:55,183 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-05-22 20:21:55,184 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-05-22 20:22:40,189 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-05-22 20:22:55,185 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-05-22 20:22:55,192 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-05-22 20:22:55,193 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-05-22 20:23:40,196 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-05-22 20:23:55,188 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-05-22 20:23:55,242 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-05-22 20:23:55,244 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-05-22 20:24:40,249 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-05-22 20:24:55,212 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-05-22 20:24:55,222 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-05-22 20:24:55,225 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-05-22 20:25:40,228 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-05-22 20:25:55,219 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-05-22 20:25:55,228 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-05-22 20:25:55,231 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-05-22 20:26:40,327 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-05-22 20:26:55,227 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-05-22 20:26:55,235 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-05-22 20:26:55,237 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-05-22 20:27:40,241 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-05-22 20:27:55,230 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-05-22 20:27:55,239 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-05-22 20:27:55,241 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-05-22 20:28:40,244 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-05-22 20:28:55,239 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-05-22 20:28:55,249 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-05-22 20:28:55,250 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-05-22 20:29:40,256 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-05-22 20:29:55,246 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-05-22 20:29:55,258 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-05-22 20:29:55,263 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-05-22 20:30:40,268 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-05-22 20:30:55,252 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-05-22 20:30:55,261 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-05-22 20:30:55,262 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-05-22 20:31:40,266 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-05-22 20:31:55,257 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-05-22 20:31:55,264 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-05-22 20:31:55,277 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-05-22 20:32:40,279 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-05-22 20:32:55,261 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-05-22 20:32:55,271 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-05-22 20:32:55,272 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-05-22 20:33:40,277 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-05-22 20:33:55,268 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-05-22 20:33:55,313 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-05-22 20:33:55,315 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-05-22 20:34:40,319 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-05-22 20:34:55,277 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-05-22 20:34:55,285 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-05-22 20:34:55,287 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-05-22 20:35:40,289 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-05-22 20:35:55,283 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-05-22 20:35:55,306 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-05-22 20:35:55,307 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-05-22 20:36:40,312 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-05-22 20:36:55,304 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-05-22 20:36:55,311 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-05-22 20:36:55,315 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-05-22 20:37:40,317 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-05-22 20:37:40,901 WARN com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client->server 通道断开了
+2020-05-22 20:37:40,906 WARN com.ggj.platform.xconf.client.netty.NettyClient [Thread-206] client socket close
+2020-05-22 20:37:41,125 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-22 20:37:41,131 INFO com.zaxxer.hikari.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown initiated...
+2020-05-22 20:37:41,176 INFO com.zaxxer.hikari.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown completed.
+2020-05-22 20:37:41,176 WARN com.ggj.platform.xconf.client.entry.connection.XconfClient [SpringContextShutdownHook] xconfClient destory
+2020-05-22 20:38:05,812 INFO com.alibaba.boot.dubbo.context.event.WelcomeLogoApplicationListener [main] 
+
+ :: Dubbo Spring Boot (v0.2.0) : https://github.com/apache/incubator-dubbo-spring-boot-project
+ :: Dubbo (v2.6.2) : https://github.com/apache/incubator-dubbo
+ :: Google group : dev@dubbo.incubator.apache.org
+
+2020-05-22 20:38:05,817 INFO com.alibaba.boot.dubbo.context.event.OverrideDubboConfigApplicationListener [main] Dubbo Config was overridden by externalized configuration {dubbo.application.author=muyi, dubbo.application.name=big-monster, dubbo.consumer.timeout=5000, dubbo.registry.address=47.99.2.51:2181,47.99.2.51:2182,47.99.2.51:2183}
+2020-05-22 20:38:10,876 WARN org.springframework.boot.StartupInfoLogger [main] InetAddress.getLocalHost().getHostName() took 5002 milliseconds to respond. Please verify your network configuration (macOS machines may need to add entries to /etc/hosts).
+2020-05-22 20:38:15,880 INFO org.springframework.boot.StartupInfoLogger [main] Starting BigMonsterApplication on MacBook-Pro-2.local with PID 11162 (/Users/changfeng/work/code/big-monster/monster-web/target/classes started by changfeng in /Users/changfeng/work/code/big-monster)
+2020-05-22 20:38:15,881 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2020-05-22 20:38:16,455 WARN org.mybatis.logging.Logger [main] Skipping MapperFactoryBean with name 'liveVideoAttributeMapper' and 'com.muyi.bigMonster.mapper.LiveVideoAttributeMapper' mapperInterface. Bean already defined with the same name!
+2020-05-22 20:38:16,456 WARN org.mybatis.logging.Logger [main] No MyBatis mapper was found in '[com.muyi.bigMonster.mapper]' package. Please check your configuration.
+2020-05-22 20:38:16,457 WARN org.mybatis.logging.Logger [main] Skipping MapperFactoryBean with name 'liveVideoAttributeMapper' and 'com.muyi.bigMonster.mapper.LiveVideoAttributeMapper' mapperInterface. Bean already defined with the same name!
+2020-05-22 20:38:16,457 WARN org.mybatis.logging.Logger [main] No MyBatis mapper was found in '[com.muyi.bigMonster.mapper]' package. Please check your configuration.
+2020-05-22 20:38:16,543 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'com.alibaba.boot.dubbo.autoconfigure.DubboAutoConfiguration' of type [com.alibaba.boot.dubbo.autoconfigure.DubboAutoConfiguration$$EnhancerBySpringCGLIB$$1fdb168d] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-22 20:38:16,574 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'com.ggj.platform.gsf.monitor.config.GsfMonitorFilterAutoConfiguration' of type [com.ggj.platform.gsf.monitor.config.GsfMonitorFilterAutoConfiguration$$EnhancerBySpringCGLIB$$cebe4cb5] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-22 20:38:16,601 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'xconfClientConfiguration' of type [com.muyi.bigMonster.config.XconfClientConfiguration$$EnhancerBySpringCGLIB$$943e0d0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-22 20:38:16,637 INFO com.ggj.platform.xconf.client.entry.connection.XconfClient [main] sqlite存储目录为:/Users/changfeng/.xconf
+2020-05-22 20:38:16,702 INFO com.ggj.platform.xconf.client.store.persistence.SqliteStoreHelper [main] 初始化表成功(如果表存在,不会重新创建)
+2020-05-22 20:38:21,840 INFO com.ggj.platform.xconf.client.netty.channel.ServerChannelHolder [main] connect 120.55.196.18:16520 server success
+2020-05-22 20:38:21,841 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client->server 通道连接成功
+2020-05-22 20:38:21,919 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-05-22 20:38:21,932 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-05-22 20:38:22,003 INFO com.ggj.platform.xconf.client.netty.sync.ClientSyncData [main] await sync done
+2020-05-22 20:38:22,003 INFO com.ggj.platform.xconf.client.netty.sync.ClientSyncData$1 [XconfClient-NioEventLoopGroup-pool-0] await sync complete
+2020-05-22 20:38:22,004 INFO com.ggj.platform.xconf.client.netty.NettyClient [main] 同步数据结果:true
+2020-05-22 20:38:22,004 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-05-22 20:38:22,016 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'relaxedDubboConfigBinder' of type [com.alibaba.boot.dubbo.autoconfigure.RelaxedDubboConfigBinder] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-22 20:38:22,017 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'relaxedDubboConfigBinder' of type [com.alibaba.boot.dubbo.autoconfigure.RelaxedDubboConfigBinder] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-22 20:38:22,018 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'relaxedDubboConfigBinder' of type [com.alibaba.boot.dubbo.autoconfigure.RelaxedDubboConfigBinder] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-22 20:38:22,301 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 9999 (http)
+2020-05-22 20:38:22,309 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-9999"]
+2020-05-22 20:38:22,309 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2020-05-22 20:38:22,310 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-05-22 20:38:22,382 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2020-05-22 20:38:22,382 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 6428 ms
+2020-05-22 20:38:25,009 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-05-22 20:38:25,017 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-05-22 20:38:25,019 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-05-22 20:38:33,160 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-22 20:38:33,425 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-9999"]
+2020-05-22 20:38:33,439 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 9999 (http) with context path '/monster'
+2020-05-22 20:38:33,448 INFO org.springframework.boot.StartupInfoLogger [main] Started BigMonsterApplication in 37.962 seconds (JVM running for 43.669)
+2020-05-22 20:39:10,029 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-05-22 20:39:25,013 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-05-22 20:39:25,020 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-05-22 20:39:25,022 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-05-22 20:40:10,026 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-05-22 20:40:10,840 INFO org.apache.juli.logging.DirectJDKLog [http-nio-9999-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-22 20:40:10,841 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-9999-exec-1] Initializing Servlet 'dispatcherServlet'
+2020-05-22 20:40:10,861 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-9999-exec-1] Completed initialization in 20 ms
+2020-05-22 20:40:25,018 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-05-22 20:40:25,031 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-05-22 20:40:25,032 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-05-22 20:41:10,034 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-05-22 20:41:25,025 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-05-22 20:41:25,034 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-05-22 20:41:25,036 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-05-22 20:42:10,042 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-05-22 20:42:25,031 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-05-22 20:42:25,040 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-05-22 20:42:25,041 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-05-22 20:43:10,046 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-05-22 20:43:25,036 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-05-22 20:43:25,046 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-05-22 20:43:25,048 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-05-22 20:44:10,054 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-05-22 20:44:25,044 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-05-22 20:44:25,051 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-05-22 20:44:25,052 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-05-22 20:45:10,055 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-05-22 20:45:25,051 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-05-22 20:45:25,060 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-05-22 20:45:25,061 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-05-22 20:46:10,065 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-05-22 20:46:25,057 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-05-22 20:46:25,068 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-05-22 20:46:25,069 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-05-22 20:47:10,075 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-05-22 20:47:25,066 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-05-22 20:47:25,074 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-05-22 20:47:25,076 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-05-22 20:47:43,103 WARN com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client->server 通道断开了
+2020-05-22 20:47:43,105 WARN com.ggj.platform.xconf.client.netty.NettyClient [Thread-204] client socket close
+2020-05-22 20:47:43,152 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-22 20:47:43,154 WARN com.ggj.platform.xconf.client.entry.connection.XconfClient [SpringContextShutdownHook] xconfClient destory
+2020-05-22 20:53:15,574 INFO com.alibaba.boot.dubbo.context.event.WelcomeLogoApplicationListener [main] 
+
+ :: Dubbo Spring Boot (v0.2.0) : https://github.com/apache/incubator-dubbo-spring-boot-project
+ :: Dubbo (v2.6.2) : https://github.com/apache/incubator-dubbo
+ :: Google group : dev@dubbo.incubator.apache.org
+
+2020-05-22 20:53:15,580 INFO com.alibaba.boot.dubbo.context.event.OverrideDubboConfigApplicationListener [main] Dubbo Config was overridden by externalized configuration {dubbo.application.author=muyi, dubbo.application.name=big-monster, dubbo.consumer.timeout=5000, dubbo.registry.address=47.99.2.51:2181,47.99.2.51:2182,47.99.2.51:2183}
+2020-05-22 20:53:20,719 WARN org.springframework.boot.StartupInfoLogger [main] InetAddress.getLocalHost().getHostName() took 5002 milliseconds to respond. Please verify your network configuration (macOS machines may need to add entries to /etc/hosts).
+2020-05-22 20:53:25,721 INFO org.springframework.boot.StartupInfoLogger [main] Starting BigMonsterApplication on MacBook-Pro-2.local with PID 11628 (/Users/changfeng/work/code/big-monster/monster-web/target/classes started by changfeng in /Users/changfeng/work/code/big-monster)
+2020-05-22 20:53:25,723 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2020-05-22 20:53:26,706 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'com.alibaba.boot.dubbo.autoconfigure.DubboAutoConfiguration' of type [com.alibaba.boot.dubbo.autoconfigure.DubboAutoConfiguration$$EnhancerBySpringCGLIB$$e40731ac] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-22 20:53:26,773 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'com.ggj.platform.gsf.monitor.config.GsfMonitorFilterAutoConfiguration' of type [com.ggj.platform.gsf.monitor.config.GsfMonitorFilterAutoConfiguration$$EnhancerBySpringCGLIB$$92ea67d4] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-22 20:53:26,803 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'xconfClientConfiguration' of type [com.muyi.bigMonster.config.XconfClientConfiguration$$EnhancerBySpringCGLIB$$cd6ffbef] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-22 20:53:26,849 INFO com.ggj.platform.xconf.client.entry.connection.XconfClient [main] sqlite存储目录为:/Users/changfeng/.xconf
+2020-05-22 20:53:26,975 INFO com.ggj.platform.xconf.client.store.persistence.SqliteStoreHelper [main] 初始化表成功(如果表存在,不会重新创建)
+2020-05-22 20:53:32,241 INFO com.ggj.platform.xconf.client.netty.channel.ServerChannelHolder [main] connect 120.55.196.18:16520 server success
+2020-05-22 20:53:32,242 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client->server 通道连接成功
+2020-05-22 20:53:32,368 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-05-22 20:53:32,384 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-05-22 20:53:32,507 INFO com.ggj.platform.xconf.client.netty.sync.ClientSyncData [main] await sync done
+2020-05-22 20:53:32,507 INFO com.ggj.platform.xconf.client.netty.sync.ClientSyncData$1 [XconfClient-NioEventLoopGroup-pool-0] await sync complete
+2020-05-22 20:53:32,507 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-05-22 20:53:32,507 INFO com.ggj.platform.xconf.client.netty.NettyClient [main] 同步数据结果:true
+2020-05-22 20:53:32,535 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'relaxedDubboConfigBinder' of type [com.alibaba.boot.dubbo.autoconfigure.RelaxedDubboConfigBinder] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-22 20:53:32,536 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'relaxedDubboConfigBinder' of type [com.alibaba.boot.dubbo.autoconfigure.RelaxedDubboConfigBinder] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-22 20:53:32,537 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'relaxedDubboConfigBinder' of type [com.alibaba.boot.dubbo.autoconfigure.RelaxedDubboConfigBinder] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-22 20:53:32,953 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 9999 (http)
+2020-05-22 20:53:32,972 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-9999"]
+2020-05-22 20:53:32,973 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2020-05-22 20:53:32,973 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-05-22 20:53:33,159 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2020-05-22 20:53:33,160 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 7346 ms
+2020-05-22 20:53:35,510 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-05-22 20:53:35,517 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-05-22 20:53:35,518 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-05-22 20:53:44,200 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-22 20:53:44,555 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-9999"]
+2020-05-22 20:53:44,571 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 9999 (http) with context path '/monster'
+2020-05-22 20:53:44,580 INFO org.springframework.boot.StartupInfoLogger [main] Started BigMonsterApplication in 39.552 seconds (JVM running for 45.306)
+2020-05-22 20:53:50,346 INFO org.apache.juli.logging.DirectJDKLog [http-nio-9999-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-22 20:53:50,347 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-9999-exec-1] Initializing Servlet 'dispatcherServlet'
+2020-05-22 20:53:50,365 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-9999-exec-1] Completed initialization in 18 ms
+2020-05-22 20:53:50,415 INFO com.zaxxer.hikari.HikariDataSource [http-nio-9999-exec-1] HikariPool-1 - Starting...
+2020-05-22 20:53:52,571 INFO com.zaxxer.hikari.HikariDataSource [http-nio-9999-exec-1] HikariPool-1 - Start completed.
+2020-05-22 20:54:20,533 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-05-22 20:54:29,199 WARN com.ggj.platform.xconf.client.netty.NettyClient [Thread-206] client socket close
+2020-05-22 20:54:29,204 WARN com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client->server 通道断开了
+2020-05-22 20:54:29,222 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-22 20:54:29,222 INFO com.zaxxer.hikari.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown initiated...
+2020-05-22 20:54:29,230 INFO com.zaxxer.hikari.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown completed.
+2020-05-22 20:54:29,231 WARN com.ggj.platform.xconf.client.entry.connection.XconfClient [SpringContextShutdownHook] xconfClient destory
+2020-05-22 21:00:42,226 INFO com.alibaba.boot.dubbo.context.event.WelcomeLogoApplicationListener [main] 
+
+ :: Dubbo Spring Boot (v0.2.0) : https://github.com/apache/incubator-dubbo-spring-boot-project
+ :: Dubbo (v2.6.2) : https://github.com/apache/incubator-dubbo
+ :: Google group : dev@dubbo.incubator.apache.org
+
+2020-05-22 21:00:42,230 INFO com.alibaba.boot.dubbo.context.event.OverrideDubboConfigApplicationListener [main] Dubbo Config was overridden by externalized configuration {dubbo.application.author=muyi, dubbo.application.name=big-monster, dubbo.consumer.timeout=5000, dubbo.registry.address=47.99.2.51:2181,47.99.2.51:2182,47.99.2.51:2183}
+2020-05-22 21:00:47,371 WARN org.springframework.boot.StartupInfoLogger [main] InetAddress.getLocalHost().getHostName() took 5004 milliseconds to respond. Please verify your network configuration (macOS machines may need to add entries to /etc/hosts).
+2020-05-22 21:00:52,380 INFO org.springframework.boot.StartupInfoLogger [main] Starting BigMonsterApplication on MacBook-Pro-2.local with PID 11858 (/Users/changfeng/work/code/big-monster/monster-web/target/classes started by changfeng in /Users/changfeng/work/code/big-monster)
+2020-05-22 21:00:52,383 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2020-05-22 21:00:53,290 WARN org.mybatis.logging.Logger [main] Skipping MapperFactoryBean with name 'liveVideoAttributeMapper' and 'com.muyi.bigMonster.mapper.LiveVideoAttributeMapper' mapperInterface. Bean already defined with the same name!
+2020-05-22 21:00:53,291 WARN org.mybatis.logging.Logger [main] Skipping MapperFactoryBean with name 'PBuyerResourceMapper' and 'com.muyi.bigMonster.mapper.PBuyerResourceMapper' mapperInterface. Bean already defined with the same name!
+2020-05-22 21:00:53,291 WARN org.mybatis.logging.Logger [main] No MyBatis mapper was found in '[com.muyi.bigMonster.mapper]' package. Please check your configuration.
+2020-05-22 21:00:53,292 WARN org.mybatis.logging.Logger [main] Skipping MapperFactoryBean with name 'liveVideoAttributeMapper' and 'com.muyi.bigMonster.mapper.LiveVideoAttributeMapper' mapperInterface. Bean already defined with the same name!
+2020-05-22 21:00:53,292 WARN org.mybatis.logging.Logger [main] Skipping MapperFactoryBean with name 'PBuyerResourceMapper' and 'com.muyi.bigMonster.mapper.PBuyerResourceMapper' mapperInterface. Bean already defined with the same name!
+2020-05-22 21:00:53,293 WARN org.mybatis.logging.Logger [main] No MyBatis mapper was found in '[com.muyi.bigMonster.mapper]' package. Please check your configuration.
+2020-05-22 21:00:53,419 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'com.alibaba.boot.dubbo.autoconfigure.DubboAutoConfiguration' of type [com.alibaba.boot.dubbo.autoconfigure.DubboAutoConfiguration$$EnhancerBySpringCGLIB$$dc10c8e6] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-22 21:00:53,467 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'com.ggj.platform.gsf.monitor.config.GsfMonitorFilterAutoConfiguration' of type [com.ggj.platform.gsf.monitor.config.GsfMonitorFilterAutoConfiguration$$EnhancerBySpringCGLIB$$8af3ff0e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-22 21:00:53,504 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'xconfClientConfiguration' of type [com.muyi.bigMonster.config.XconfClientConfiguration$$EnhancerBySpringCGLIB$$c5799329] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-22 21:00:53,573 INFO com.ggj.platform.xconf.client.entry.connection.XconfClient [main] sqlite存储目录为:/Users/changfeng/.xconf
+2020-05-22 21:00:53,684 INFO com.ggj.platform.xconf.client.store.persistence.SqliteStoreHelper [main] 初始化表成功(如果表存在,不会重新创建)
+2020-05-22 21:00:58,937 INFO com.ggj.platform.xconf.client.netty.channel.ServerChannelHolder [main] connect 120.55.196.18:16520 server success
+2020-05-22 21:00:58,938 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client->server 通道连接成功
+2020-05-22 21:00:59,090 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-05-22 21:00:59,108 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-05-22 21:00:59,230 INFO com.ggj.platform.xconf.client.netty.sync.ClientSyncData$1 [XconfClient-NioEventLoopGroup-pool-0] await sync complete
+2020-05-22 21:00:59,230 INFO com.ggj.platform.xconf.client.netty.sync.ClientSyncData [main] await sync done
+2020-05-22 21:00:59,230 INFO com.ggj.platform.xconf.client.netty.NettyClient [main] 同步数据结果:true
+2020-05-22 21:00:59,230 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-05-22 21:00:59,253 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'relaxedDubboConfigBinder' of type [com.alibaba.boot.dubbo.autoconfigure.RelaxedDubboConfigBinder] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-22 21:00:59,254 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'relaxedDubboConfigBinder' of type [com.alibaba.boot.dubbo.autoconfigure.RelaxedDubboConfigBinder] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-22 21:00:59,256 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'relaxedDubboConfigBinder' of type [com.alibaba.boot.dubbo.autoconfigure.RelaxedDubboConfigBinder] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-22 21:00:59,635 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 9999 (http)
+2020-05-22 21:00:59,649 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-9999"]
+2020-05-22 21:00:59,650 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2020-05-22 21:00:59,651 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-05-22 21:00:59,820 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2020-05-22 21:00:59,820 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 7344 ms
+2020-05-22 21:01:02,236 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-05-22 21:01:02,244 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-05-22 21:01:02,245 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-05-22 21:01:10,915 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-22 21:01:11,316 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-9999"]
+2020-05-22 21:01:11,333 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 9999 (http) with context path '/monster'
+2020-05-22 21:01:11,343 INFO org.springframework.boot.StartupInfoLogger [main] Started BigMonsterApplication in 39.601 seconds (JVM running for 45.286)
+2020-05-22 21:01:16,670 INFO org.apache.juli.logging.DirectJDKLog [http-nio-9999-exec-2] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-22 21:01:16,671 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-9999-exec-2] Initializing Servlet 'dispatcherServlet'
+2020-05-22 21:01:16,697 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-9999-exec-2] Completed initialization in 26 ms
+2020-05-22 21:01:47,261 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-05-22 21:02:02,244 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-05-22 21:02:02,251 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-05-22 21:02:02,252 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-05-22 21:02:47,259 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-05-22 21:03:02,246 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-05-22 21:03:02,254 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-05-22 21:03:02,256 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-05-22 21:03:47,267 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
