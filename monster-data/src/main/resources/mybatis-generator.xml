@@ -7,6 +7,7 @@
     <!--    <classPathEntry-->
     <!--            location="/Users/changfeng/.m2/repository/mysql/mysql-connector-java/8.0.19/mysql-connector-java-8.0.19.jar"/>-->
 
+    <!--daily1数据源-->
     <context id="daily1" targetRuntime="MyBatis3">
 
         <plugin type="org.mybatis.generator.plugins.FluentBuilderMethodsPlugin"/>
@@ -22,21 +23,21 @@
         </jdbcConnection>
 
         <!-- 生成模型-model-的包名和位置-->
-        <javaModelGenerator targetPackage="com.muyi.bigMonster.model"
+        <javaModelGenerator targetPackage="com.muyi.bigMonster.daily1.model"
                             targetProject="src/main/java">
             <property name="enableSubPackages" value="true"/>
             <property name="trimStrings" value="true"/>
         </javaModelGenerator>
 
         <!-- 生成映射文件-Mapper.xml-的包名和位置-->
-        <sqlMapGenerator targetPackage="mapper.zebra"
+        <sqlMapGenerator targetPackage="mapper.daily1"
                          targetProject="src/main/resources">
             <property name="enableSubPackages" value="true"/>
         </sqlMapGenerator>
 
         <!-- 数据访问对象-DAO-Java Mapper-生成的包名和位置-->
         <javaClientGenerator type="MIXEDMAPPER"
-                             targetPackage="com.muyi.bigMonster.mapper"
+                             targetPackage="com.muyi.bigMonster.daily1.mapper"
                              targetProject="src/main/java">
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
@@ -45,6 +46,7 @@
 
     </context>
 
+    <!--daily2drds数据源-->
     <context id="daily2drds" targetRuntime="MyBatis3">
 
         <plugin type="org.mybatis.generator.plugins.FluentBuilderMethodsPlugin"/>
@@ -60,21 +62,21 @@
         </jdbcConnection>
 
         <!-- 生成模型-model-的包名和位置-->
-        <javaModelGenerator targetPackage="com.muyi.bigMonster.model"
+        <javaModelGenerator targetPackage="com.muyi.bigMonster.daily2drds.model"
                             targetProject="src/main/java">
             <property name="enableSubPackages" value="true"/>
             <property name="trimStrings" value="true"/>
         </javaModelGenerator>
 
         <!-- 生成映射文件-Mapper.xml-的包名和位置-->
-        <sqlMapGenerator targetPackage="mapper.zebra"
+        <sqlMapGenerator targetPackage="mapper.daily2drds"
                          targetProject="src/main/resources">
             <property name="enableSubPackages" value="true"/>
         </sqlMapGenerator>
 
         <!-- 数据访问对象-DAO-Java Mapper-生成的包名和位置-->
         <javaClientGenerator type="MIXEDMAPPER"
-                             targetPackage="com.muyi.bigMonster.mapper"
+                             targetPackage="com.muyi.bigMonster.daily2drds.mapper"
                              targetProject="src/main/java">
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>

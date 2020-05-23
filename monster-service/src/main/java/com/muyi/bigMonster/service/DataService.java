@@ -1,7 +1,7 @@
 package com.muyi.bigMonster.service;
 
-import com.muyi.bigMonster.mapper.LiveVideoAttributeMapper;
-import com.muyi.bigMonster.model.LiveVideoAttribute;
+import com.muyi.bigMonster.daily1.mapper.LiveVideoAttributeMapper;
+import com.muyi.bigMonster.daily1.model.LiveVideoAttribute;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
