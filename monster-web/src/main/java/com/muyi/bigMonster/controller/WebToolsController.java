@@ -22,7 +22,7 @@ public class WebToolsController {
     public Result updateBuyerResourceEndTime(@RequestParam Integer buyerResourceId,
                                              @RequestParam String time) {
         log.info("buyerResourceId=" + buyerResourceId + "\ntime=" + time);
-        if (null == time.trim() || "" == time) {
+        if (null == time || "".equals(time.trim())) {
             SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
             Date date = new Date();
             String now = simpleDateFormat.format(date);

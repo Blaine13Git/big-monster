@@ -14,7 +14,7 @@ public class WebToolsService {
     private PBuyerResourceMapper pBuyerResourceMapper;
 
     public int updateBuyerResourceEndTime(Integer buyerResourceId, String time) {
-        log.info("buyerResourceId=" + buyerResourceId + "\ntime=" + time);
+        log.info("\nbuyerResourceId=" + buyerResourceId + "\ntime=" + time);
         int number = pBuyerResourceMapper.updateById(buyerResourceId, time);
         return number;
     }
