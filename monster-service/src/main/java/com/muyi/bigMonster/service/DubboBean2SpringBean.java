@@ -31,6 +31,8 @@ public class DubboBean2SpringBean {
 //    @Reference(timeout = 10000, check = false)
 //    private RedPacketService redPacketService;
 
+///////////////////////////Spring Bean///////////////////////////
+
     @Bean(name = "liveApi")
     public LiveApi getLiveApi() {
         return liveApi;

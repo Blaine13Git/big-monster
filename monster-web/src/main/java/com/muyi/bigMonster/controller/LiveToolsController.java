@@ -72,4 +72,17 @@ public class LiveToolsController {
         }
     }
 
+    @GetMapping("case03")
+    @ResponseBody
+    public Result case03() {
+
+        try {
+            dataService.case03(111,"2020-05-23 23:00:00");
+            return Result.Success("OK");
+        } catch (Exception e) {
+            e.printStackTrace();
+            return Result.Failure("服务异常：" + e.getMessage());
+        }
+    }
+
 }
