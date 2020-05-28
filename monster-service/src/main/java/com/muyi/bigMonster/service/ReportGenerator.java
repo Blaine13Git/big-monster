@@ -13,9 +13,7 @@
 package com.muyi.bigMonster.service;
 
 
-import org.jacoco.core.analysis.Analyzer;
-import org.jacoco.core.analysis.CoverageBuilder;
-import org.jacoco.core.analysis.IBundleCoverage;
+import org.jacoco.core.analysis.*;
 import org.jacoco.core.data.ExecutionDataStore;
 import org.jacoco.core.tools.ExecFileLoader;
 import org.jacoco.report.DirectorySourceFileLocator;
@@ -27,6 +25,7 @@ import org.jacoco.report.html.HTMLFormatter;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 /**
@@ -87,8 +86,22 @@ public class ReportGenerator {
 
         final Analyzer analyzer = new Analyzer(executionDataStore, coverageBuilder);
 
-//        analyzer.analyzeAll(classesDirectory);
         analyzer.analyzeAll(classesDirectory, "master", "test");
+
+        Collection<IClassCoverage> classes = coverageBuilder.getClasses();
+
+
+        for (final IClassCoverage cc : coverageBuilder.getClasses()) {
+            System.out.printf("Coverage of class %s%n", cc.getName());
+
+            printCounter("instructions-指令", cc.getInstructionCounter());
+            printCounter("branches-分支", cc.getBranchCounter());
+            printCounter("lines-行", cc.getLineCounter());
+            printCounter("methods-方法", cc.getMethodCounter());
+            printCounter("complexity-复杂", cc.getComplexityCounter());
+
+        }
+
 
         return coverageBuilder.getBundle(title);
     }
@@ -102,23 +115,11 @@ public class ReportGenerator {
 
         visitor.visitInfo(execFileLoader.getSessionInfoStore().getInfos(), execFileLoader.getExecutionDataStore().getContents());
 
-//        DirectorySourceFileLocator sourceFileLocator = new DirectorySourceFileLocator(sourceDirectory, "utf-8", 4);
-//        visitor.visitBundle(bundleCoverage, sourceFileLocator);
-
         //多源码路径
         String projectPathString = System.getProperty("user.dir");
         File projectPathFile = new File(projectPathString);
 
-//        File sourceDirectory1 = new File(projectPathFile, "monster-data/src/main/java/");
-//        File sourceDirectory2 = new File(projectPathFile, "monster-service/src/main/java/");
-//        File sourceDirectory3 = new File(projectPathFile, "monster-web/src/main/java/");
-
         MultiSourceFileLocator sourceLocator = new MultiSourceFileLocator(4);
-
-//        sourceLocator.add(new DirectorySourceFileLocator(sourceDirectory1, "utf-8", 4));
-//        sourceLocator.add(new DirectorySourceFileLocator(sourceDirectory2, "utf-8", 4));
-//        sourceLocator.add(new DirectorySourceFileLocator(sourceDirectory3, "utf-8", 4));
-
 
         List<String> modelNameList = getModelName(projectPathFile);
         for (String modelName : modelNameList) {
@@ -131,6 +132,11 @@ public class ReportGenerator {
 
     }
 
+    private void printCounter(final String unit, final ICounter counter) {
+        final Integer missed = Integer.valueOf(counter.getMissedCount());
+        final Integer total = Integer.valueOf(counter.getTotalCount());
+        System.out.printf("%n%s of %s %s missed%n", missed, total, unit);
+    }
 
     public int analyzeAll(final File file, String baseBranch, String diffBranch) throws IOException {
 
@@ -173,11 +179,6 @@ public class ReportGenerator {
         generator.create();
 
 //        generator.report01();
-
-//        List<String> modelNameList = generator.getModelName(file);
-//        for (String modelName : modelNameList) {
-//            System.out.println(modelName);
-//        }
 
     }
 
