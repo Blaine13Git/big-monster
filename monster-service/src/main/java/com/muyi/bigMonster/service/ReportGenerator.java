@@ -86,8 +86,7 @@ public class ReportGenerator {
 
         analyzer.analyzeAll(classesDirectory, "master", "test");
 
-        Collection<IClassCoverage> classes = coverageBuilder.getClasses();
-
+/*
         for (final IClassCoverage cc : coverageBuilder.getClasses()) {
             System.out.printf("Coverage of class %s%n", cc.getName());
 
@@ -98,6 +97,7 @@ public class ReportGenerator {
             printCounter("complexity-复杂", cc.getComplexityCounter());
 
         }
+*/
 
         return coverageBuilder.getBundle(title);
     }
@@ -145,7 +145,6 @@ public class ReportGenerator {
                     }
                 }
             }
-
         }
         return modelNameList;
     }

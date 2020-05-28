@@ -206,34 +206,13 @@ public class DiffService {
      */
     public boolean isDiff(String classname, String baseBranch, String diffBranch) {
         List<DiffEntry> notDeleteDiffEntries = getNotDelete(baseBranch, diffBranch);
-
         for (DiffEntry diffEntry : notDeleteDiffEntries) {
-
             if (diffEntry.getNewPath().contains(classname)) {
-
-                log.info(">>> Diffed Classname >>> " + classname + "\n");
-
                 return true;
             }
         }
         return false;
     }
-
-    public static void main(String[] args) {
-
-        DiffService diffService = new DiffService();
-
-//        diffService.getDiffEntriesByBranch("master","test");
-//        diffService.getModify("master", "test");
-//        diffService.getAdd("master", "test");
-//        diffService.getDelete("master", "test");
-//        diffService.getNotDelete("master", "test");
-
-
-
-    }
-
-
 
 }
 
