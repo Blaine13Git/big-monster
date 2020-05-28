@@ -133,18 +133,6 @@ public class ReportGenerator {
         System.out.printf("%n%s of %s %s missed%n", missed, total, unit);
     }
 
-
-    public static void main(final String[] args) throws Exception {
-        String projectDirectory = System.getProperty("user.dir");
-        File file = new File(projectDirectory);
-        final ReportGenerator generator = new ReportGenerator(file, "");
-
-        generator.create();
-
-//        generator.report01();
-
-    }
-
     private List<String> getModelName(File file) {
 
         List<String> modelNameList = new ArrayList<>();
@@ -160,6 +148,17 @@ public class ReportGenerator {
 
         }
         return modelNameList;
+    }
+
+    public static void main(final String[] args) throws Exception {
+        String projectDirectory = System.getProperty("user.dir");
+        File file = new File(projectDirectory);
+        final ReportGenerator generator = new ReportGenerator(file, "");
+
+        generator.create();
+
+//        generator.report01();
+
     }
 
     // 测试方法
