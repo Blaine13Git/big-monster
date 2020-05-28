@@ -26,6 +26,8 @@ import org.jacoco.report.html.HTMLFormatter;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * This example creates a HTML report for eclipse like projects based on a
@@ -36,7 +38,7 @@ import java.io.IOException;
  * source highlighting will not work.
  */
 public class ReportGenerator {
-//    private static final String JAVA_SOURCE_PREFIX = "src/main/java/";
+    private static final String JAVA_SOURCE_PREFIX = "/src/main/java/";
 //    private static final String CLASS_SOURCE_PREFIX = "target/classes/";
 
     private final String title;
@@ -107,14 +109,22 @@ public class ReportGenerator {
         String projectPathString = System.getProperty("user.dir");
         File projectPathFile = new File(projectPathString);
 
-        File sourceDirectory1 = new File(projectPathFile, "monster-data/src/main/java/");
-        File sourceDirectory2 = new File(projectPathFile, "monster-service/src/main/java/");
-        File sourceDirectory3 = new File(projectPathFile, "monster-web/src/main/java/");
+//        File sourceDirectory1 = new File(projectPathFile, "monster-data/src/main/java/");
+//        File sourceDirectory2 = new File(projectPathFile, "monster-service/src/main/java/");
+//        File sourceDirectory3 = new File(projectPathFile, "monster-web/src/main/java/");
 
         MultiSourceFileLocator sourceLocator = new MultiSourceFileLocator(4);
-        sourceLocator.add(new DirectorySourceFileLocator(sourceDirectory1, "utf-8", 4));
-        sourceLocator.add(new DirectorySourceFileLocator(sourceDirectory2, "utf-8", 4));
-        sourceLocator.add(new DirectorySourceFileLocator(sourceDirectory3, "utf-8", 4));
+
+//        sourceLocator.add(new DirectorySourceFileLocator(sourceDirectory1, "utf-8", 4));
+//        sourceLocator.add(new DirectorySourceFileLocator(sourceDirectory2, "utf-8", 4));
+//        sourceLocator.add(new DirectorySourceFileLocator(sourceDirectory3, "utf-8", 4));
+
+
+        List<String> modelNameList = getModelName(projectPathFile);
+        for (String modelName : modelNameList) {
+            sourceLocator.add(new DirectorySourceFileLocator(new File(projectPathFile, modelName + JAVA_SOURCE_PREFIX), "utf-8", modelNameList.size()));
+        }
+
         visitor.visitBundle(bundleCoverage, sourceLocator);
 
         visitor.visitEnd();
@@ -160,8 +170,14 @@ public class ReportGenerator {
         File file = new File(projectDirectory);
         final ReportGenerator generator = new ReportGenerator(file, "");
 
-//        generator.report01();
         generator.create();
+
+//        generator.report01();
+
+//        List<String> modelNameList = generator.getModelName(file);
+//        for (String modelName : modelNameList) {
+//            System.out.println(modelName);
+//        }
 
     }
 
@@ -169,6 +185,23 @@ public class ReportGenerator {
 
         analyzeAll(classesDirectory, "master", "test");
 
+    }
+
+    private List<String> getModelName(File file) {
+
+        List<String> modelNameList = new ArrayList<>();
+
+        for (File fileChild : file.listFiles()) {
+            if (fileChild.isDirectory()) {
+                for (File filePOM : fileChild.listFiles()) {
+                    if (filePOM.getName().equals("pom.xml")) {
+                        modelNameList.add(fileChild.getName());
+                    }
+                }
+            }
+
+        }
+        return modelNameList;
     }
 
 }

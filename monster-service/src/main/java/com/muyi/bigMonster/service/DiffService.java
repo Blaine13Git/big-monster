@@ -16,7 +16,9 @@ import org.eclipse.jgit.treewalk.CanonicalTreeParser;
 import org.eclipse.jgit.treewalk.filter.PathSuffixFilter;
 import org.springframework.stereotype.Service;
 
+import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -225,10 +227,13 @@ public class DiffService {
 //        diffService.getModify("master", "test");
 //        diffService.getAdd("master", "test");
 //        diffService.getDelete("master", "test");
-        diffService.getNotDelete("master", "test");
+//        diffService.getNotDelete("master", "test");
+
 
 
     }
+
+
 
 }
 
