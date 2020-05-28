@@ -10,8 +10,7 @@
  *    Evgeny Mandrikov - initial API and implementation
  *
  *******************************************************************************/
-package org.jacoco.examples;
-
+package com.muyi.bigMonster.service;
 import java.io.FileOutputStream;
 
 import javax.management.MBeanServerConnection;

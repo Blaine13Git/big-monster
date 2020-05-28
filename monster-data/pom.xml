@@ -80,6 +80,7 @@
                     </configurationFile>
                 </configuration>
             </plugin>
+
         </plugins>
 
         <resources>

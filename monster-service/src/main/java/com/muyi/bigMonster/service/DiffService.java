@@ -16,7 +16,6 @@ import org.eclipse.jgit.treewalk.CanonicalTreeParser;
 import org.eclipse.jgit.treewalk.filter.PathSuffixFilter;
 import org.springframework.stereotype.Service;
 
-import java.io.File;
 import java.io.IOException;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -82,7 +81,6 @@ public class DiffService {
         }
     }
 
-
     /**
      * diff by branch
      *
@@ -109,11 +107,11 @@ public class DiffService {
                     .setPathFilter(PathSuffixFilter.create(".java"))
                     .call();
 
-            /*System.out.println("\nFound All: " + diffs.size() + " differences");
-            for (DiffEntry diff : diffs) {
-                System.out.println("Diff: " + diff.getChangeType() + ": " +
-                        (diff.getOldPath().equals(diff.getNewPath()) ? diff.getNewPath() : diff.getOldPath() + " -> " + diff.getNewPath()));
-            }*/
+//            System.out.println("\nFound All: " + diffs.size() + " differences");
+//            for (DiffEntry diff : diffs) {
+//                System.out.println("Diff: " + diff.getChangeType() + ": " +
+//                        (diff.getOldPath().equals(diff.getNewPath()) ? diff.getNewPath() : diff.getOldPath() + " -> " + diff.getNewPath()));
+//            }
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -156,29 +154,6 @@ public class DiffService {
         System.out.println("\nFound add: " + addList.size() + " differences");
         for (DiffEntry diff : addList) {
             System.out.println("Add: " + diff.getNewPath());
-
-            // 去掉模块名称
-            int indexStart = diff.getNewPath().indexOf("/");
-            String classPath = diff.getNewPath().substring(indexStart + 1);
-            System.out.println("Add: " + classPath);
-
-            try {
-                String classPackage = classPath.replace("/", ".");
-                int indexEnd = classPackage.lastIndexOf(".");
-                String fullClassNamePlus = classPackage.substring(0, indexEnd);
-
-                String fullClassName = fullClassNamePlus.replace("src.main.java.","");
-                System.out.println(fullClassName);
-
-                String PackageName = Class.forName(fullClassName).getPackage().getName();
-
-//                String name = Class.forName("com.muyi.bigMonster.controller.WebToolsController").getPackage().getName();
-
-                System.out.println(PackageName);
-
-            } catch (ClassNotFoundException e) {
-                e.printStackTrace();
-            }
         }
 
         return addList;
@@ -191,7 +166,7 @@ public class DiffService {
      * @param diffBranch
      * @return 返回删除的list
      */
-    public List<DiffEntry> geDelete(String baseBranch, String diffBranch) {
+    public List<DiffEntry> getDelete(String baseBranch, String diffBranch) {
         List<DiffEntry> diffEntries = getDiffEntriesByBranch(baseBranch, diffBranch);
         List<DiffEntry> deleteList = diffEntries.stream().filter(diffEntry -> diffEntry.getChangeType().toString().equals("DELETE")).collect(Collectors.toList());
 
@@ -203,12 +178,54 @@ public class DiffService {
         return deleteList;
     }
 
+    /**
+     * 获取非删除的内容（即modify & add）
+     *
+     * @param baseBranch
+     * @param diffBranch
+     * @return 返回删除的list
+     */
+    public List<DiffEntry> getNotDelete(String baseBranch, String diffBranch) {
+        List<DiffEntry> diffEntries = getDiffEntriesByBranch(baseBranch, diffBranch);
+        List<DiffEntry> notDeleteList = diffEntries.stream().filter(diffEntry -> !(diffEntry.getChangeType().toString().equals("DELETE"))).collect(Collectors.toList());
+
+        System.out.println("\nFound not delete: " + notDeleteList.size() + " differences");
+        for (DiffEntry diff : notDeleteList) {
+            System.out.println("Not Delete: " + diff.getChangeType().toString() + " " + diff.getNewPath());
+        }
+        return notDeleteList;
+    }
+
+    /**
+     * 判断是否为diff文件
+     *
+     * @param classname
+     * @return <code>true</code> 表示是diff文件
+     */
+    public boolean isDiff(String classname, String baseBranch, String diffBranch) {
+        List<DiffEntry> notDeleteDiffEntries = getNotDelete(baseBranch, diffBranch);
+
+        for (DiffEntry diffEntry : notDeleteDiffEntries) {
+
+            if (diffEntry.getNewPath().contains(classname)) {
+
+                log.info(">>> Diffed Classname >>> " + classname + "\n");
+
+                return true;
+            }
+        }
+        return false;
+    }
+
     public static void main(String[] args) {
 
         DiffService diffService = new DiffService();
 
-//        List<DiffEntry> modify = diffService.getModify("master", "test");
-        List<DiffEntry> add = diffService.getAdd("master", "test");
+//        diffService.getDiffEntriesByBranch("master","test");
+//        diffService.getModify("master", "test");
+//        diffService.getAdd("master", "test");
+//        diffService.getDelete("master", "test");
+        diffService.getNotDelete("master", "test");
 
 
     }
