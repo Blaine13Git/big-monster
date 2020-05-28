@@ -104,13 +104,12 @@ public class ReportGenerator {
 //        visitor.visitBundle(bundleCoverage, sourceFileLocator);
 
         //多源码路径
-
         String projectPathString = System.getProperty("user.dir");
         File projectPathFile = new File(projectPathString);
 
-        File sourceDirectory1 = new File(projectPathFile, "monster-data");
-        File sourceDirectory2 = new File(projectPathFile, "monster-service");
-        File sourceDirectory3 = new File(projectPathFile, "monster-web");
+        File sourceDirectory1 = new File(projectPathFile, "monster-data/src/main/java/");
+        File sourceDirectory2 = new File(projectPathFile, "monster-service/src/main/java/");
+        File sourceDirectory3 = new File(projectPathFile, "monster-web/src/main/java/");
 
         MultiSourceFileLocator sourceLocator = new MultiSourceFileLocator(4);
         sourceLocator.add(new DirectorySourceFileLocator(sourceDirectory1, "utf-8", 4));
@@ -121,6 +120,7 @@ public class ReportGenerator {
         visitor.visitEnd();
 
     }
+
 
     public int analyzeAll(final File file, String baseBranch, String diffBranch) throws IOException {
 
