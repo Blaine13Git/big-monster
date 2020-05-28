@@ -37,14 +37,13 @@ import java.util.List;
  * source highlighting will not work.
  */
 public class ReportGenerator {
+
     private static final String JAVA_SOURCE_PREFIX = "/src/main/java/";
-//    private static final String CLASS_SOURCE_PREFIX = "target/classes/";
 
     private final String title;
 
     private final File executionDataFile;
     private final File classesDirectory;
-    private final File sourceDirectory;
     private final File reportDirectory;
 
     private ExecFileLoader execFileLoader;
@@ -54,10 +53,9 @@ public class ReportGenerator {
         this.executionDataFile = new File(projectDirectory, "jacoco-client.exec");
         this.reportDirectory = new File(projectDirectory, "reportCoverage");
         this.classesDirectory = new File(projectDirectory, "");
-        this.sourceDirectory = new File(projectDirectory, "");
     }
 
-    // 组织创建3步
+    // 报告生成3步走
     public void create() throws IOException {
 
         // 加载exec文件
@@ -90,7 +88,6 @@ public class ReportGenerator {
 
         Collection<IClassCoverage> classes = coverageBuilder.getClasses();
 
-
         for (final IClassCoverage cc : coverageBuilder.getClasses()) {
             System.out.printf("Coverage of class %s%n", cc.getName());
 
@@ -101,7 +98,6 @@ public class ReportGenerator {
             printCounter("complexity-复杂", cc.getComplexityCounter());
 
         }
-
 
         return coverageBuilder.getBundle(title);
     }
@@ -127,7 +123,6 @@ public class ReportGenerator {
         }
 
         visitor.visitBundle(bundleCoverage, sourceLocator);
-
         visitor.visitEnd();
 
     }
@@ -138,6 +133,36 @@ public class ReportGenerator {
         System.out.printf("%n%s of %s %s missed%n", missed, total, unit);
     }
 
+
+    public static void main(final String[] args) throws Exception {
+        String projectDirectory = System.getProperty("user.dir");
+        File file = new File(projectDirectory);
+        final ReportGenerator generator = new ReportGenerator(file, "");
+
+        generator.create();
+
+//        generator.report01();
+
+    }
+
+    private List<String> getModelName(File file) {
+
+        List<String> modelNameList = new ArrayList<>();
+
+        for (File fileChild : file.listFiles()) {
+            if (fileChild.isDirectory()) {
+                for (File filePOM : fileChild.listFiles()) {
+                    if (filePOM.getName().equals("pom.xml")) {
+                        modelNameList.add(fileChild.getName());
+                    }
+                }
+            }
+
+        }
+        return modelNameList;
+    }
+
+    // 测试方法
     public int analyzeAll(final File file, String baseBranch, String diffBranch) throws IOException {
 
         int count = 0;
@@ -169,40 +194,11 @@ public class ReportGenerator {
         return count;
     }
 
-
-    public static void main(final String[] args) throws Exception {
-
-        String projectDirectory = System.getProperty("user.dir");
-        File file = new File(projectDirectory);
-        final ReportGenerator generator = new ReportGenerator(file, "");
-
-        generator.create();
-
-//        generator.report01();
-
-    }
-
     private void report01() throws IOException {
 
         analyzeAll(classesDirectory, "master", "test");
 
     }
 
-    private List<String> getModelName(File file) {
-
-        List<String> modelNameList = new ArrayList<>();
-
-        for (File fileChild : file.listFiles()) {
-            if (fileChild.isDirectory()) {
-                for (File filePOM : fileChild.listFiles()) {
-                    if (filePOM.getName().equals("pom.xml")) {
-                        modelNameList.add(fileChild.getName());
-                    }
-                }
-            }
-
-        }
-        return modelNameList;
-    }
 
 }
