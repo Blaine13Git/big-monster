@@ -23,12 +23,11 @@ public class ReportGeneratorService {
 
     private static final String JAVA_SOURCE_PREFIX = "/src/main/java/";
 
-    private ExecFileLoader execFileLoader;
-
     private String title;
 
     private File reportDirectory;
 
+    private ExecFileLoader execFileLoader;
 
     // 报告生成3步走
     public void create(String executionDataFilePath, String projectPath) throws IOException {
