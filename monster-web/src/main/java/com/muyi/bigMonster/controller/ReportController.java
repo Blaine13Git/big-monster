@@ -31,10 +31,10 @@ public class ReportController {
             clientExecDataGenerateService.execDataGenerate(ip, port, destFilePath);
         } catch (IOException e) {
             e.printStackTrace();
-            return Result.Failure("failure");
+            return Result.Failure("Failure");
         }
 
-        return Result.Success("success");
+        return Result.Success("Success");
     }
 
     /**

@@ -15,6 +15,7 @@ public class WebToolsService {
 
     /**
      * 更新优惠券的有效期
+     * OK
      *
      * @param buyerResourceId
      * @param time

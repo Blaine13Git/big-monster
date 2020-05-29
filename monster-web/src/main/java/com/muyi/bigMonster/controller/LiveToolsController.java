@@ -8,6 +8,9 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+/**
+ * test
+ */
 @Slf4j
 @RestController
 @RequestMapping("test")
@@ -77,7 +80,7 @@ public class LiveToolsController {
     public Result case03() {
 
         try {
-            dataService.case03(111,"2020-05-23 23:00:00");
+            dataService.case03(111, "2020-05-23 23:00:00");
             return Result.Success("OK");
         } catch (Exception e) {
             e.printStackTrace();

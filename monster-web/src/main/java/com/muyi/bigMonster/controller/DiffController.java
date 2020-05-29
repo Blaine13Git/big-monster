@@ -10,7 +10,7 @@ import java.util.List;
 
 
 @RestController
-@RequestMapping("diff")
+@RequestMapping("diffBranch")
 public class DiffController {
 
     @Resource

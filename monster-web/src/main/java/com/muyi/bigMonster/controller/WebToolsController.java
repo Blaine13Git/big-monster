@@ -34,8 +34,6 @@ public class WebToolsController {
         if (0 == number) {
             return Result.Failure("没有找到要更新的数据");
         }
-
-        return Result.Success("成功更新 " + number + " 条数据");
-
+        return Result.Success("成功更新 " + number + " 条数据!");
     }
 }

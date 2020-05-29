@@ -12,6 +12,7 @@ import org.springframework.context.annotation.Configuration;
 
 /**
  * Dubbo bean 2 Spring bean
+ * test
  */
 @Configuration
 public class DubboBean2SpringBean {
