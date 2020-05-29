@@ -17,18 +17,36 @@ public class DiffController {
     private DiffService diffService;
 
     /**
+     * 获取总 diff 的 class
+     *
+     * @param baseBranch
+     * @param diffBranch
+     * @return
+     */
+    @PostMapping("diffClass")
+    @ResponseBody
+    public Result diffClass(@RequestParam String projectPath,
+                            @RequestParam String baseBranch,
+                            @RequestParam String diffBranch) {
+
+        List<DiffEntry> diffClassList = diffService.getDiffEntriesByBranch(projectPath, baseBranch, diffBranch);
+        return Result.Success(diffClassList);
+    }
+
+    /**
      * 获取修改的文件
      *
      * @param baseBranch
      * @param diffBranch
      * @return
      */
-    @PostMapping("modify")
+    @PostMapping("modifyClass")
     @ResponseBody
-    public Result modify(@RequestParam String baseBranch,
-                         @RequestParam String diffBranch) {
+    public Result modifyClass(@RequestParam String projectPath,
+                              @RequestParam String baseBranch,
+                              @RequestParam String diffBranch) {
 
-        List<DiffEntry> modifyList = diffService.getModify(baseBranch, diffBranch);
+        List<DiffEntry> modifyList = diffService.getModify(projectPath, baseBranch, diffBranch);
         return Result.Success(modifyList);
     }
 
@@ -39,13 +57,32 @@ public class DiffController {
      * @param diffBranch
      * @return
      */
-    @PostMapping("add")
+    @PostMapping("addClass")
     @ResponseBody
-    public Result add(@RequestParam String baseBranch,
-                      @RequestParam String diffBranch) {
+    public Result addClass(@RequestParam String projectPath,
+                           @RequestParam String baseBranch,
+                           @RequestParam String diffBranch) {
 
-        List<DiffEntry> modifyList = diffService.getAdd(baseBranch, diffBranch);
-        return Result.Success(modifyList);
+        List<DiffEntry> addClassList = diffService.getAdd(projectPath, baseBranch, diffBranch);
+        return Result.Success(addClassList);
+    }
+
+
+    /**
+     * 获取删除的文件
+     *
+     * @param baseBranch
+     * @param diffBranch
+     * @return
+     */
+    @PostMapping("delClass")
+    @ResponseBody
+    public Result delClass(@RequestParam String projectPath,
+                           @RequestParam String baseBranch,
+                           @RequestParam String diffBranch) {
+
+        List<DiffEntry> delClassList = diffService.getAdd(projectPath, baseBranch, diffBranch);
+        return Result.Success(delClassList);
     }
 
 

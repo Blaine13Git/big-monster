@@ -160,43 +160,43 @@ public class ReportGenerator {
 
     }
 
-    // 测试方法
-    public int analyzeAll(final File file, String baseBranch, String diffBranch) throws IOException {
-
-        int count = 0;
-        if (file.isDirectory()) {
-            for (final File f : file.listFiles()) {
-                count += analyzeAll(f, baseBranch, diffBranch);
-            }
-        } else {
-
-            // 只分析被改动过的文件
-            String absolutePath = file.getAbsolutePath();
-            String projectPath = System.getProperty("user.dir");
-            String projectClassPath = projectPath + "/";
-            String relativePath = absolutePath.replace(projectClassPath, "");
-            String classNamePlus = relativePath.replace(".class", ".java");
-
-            if (classNamePlus.contains("/target/classes/")) {
-                int index = classNamePlus.indexOf("/target/classes/", 0) + 16;
-                String mockClassName = classNamePlus.substring(index);
-                if (new DiffService().isDiff(mockClassName, baseBranch, diffBranch)) {
-
-                    System.out.println("OK");
-                    System.out.println(">>> mockClassName >>> " + mockClassName);
-                    count++;
-                }
-            }
-        }
-        System.out.println("============" + count + "============");
-        return count;
-    }
-
-    private void report01() throws IOException {
-
-        analyzeAll(classesDirectory, "master", "test");
-
-    }
+//    // 测试方法
+//    public int analyzeAll(final File file, String baseBranch, String diffBranch) throws IOException {
+//
+//        int count = 0;
+//        if (file.isDirectory()) {
+//            for (final File f : file.listFiles()) {
+//                count += analyzeAll(f, baseBranch, diffBranch);
+//            }
+//        } else {
+//
+//            // 只分析被改动过的文件
+//            String absolutePath = file.getAbsolutePath();
+//            String projectPath = System.getProperty("user.dir");
+//            String projectClassPath = projectPath + "/";
+//            String relativePath = absolutePath.replace(projectClassPath, "");
+//            String classNamePlus = relativePath.replace(".class", ".java");
+//
+//            if (classNamePlus.contains("/target/classes/")) {
+//                int index = classNamePlus.indexOf("/target/classes/", 0) + 16;
+//                String mockClassName = classNamePlus.substring(index);
+//                if (new DiffService().isDiff(mockClassName, baseBranch, diffBranch)) {
+//
+//                    System.out.println("OK");
+//                    System.out.println(">>> mockClassName >>> " + mockClassName);
+//                    count++;
+//                }
+//            }
+//        }
+//        System.out.println("============" + count + "============");
+//        return count;
+//    }
+//
+//    private void report01() throws IOException {
+//
+//        analyzeAll(classesDirectory, "master", "test");
+//
+//    }
 
 
 }

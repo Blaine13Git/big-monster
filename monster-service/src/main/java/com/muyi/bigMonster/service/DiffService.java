@@ -1,5 +1,6 @@
 package com.muyi.bigMonster.service;
 
+import com.muyi.bigMonster.tools.GitTools;
 import lombok.extern.slf4j.Slf4j;
 import org.eclipse.jgit.api.Git;
 import org.eclipse.jgit.api.errors.GitAPIException;
@@ -25,42 +26,8 @@ import java.util.stream.Collectors;
 @Slf4j
 @Service
 public class DiffService {
-    private static Git git;
-    private static Repository repository;
+
     private static final String PREFIX = "refs/heads/";
-
-    public DiffService() {
-        // 获取git对象--单例DCL模式
-        if (null == repository) {
-            synchronized (DiffService.class) {
-                if (null == repository) {
-                    try {
-
-                        // 方式1
-                        FileRepositoryBuilder builder = new FileRepositoryBuilder();
-                        repository = builder.readEnvironment().findGitDir().build();
-
-                        // 方式2
-//                        String projectPath = System.getProperty("user.dir");
-//                        repository = builder.setGitDir(new File(projectPath + "/.git")).build();
-
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                }
-            }
-        }
-
-        // 获取repository对象--单例DCL模式
-        if (null == git) {
-            synchronized (DiffService.class) {
-                if (null == git) {
-                    git = new Git(repository);
-                }
-            }
-        }
-
-    }
 
     /**
      * @param repository 代码仓库
@@ -90,20 +57,21 @@ public class DiffService {
      * @param diffBranch
      * @return Diff DiffEntry list
      */
-    public List<DiffEntry> getDiffEntriesByBranch(String baseBranch, String diffBranch) {
+    public List<DiffEntry> getDiffEntriesByBranch(String projectPath, String baseBranch, String diffBranch) {
+        GitTools gitTools = new GitTools(projectPath);
         List<DiffEntry> diffs = null;
         try {
 
-            if (repository.exactRef(PREFIX + diffBranch) == null) {
+            if (gitTools.repository.exactRef(PREFIX + diffBranch) == null) {
                 // first we need to ensure that the remote branch is visible locally
-                Ref ref = git.branchCreate().setName(diffBranch).setStartPoint("origin/" + diffBranch).call();
+                Ref ref = gitTools.git.branchCreate().setName(diffBranch).setStartPoint("origin/" + diffBranch).call();
                 System.out.println("Created local branch with ref: " + ref);
             }
 
-            AbstractTreeIterator baseBranchTree = prepareTreeParserBranch(repository, PREFIX + baseBranch);
-            AbstractTreeIterator diffBranchTree = prepareTreeParserBranch(repository, PREFIX + diffBranch);
+            AbstractTreeIterator baseBranchTree = prepareTreeParserBranch(gitTools.repository, PREFIX + baseBranch);
+            AbstractTreeIterator diffBranchTree = prepareTreeParserBranch(gitTools.repository, PREFIX + diffBranch);
 
-            diffs = git.diff()
+            diffs = gitTools.git.diff()
                     .setOldTree(baseBranchTree)
                     .setNewTree(diffBranchTree)
                     .setPathFilter(PathSuffixFilter.create(".java"))
@@ -130,8 +98,8 @@ public class DiffService {
      * @param diffBranch
      * @return 返回修改的list
      */
-    public List<DiffEntry> getModify(String baseBranch, String diffBranch) {
-        List<DiffEntry> diffEntries = getDiffEntriesByBranch(baseBranch, diffBranch);
+    public List<DiffEntry> getModify(String projectPath, String baseBranch, String diffBranch) {
+        List<DiffEntry> diffEntries = getDiffEntriesByBranch(projectPath, baseBranch, diffBranch);
         List<DiffEntry> modifyList = diffEntries.stream().filter(diffEntry -> diffEntry.getChangeType().toString().equals("MODIFY")).collect(Collectors.toList());
 
         System.out.println("\nFound modify: " + modifyList.size() + " differences");
@@ -149,8 +117,8 @@ public class DiffService {
      * @param diffBranch
      * @return 返回新增的list
      */
-    public List<DiffEntry> getAdd(String baseBranch, String diffBranch) {
-        List<DiffEntry> diffEntries = getDiffEntriesByBranch(baseBranch, diffBranch);
+    public List<DiffEntry> getAdd(String projectPath, String baseBranch, String diffBranch) {
+        List<DiffEntry> diffEntries = getDiffEntriesByBranch(projectPath, baseBranch, diffBranch);
         List<DiffEntry> addList = diffEntries.stream().filter(diffEntry -> diffEntry.getChangeType().toString().equals("ADD")).collect(Collectors.toList());
 
         System.out.println("\nFound add: " + addList.size() + " differences");
@@ -168,8 +136,8 @@ public class DiffService {
      * @param diffBranch
      * @return 返回删除的list
      */
-    public List<DiffEntry> getDelete(String baseBranch, String diffBranch) {
-        List<DiffEntry> diffEntries = getDiffEntriesByBranch(baseBranch, diffBranch);
+    public List<DiffEntry> getDelete(String projectPath, String baseBranch, String diffBranch) {
+        List<DiffEntry> diffEntries = getDiffEntriesByBranch(projectPath, baseBranch, diffBranch);
         List<DiffEntry> deleteList = diffEntries.stream().filter(diffEntry -> diffEntry.getChangeType().toString().equals("DELETE")).collect(Collectors.toList());
 
         System.out.println("\nFound delete: " + deleteList.size() + " differences");
@@ -187,8 +155,8 @@ public class DiffService {
      * @param diffBranch
      * @return 返回删除的list
      */
-    public List<DiffEntry> getNotDelete(String baseBranch, String diffBranch) {
-        List<DiffEntry> diffEntries = getDiffEntriesByBranch(baseBranch, diffBranch);
+    public List<DiffEntry> getNotDelete(String projectPath, String baseBranch, String diffBranch) {
+        List<DiffEntry> diffEntries = getDiffEntriesByBranch(projectPath, baseBranch, diffBranch);
         List<DiffEntry> notDeleteList = diffEntries.stream().filter(diffEntry -> !(diffEntry.getChangeType().toString().equals("DELETE"))).collect(Collectors.toList());
 
         System.out.println("\nFound not delete: " + notDeleteList.size() + " differences");
@@ -204,14 +172,20 @@ public class DiffService {
      * @param classname
      * @return <code>true</code> 表示是diff文件
      */
-    public boolean isDiff(String classname, String baseBranch, String diffBranch) {
-        List<DiffEntry> notDeleteDiffEntries = getNotDelete(baseBranch, diffBranch);
+    public boolean isDiff(String classname, String projectPath, String baseBranch, String diffBranch) {
+        List<DiffEntry> notDeleteDiffEntries = getNotDelete(projectPath, baseBranch, diffBranch);
         for (DiffEntry diffEntry : notDeleteDiffEntries) {
             if (diffEntry.getNewPath().contains(classname)) {
                 return true;
             }
         }
         return false;
+    }
+
+
+    public static void main(String[] args) {
+        DiffService diffService = new DiffService();
+        diffService.getNotDelete("/Users/changfeng/work/code/webtools/", "master", "home");
     }
 
 }
