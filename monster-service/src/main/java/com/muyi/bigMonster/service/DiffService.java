@@ -159,10 +159,10 @@ public class DiffService {
         List<DiffEntry> diffEntries = getDiffEntriesByBranch(projectPath, baseBranch, diffBranch);
         List<DiffEntry> notDeleteList = diffEntries.stream().filter(diffEntry -> !(diffEntry.getChangeType().toString().equals("DELETE"))).collect(Collectors.toList());
 
-//        System.out.println("\nFound not delete: " + notDeleteList.size() + " differences");
-//        for (DiffEntry diff : notDeleteList) {
-//            System.out.println("Not Delete: " + diff.getChangeType().toString() + " " + diff.getNewPath());
-//        }
+        System.out.println("\nFound not delete: " + notDeleteList.size() + " differences");
+        for (DiffEntry diff : notDeleteList) {
+            System.out.println("Not Delete: " + diff.getChangeType().toString() + " " + diff.getNewPath());
+        }
 
         return notDeleteList;
     }
@@ -183,11 +183,13 @@ public class DiffService {
         return false;
     }
 
-//
-//    public static void main(String[] args) {
-//        DiffService diffService = new DiffService();
+
+    public static void main(String[] args) {
+        DiffService diffService = new DiffService();
 //        diffService.getNotDelete("/Users/changfeng/work/code/webtools/", "master", "home");
-//    }
+
+        diffService.getNotDelete(System.getProperty("user.dir"),"master","test");
+    }
 
 }
 
