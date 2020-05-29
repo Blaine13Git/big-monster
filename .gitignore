@@ -34,5 +34,3 @@ build/
 logs/
 reportCoverage/
 coverageReport/
-
-logs/
