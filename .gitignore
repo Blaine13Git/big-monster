@@ -31,5 +31,8 @@ build/
 .vscode/
 
 *.log
+logs/
+reportCoverage/
+coverageReport/
 
 logs/
