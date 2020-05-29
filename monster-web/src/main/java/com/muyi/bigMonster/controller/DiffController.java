@@ -81,7 +81,7 @@ public class DiffController {
                            @RequestParam String baseBranch,
                            @RequestParam String diffBranch) {
 
-        List<DiffEntry> delClassList = diffService.getAdd(projectPath, baseBranch, diffBranch);
+        List<DiffEntry> delClassList = diffService.getDelete(projectPath, baseBranch, diffBranch);
         return Result.Success(delClassList);
     }
 

@@ -102,10 +102,10 @@ public class DiffService {
         List<DiffEntry> diffEntries = getDiffEntriesByBranch(projectPath, baseBranch, diffBranch);
         List<DiffEntry> modifyList = diffEntries.stream().filter(diffEntry -> diffEntry.getChangeType().toString().equals("MODIFY")).collect(Collectors.toList());
 
-        System.out.println("\nFound modify: " + modifyList.size() + " differences");
-        for (DiffEntry diff : modifyList) {
-            System.out.println("Modify: " + diff.getNewPath());
-        }
+//        System.out.println("\nFound modify: " + modifyList.size() + " differences");
+//        for (DiffEntry diff : modifyList) {
+//            System.out.println("Modify: " + diff.getNewPath());
+//        }
 
         return modifyList;
     }
@@ -121,10 +121,10 @@ public class DiffService {
         List<DiffEntry> diffEntries = getDiffEntriesByBranch(projectPath, baseBranch, diffBranch);
         List<DiffEntry> addList = diffEntries.stream().filter(diffEntry -> diffEntry.getChangeType().toString().equals("ADD")).collect(Collectors.toList());
 
-        System.out.println("\nFound add: " + addList.size() + " differences");
-        for (DiffEntry diff : addList) {
-            System.out.println("Add: " + diff.getNewPath());
-        }
+//        System.out.println("\nFound add: " + addList.size() + " differences");
+//        for (DiffEntry diff : addList) {
+//            System.out.println("Add: " + diff.getNewPath());
+//        }
 
         return addList;
     }
@@ -140,10 +140,10 @@ public class DiffService {
         List<DiffEntry> diffEntries = getDiffEntriesByBranch(projectPath, baseBranch, diffBranch);
         List<DiffEntry> deleteList = diffEntries.stream().filter(diffEntry -> diffEntry.getChangeType().toString().equals("DELETE")).collect(Collectors.toList());
 
-        System.out.println("\nFound delete: " + deleteList.size() + " differences");
-        for (DiffEntry diff : deleteList) {
-            System.out.println("Delete: " + diff.getNewPath());
-        }
+//        System.out.println("\nFound delete: " + deleteList.size() + " differences");
+//        for (DiffEntry diff : deleteList) {
+//            System.out.println("Delete: " + diff.getNewPath());
+//        }
 
         return deleteList;
     }
@@ -159,10 +159,11 @@ public class DiffService {
         List<DiffEntry> diffEntries = getDiffEntriesByBranch(projectPath, baseBranch, diffBranch);
         List<DiffEntry> notDeleteList = diffEntries.stream().filter(diffEntry -> !(diffEntry.getChangeType().toString().equals("DELETE"))).collect(Collectors.toList());
 
-        System.out.println("\nFound not delete: " + notDeleteList.size() + " differences");
-        for (DiffEntry diff : notDeleteList) {
-            System.out.println("Not Delete: " + diff.getChangeType().toString() + " " + diff.getNewPath());
-        }
+//        System.out.println("\nFound not delete: " + notDeleteList.size() + " differences");
+//        for (DiffEntry diff : notDeleteList) {
+//            System.out.println("Not Delete: " + diff.getChangeType().toString() + " " + diff.getNewPath());
+//        }
+
         return notDeleteList;
     }
 
@@ -182,11 +183,11 @@ public class DiffService {
         return false;
     }
 
-
-    public static void main(String[] args) {
-        DiffService diffService = new DiffService();
-        diffService.getNotDelete("/Users/changfeng/work/code/webtools/", "master", "home");
-    }
+//
+//    public static void main(String[] args) {
+//        DiffService diffService = new DiffService();
+//        diffService.getNotDelete("/Users/changfeng/work/code/webtools/", "master", "home");
+//    }
 
 }
 
