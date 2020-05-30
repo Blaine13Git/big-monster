@@ -102,7 +102,7 @@
         </dependency>-->
 
         <!--直播依赖-->
-        <dependency>
+<!--        <dependency>
             <groupId>com.ggj.live</groupId>
             <artifactId>live-api</artifactId>
             <version>1.0.1-SNAPSHOT</version>
@@ -127,7 +127,7 @@
                     <artifactId>gsf</artifactId>
                 </exclusion>
             </exclusions>
-        </dependency>
+        </dependency>-->
 
         <!-- ********************GGJ基础依赖******************** -->
         <dependency>
