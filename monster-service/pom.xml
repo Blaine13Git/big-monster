@@ -16,13 +16,15 @@
         <dependency>
             <groupId>org.jacoco</groupId>
             <artifactId>org.jacoco.core</artifactId>
-            <version>0.8.6-SNAPSHOT</version>
+            <version>13.1.13</version>
+            <type>pom</type>
         </dependency>
 
         <dependency>
             <groupId>org.jacoco</groupId>
             <artifactId>org.jacoco.report</artifactId>
-            <version>0.8.6-SNAPSHOT</version>
+            <version>13.1.13</version>
+            <type>pom</type>
         </dependency>
 
         <dependency>
