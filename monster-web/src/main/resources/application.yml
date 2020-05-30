@@ -15,6 +15,7 @@ dubbo:
     author: muyi
   registry:
     address: 47.99.2.51:2181,47.99.2.51:2182,47.99.2.51:2183
+    register: false
   consumer:
     timeout: 5000
 
