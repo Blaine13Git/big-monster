@@ -1,7 +1,6 @@
 package com.muyi.bigMonster.controller;
 
 import com.muyi.bigMonster.model.daily1.ComplexMetricsProjectInfo;
-import com.muyi.bigMonster.result.PageResult;
 import com.muyi.bigMonster.result.Result;
 import com.muyi.bigMonster.service.DiffDataService;
 import lombok.extern.slf4j.Slf4j;
@@ -24,6 +23,7 @@ public class ProjectsController {
      * @return
      */
     @GetMapping("getAllProjects")
+    @ResponseBody
     public Result getAllProjects() {
         return Result.Success(diffDataService.getAllProjects());
     }
