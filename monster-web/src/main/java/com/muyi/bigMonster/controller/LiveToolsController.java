@@ -3,7 +3,7 @@ package com.muyi.bigMonster.controller;
 import com.ggj.hqbs.live.api.RoomApi;
 import com.ggj.platform.gsf.result.PlainResult;
 import com.muyi.bigMonster.result.Result;
-import com.muyi.bigMonster.service.DataService;
+import com.muyi.bigMonster.service.DiffDataService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -20,7 +20,7 @@ public class LiveToolsController {
     private RoomApi roomApi;
 
     @Autowired
-    private DataService dataService;
+    private DiffDataService diffDataService;
 
     /**
      * 创建直播间
@@ -54,7 +54,7 @@ public class LiveToolsController {
     public Result case01() {
 
         try {
-            dataService.case01();
+            diffDataService.case01();
             return Result.Success("OK");
         } catch (Exception e) {
             e.printStackTrace();
@@ -67,7 +67,7 @@ public class LiveToolsController {
     public Result case02() {
 
         try {
-            dataService.case02();
+            diffDataService.case02();
             return Result.Success("OK");
         } catch (Exception e) {
             e.printStackTrace();
@@ -80,7 +80,7 @@ public class LiveToolsController {
     public Result case03() {
 
         try {
-            dataService.case03(111, "2020-05-23 23:00:00");
+            diffDataService.case03(111, "2020-05-23 23:00:00");
             return Result.Success("OK");
         } catch (Exception e) {
             e.printStackTrace();

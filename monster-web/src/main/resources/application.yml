@@ -27,7 +27,7 @@ spring:
   datasource:
     daily1:
       driver-class-name: com.mysql.cj.jdbc.Driver
-      jdbc-url: jdbc:mysql://rm-bp11d50m31tbdlv0h2o.mysql.rds.aliyuncs.com:3306/zebra
+      jdbc-url: jdbc:mysql://rm-bp11d50m31tbdlv0h2o.mysql.rds.aliyuncs.com:3306/qamanager
       username: muyi
       password: k2Tp4SF834phWKO1
     daily2drds:
