@@ -63,7 +63,14 @@ public class DiffDataService {
     public void case03(Integer buyerResourceId, String time) {
         int number = pBuyerResourceMapper.updateById(1406249, "2020-05-23 23:00:00");
         System.out.println("update number:" + number);
+    }
 
+    /**
+     * @return
+     */
+    public List<ComplexMetricsProjectInfo> getAllProjects() {
+
+        return projectInfoMapper.selectAll();
     }
 
     /**

@@ -1,6 +1,7 @@
 package com.muyi.bigMonster.controller;
 
 import com.muyi.bigMonster.model.daily1.ComplexMetricsProjectInfo;
+import com.muyi.bigMonster.result.PageResult;
 import com.muyi.bigMonster.result.Result;
 import com.muyi.bigMonster.service.DiffDataService;
 import lombok.extern.slf4j.Slf4j;
@@ -16,6 +17,11 @@ public class ProjectsController {
 
     @Autowired
     private DiffDataService diffDataService;
+
+    @GetMapping("getAllProjects")
+    public Result getAllProjects() {
+        return Result.Success(diffDataService.getAllProjects());
+    }
 
     /**
      * 获取项目信息

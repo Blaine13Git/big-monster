@@ -105,4 +105,7 @@ public interface ComplexMetricsProjectInfoMapper {
 
     @Select("select * from complex_metrics_project_info where project_name = #{projectName}")
     List<ComplexMetricsProjectInfo> selectByProjectName(String projectName);
+
+    @Select("select * from complex_metrics_project_info order by create_time desc")
+    List<ComplexMetricsProjectInfo> selectAll();
 }
