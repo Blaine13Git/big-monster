@@ -42,6 +42,7 @@ public class ProjectsController {
         Integer id = stocks.get(0).getId();
 
         log.info(projectName + "的id = " + id.toString());
+        log.info(projectName + "的Name = " + stocks.get(0).getProjectName());
 
         return Result.Success(stocks);
 
