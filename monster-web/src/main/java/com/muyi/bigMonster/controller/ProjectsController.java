@@ -18,6 +18,11 @@ public class ProjectsController {
     @Autowired
     private DiffDataService diffDataService;
 
+    /**
+     * 获取所有项目信息
+     *
+     * @return
+     */
     @GetMapping("getAllProjects")
     public Result getAllProjects() {
         return Result.Success(diffDataService.getAllProjects());
