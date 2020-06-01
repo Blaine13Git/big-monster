@@ -29,7 +29,7 @@ import java.util.List;
 @Service
 public class DiffDataService {
 
-    private static final String BASE_PATH = "/Users/changfeng/work/code/";
+    private static final String BASE_PATH = "/home/gegejia/projects/"; // /home/gegejia/projects/   /Users/changfeng/work/code/
 
     private static final String username = "muyi"; //qa-jenkins
 
