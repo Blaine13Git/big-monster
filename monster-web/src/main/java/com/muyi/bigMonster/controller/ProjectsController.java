@@ -2,7 +2,7 @@ package com.muyi.bigMonster.controller;
 
 import com.muyi.bigMonster.model.daily1.ComplexMetricsProjectInfo;
 import com.muyi.bigMonster.result.Result;
-import com.muyi.bigMonster.service.DiffDataService;
+import com.muyi.bigMonster.service.ProjectsService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -15,7 +15,7 @@ import java.util.List;
 public class ProjectsController {
 
     @Autowired
-    private DiffDataService diffDataService;
+    private ProjectsService projectsService;
 
     /**
      * 获取所有项目信息
@@ -25,7 +25,7 @@ public class ProjectsController {
     @GetMapping("getAllProjects")
     @ResponseBody
     public Result getAllProjects() {
-        return Result.Success(diffDataService.getAllProjects());
+        return Result.Success(projectsService.getAllProjects());
     }
 
     /**
@@ -38,7 +38,7 @@ public class ProjectsController {
     @ResponseBody
     public Result getProjectInfo(@RequestParam String projectName) {
 
-        List<ComplexMetricsProjectInfo> stocks = diffDataService.getProjectInfoByProjectName(projectName);
+        List<ComplexMetricsProjectInfo> stocks = projectsService.getProjectInfoByProjectName(projectName);
         Integer id = stocks.get(0).getId();
 
         log.info(projectName + "的id = " + id.toString());
@@ -61,7 +61,7 @@ public class ProjectsController {
             url = url.replace(":", "/");
             url = url.replace("git@", "http://");
         }
-        return Result.Success(diffDataService.saveProjectInfo(url));
+        return Result.Success(projectsService.saveProjectInfo(url));
     }
 
     /**
@@ -72,12 +72,13 @@ public class ProjectsController {
      */
     @PostMapping("fetchCode")
     @ResponseBody
-    public Result fetchCode(@RequestParam String url) {
+    public Result fetchCode(@RequestParam String url,
+                            @RequestParam String branchName) {
         if (url.startsWith("git@")) {
             url = url.replace(":", "/");
             url = url.replace("git@", "http://");
         }
-        diffDataService.fetchRepository(url);
+        projectsService.fetchRepository(url,branchName);
         return Result.Success("OK");
     }
 

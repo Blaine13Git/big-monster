@@ -31,7 +31,7 @@ import java.util.stream.Collectors;
  */
 @Slf4j
 @Service
-public class DiffDataService {
+public class ProjectsService {
 
     private static final String username = "qa-jenkins"; //qa-jenkins
 
@@ -176,7 +176,6 @@ public class DiffDataService {
         // 如果存在，fetch
         if (gitFile.exists()) {
             log.info("clone仓库已经存在" + projectPath);
-            fetchRepository(url);
             return;
         }
 
@@ -200,7 +199,7 @@ public class DiffDataService {
      *
      * @param url
      */
-    public void fetchRepository(String url) {
+    public void fetchRepository(String url, String branchName) {
 
         try {
             String projectPath = getProjectPath(url);
@@ -221,6 +220,8 @@ public class DiffDataService {
 
             Git git = Git.open(projectFiles);
             git.fetch().setCredentialsProvider(CP).call();
+
+            pullRepository(url, branchName);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -242,8 +243,6 @@ public class DiffDataService {
 
             List<Ref> branchList = git.branchList().call();
 
-            branchList.stream().forEach(ref -> System.out.println(ref.getName()));
-
             List<Ref> collect = branchList.stream().filter(ref -> ref.toString().contains(branchName)).collect(Collectors.toList());
 
             if (collect.isEmpty()) {
@@ -263,17 +262,8 @@ public class DiffDataService {
 
     public void getBranches(String url) {
 
-        String httpUrl;
-        if (url.startsWith("git@")) {
-            httpUrl = url.replace("git@", "http://");
-            log.info("httpUrl = " + httpUrl);
-        } else {
-            httpUrl = url;
-        }
-
-
         try {
-            File projectFiles = new File(getProjectPath(httpUrl));
+            File projectFiles = new File(getProjectPath(url));
             log.info("仓库地址：" + projectFiles.getAbsolutePath());
 
             Git git = Git.open(projectFiles);
@@ -295,10 +285,9 @@ public class DiffDataService {
 //        DiffDataService diffDataService = new DiffDataService();
 //        diffDataService.pullRepository("http://gitlab.ops.yangege.cn/zebra/live.git", "refs/heads/QA-for-test");
 
-        Properties properties = new Properties();
-        properties.load(new FileInputStream("monster-service/src/main/resources/services.properties"));
-
-        System.out.println(properties.getProperty("basePath"));
+//        Properties properties = new Properties();
+//        properties.load(new FileInputStream("monster-service/src/main/resources/services.properties"));
+//        System.out.println(properties.getProperty("basePath"));
 
 
     }
