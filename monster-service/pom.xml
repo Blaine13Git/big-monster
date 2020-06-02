@@ -52,32 +52,7 @@
         <!-- ********************业务依赖******************** -->
 
         <!--直播依赖-->
-        <dependency>
-            <groupId>com.ggj.live</groupId>
-            <artifactId>live-api</artifactId>
-            <version>1.0.1-SNAPSHOT</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>com.alibaba</groupId>
-                    <artifactId>dubbo</artifactId>
-                </exclusion>
 
-                <exclusion>
-                    <groupId>org.projectlombok</groupId>
-                    <artifactId>lombok</artifactId>
-                </exclusion>
-
-                <exclusion>
-                    <groupId>org.apache.zookeeper</groupId>
-                    <artifactId>zookeeper</artifactId>
-                </exclusion>
-
-                <exclusion>
-                    <groupId>com.ggj.platform</groupId>
-                    <artifactId>gsf</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
 
         <!-- ********************GGJ基础依赖******************** -->
         <dependency>
@@ -88,23 +63,6 @@
                 <exclusion>
                     <groupId>org.slf4j</groupId>
                     <artifactId>slf4j-log4j12</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-
-        <dependency>
-            <groupId>com.ggj.platform</groupId>
-            <artifactId>adonis-spring-boot-dubbo</artifactId>
-            <version>3.1.0</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.projectlombok</groupId>
-                    <artifactId>lombok</artifactId>
-                </exclusion>
-
-                <exclusion>
-                    <groupId>org.apache.zookeeper</groupId>
-                    <artifactId>zookeeper</artifactId>
                 </exclusion>
             </exclusions>
         </dependency>
@@ -124,10 +82,6 @@
                     <artifactId>javax.el-api</artifactId>
                 </exclusion>
 
-                <exclusion>
-                    <groupId>com.alibaba</groupId>
-                    <artifactId>fastjson</artifactId>
-                </exclusion>
             </exclusions>
         </dependency>
 

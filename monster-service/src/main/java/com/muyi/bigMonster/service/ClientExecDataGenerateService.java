@@ -5,11 +5,14 @@ import java.io.IOException;
 import java.net.InetAddress;
 import java.net.Socket;
 
+import com.muyi.bigMonster.mapper.daily1.DiffCoverageReportMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.jacoco.core.data.ExecutionDataWriter;
 import org.jacoco.core.runtime.RemoteControlReader;
 import org.jacoco.core.runtime.RemoteControlWriter;
 import org.springframework.stereotype.Service;
+
+import javax.annotation.Resource;
 
 /**
  * agent config param output=tcpserver, the collected data is dumped to a local file.
@@ -18,6 +21,9 @@ import org.springframework.stereotype.Service;
 @Slf4j
 @Service
 public final class ClientExecDataGenerateService {
+
+    @Resource
+    private DiffCoverageReportMapper diffCoverageReportMapper;
 
     public void execDataGenerate(String ip, Integer port, String destFilePath) throws IOException {
         final FileOutputStream localFile = new FileOutputStream(destFilePath);
