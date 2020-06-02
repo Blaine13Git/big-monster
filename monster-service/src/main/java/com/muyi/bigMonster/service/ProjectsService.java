@@ -133,11 +133,11 @@ public class ProjectsService {
 
         String basePath;
         if (System.getProperty("user.dir").contains("jenkins")) {
-            basePath = properties.getProperty("basePathServer");
+            basePath = "/home/jenkins/codes/";//properties.getProperty("basePathServer");
         } else {
-            basePath = properties.getProperty("basePathLocal");
+            basePath = "/Users/changfeng/work/code/";//properties.getProperty("basePathLocal");
         }
-
+        log.info("basePath >>> " + basePath);
         String projectName = url.substring(url.lastIndexOf("/") + 1, url.lastIndexOf("."));
         String projectPath = basePath + projectName;
 
