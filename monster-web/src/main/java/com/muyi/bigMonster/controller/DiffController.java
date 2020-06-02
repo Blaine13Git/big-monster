@@ -90,7 +90,9 @@ public class DiffController {
     @ResponseBody
     public Result getDiffRecordByParams(@RequestParam String projectPath,
                                         @RequestParam String baseBranch,
-                                        @RequestParam String diffBranch) {
+                                        @RequestParam String diffBranch,
+                                        @RequestParam int currentPage,
+                                        @RequestParam int pageSize) {
 
         PageResult pageResult = new PageResult();
 
