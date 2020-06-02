@@ -57,6 +57,10 @@ public class ProjectsController {
     @PostMapping("saveProjectInfo")
     @ResponseBody
     public Result saveProjectInfo(@RequestParam String url) {
+        if (url.startsWith("git@")) {
+            url = url.replace(":", "/");
+            url = url.replace("git@", "http://");
+        }
         return Result.Success(diffDataService.saveProjectInfo(url));
     }
 
@@ -69,6 +73,10 @@ public class ProjectsController {
     @PostMapping("fetchCode")
     @ResponseBody
     public Result fetchCode(@RequestParam String url) {
+        if (url.startsWith("git@")) {
+            url = url.replace(":", "/");
+            url = url.replace("git@", "http://");
+        }
         diffDataService.fetchRepository(url);
         return Result.Success("OK");
     }

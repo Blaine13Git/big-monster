@@ -29,11 +29,11 @@ import java.util.List;
 @Service
 public class DiffDataService {
 
-    private static final String BASE_PATH = "/home/gegejia/projects/"; // /home/gegejia/projects/   /Users/changfeng/work/code/
+    private static final String BASE_PATH = "/Users/changfeng/work/code/"; // /home/gegejia/projects/   /Users/changfeng/work/code/
 
-    private static final String username = "muyi"; //qa-jenkins
+    private static final String username = "qa-jenkins"; //qa-jenkins
 
-    private static final String password = "work13962"; //*6OGZD9hY5Ylkk$d!Mjv
+    private static final String password = "*6OGZD9hY5Ylkk$d!Mjv"; //*6OGZD9hY5Ylkk$d!Mjv
 
     private static final CredentialsProvider CP = new UsernamePasswordCredentialsProvider(username, password);
 
@@ -91,6 +91,7 @@ public class DiffDataService {
      * @return
      */
     public int saveProjectInfo(String url) {
+
         String projectName = url.substring(url.lastIndexOf("/") + 1, url.lastIndexOf("."));
 
         List<ComplexMetricsProjectInfo> projectInfos = getProjectInfoByProjectName(projectName);
@@ -101,7 +102,7 @@ public class DiffDataService {
             record.setProjectName(projectName);
             record.setUrl(url);
             record.setCreateTime(new Date());
-            int number = projectInfoMapper.insert(record);
+            projectInfoMapper.insert(record);
             log.info("项目信息新增成功：" + projectName);
         }
 
@@ -120,6 +121,7 @@ public class DiffDataService {
      * @return
      */
     public String getProjectPath(String url) {
+
         String projectName = url.substring(url.lastIndexOf("/") + 1, url.lastIndexOf("."));
         String projectPath = BASE_PATH + projectName;
 
@@ -139,6 +141,7 @@ public class DiffDataService {
      * @param url
      */
     public void cloneRepository(String url) {
+
         String projectPath = getProjectPath(url);
         File gitFile = new File(projectPath + "/.git");
 
@@ -150,7 +153,7 @@ public class DiffDataService {
         }
 
         log.info("仓库不存在，开始clone：" + projectPath);
-        File projectFiles = new File(projectPath );
+        File projectFiles = new File(projectPath);
 
         try {
             Git.cloneRepository()
@@ -170,6 +173,7 @@ public class DiffDataService {
      * @param url
      */
     public void fetchRepository(String url) {
+
         try {
             File projectFiles = new File(getProjectPath(url));
 
@@ -194,8 +198,17 @@ public class DiffDataService {
      * @param url
      */
     public void pullRepository(String url) {
+
+        String httpUrl;
+        if (url.startsWith("git@")) {
+            httpUrl = url.replace("git@", "http://");
+            log.info("httpUrl = " + httpUrl);
+        } else {
+            httpUrl = url;
+        }
+
         try {
-            File projectFiles = new File(getProjectPath(url));
+            File projectFiles = new File(getProjectPath(httpUrl));
             log.info("pull仓库地址：" + projectFiles.getAbsolutePath());
 
             Git git = Git.open(projectFiles);
@@ -207,8 +220,18 @@ public class DiffDataService {
 
 
     public void getBranches(String url) {
+
+        String httpUrl;
+        if (url.startsWith("git@")) {
+            httpUrl = url.replace("git@", "http://");
+            log.info("httpUrl = " + httpUrl);
+        } else {
+            httpUrl = url;
+        }
+
+
         try {
-            File projectFiles = new File(getProjectPath(url));
+            File projectFiles = new File(getProjectPath(httpUrl));
             log.info("仓库地址：" + projectFiles.getAbsolutePath());
 
             Git git = Git.open(projectFiles);
@@ -228,9 +251,18 @@ public class DiffDataService {
 
     public static void main(String[] args) {
         String url2 = "http://gitlab.ops.yangege.cn/zebra/search-business-platform.git";
+
         String url3 = "http://gitlab.ops.yangege.cn/zebra/live.git";
-        DiffDataService diffDataService = new DiffDataService();
-        diffDataService.fetchRepository(url2);
+
+        String url1 = "git@gitlab.ops.yangege.cn:zebra/live.git";
+
+//        DiffDataService diffDataService = new DiffDataService();
+//        diffDataService.cloneRepository(url3);
+//        diffDataService.fetchRepository(url2);
 //        diffDataService.pullRepository(url);
+
+        url1 = url1.replace(":", "/");
+        url1 = url1.replace("git@", "http://");
+        System.out.println(url1);
     }
 }
