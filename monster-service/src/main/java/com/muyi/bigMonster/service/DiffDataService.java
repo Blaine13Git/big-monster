@@ -128,8 +128,13 @@ public class DiffDataService {
         File projectFiles = new File(projectPath);
         if (!projectFiles.exists()) {
             log.info("路径不存在，新建路径：" + projectFiles.getAbsolutePath());
-            projectFiles.mkdirs();
-            return projectPath;
+            boolean mkdirs = projectFiles.mkdirs();
+            if (mkdirs == true) {
+                log.info("路径创建成功：" + projectFiles.getAbsolutePath());
+                return projectPath;
+            } else {
+                log.info("路径创建失败：" + projectFiles.getAbsolutePath());
+            }
         }
         log.info("路径已经存在：" + projectFiles.getAbsolutePath());
         return projectPath;
