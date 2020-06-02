@@ -24,12 +24,9 @@ import java.util.List;
  * 基础工程调试使用
  * test
  */
-
 @Slf4j
 @Service
 public class DiffDataService {
-
-    private static final String BASE_PATH = "/home/gegejia/projects/"; // /home/gegejia/projects/   /Users/changfeng/work/code/
 
     private static final String username = "qa-jenkins"; //qa-jenkins
 
@@ -121,9 +118,12 @@ public class DiffDataService {
      * @return
      */
     public String getProjectPath(String url) {
+        String projectPathTemp = System.getProperty("user.dir");
+        int index = projectPathTemp.lastIndexOf("/");
+        String homeDirPath = projectPathTemp.substring(0, index + 1);
 
         String projectName = url.substring(url.lastIndexOf("/") + 1, url.lastIndexOf("."));
-        String projectPath = BASE_PATH + projectName;
+        String projectPath = homeDirPath + projectName;
 
         File projectFiles = new File(projectPath);
         if (!projectFiles.exists()) {
@@ -134,6 +134,7 @@ public class DiffDataService {
                 return projectPath;
             } else {
                 log.info("路径创建失败：" + projectFiles.getAbsolutePath());
+                return "";
             }
         }
         log.info("路径已经存在：" + projectFiles.getAbsolutePath());
@@ -148,6 +149,12 @@ public class DiffDataService {
     public void cloneRepository(String url) {
 
         String projectPath = getProjectPath(url);
+
+        if (projectPath == "") {
+            log.info("仓库已经不存在！");
+            return;
+        }
+
         File gitFile = new File(projectPath + "/.git");
 
         // 如果存在，fetch
@@ -247,19 +254,11 @@ public class DiffDataService {
     }
 
     public static void main(String[] args) {
-        String url2 = "http://gitlab.ops.yangege.cn/zebra/search-business-platform.git";
 
-        String url3 = "http://gitlab.ops.yangege.cn/zebra/live.git";
+        String projectPath = System.getProperty("user.dir");
+        int index = projectPath.lastIndexOf("/");
+        String homeDirPath = projectPath.substring(0, index + 1);
 
-        String url1 = "git@gitlab.ops.yangege.cn:zebra/live.git";
-
-//        DiffDataService diffDataService = new DiffDataService();
-//        diffDataService.cloneRepository(url3);
-//        diffDataService.fetchRepository(url2);
-//        diffDataService.pullRepository(url);
-
-        url1 = url1.replace(":", "/");
-        url1 = url1.replace("git@", "http://");
-        System.out.println(url1);
+        System.out.println(homeDirPath);
     }
 }
