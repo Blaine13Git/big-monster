@@ -140,17 +140,18 @@ public class DiffDataService {
      */
     public void cloneRepository(String url) {
         String projectPath = getProjectPath(url);
-        File projectFiles = new File(projectPath + "/.git");
+        File gitFile = new File(projectPath + "/.git");
 
         // 如果存在，fetch
-        if (projectFiles.exists()) {
+        if (gitFile.exists()) {
             log.info("clone仓库已经存在" + projectPath);
             fetchRepository(url);
             return;
         }
 
         log.info("仓库不存在，开始clone：" + projectPath);
-        // 如果不存在，clone
+        File projectFiles = new File(projectPath );
+
         try {
             Git.cloneRepository()
                     .setURI(url)
