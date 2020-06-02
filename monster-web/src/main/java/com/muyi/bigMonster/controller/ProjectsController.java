@@ -78,7 +78,8 @@ public class ProjectsController {
             url = url.replace(":", "/");
             url = url.replace("git@", "http://");
         }
-        projectsService.fetchRepository(url,branchName);
+
+        projectsService.fetchRepository(url, "refs/heads/" + branchName);
         return Result.Success("OK");
     }
 
