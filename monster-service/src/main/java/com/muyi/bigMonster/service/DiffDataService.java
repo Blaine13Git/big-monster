@@ -29,7 +29,7 @@ import java.util.List;
 @Service
 public class DiffDataService {
 
-    private static final String BASE_PATH = "/Users/changfeng/work/code/"; // /home/gegejia/projects/   /Users/changfeng/work/code/
+    private static final String BASE_PATH = "/home/gegejia/projects/"; // /home/gegejia/projects/   /Users/changfeng/work/code/
 
     private static final String username = "qa-jenkins"; //qa-jenkins
 
@@ -199,16 +199,8 @@ public class DiffDataService {
      */
     public void pullRepository(String url) {
 
-        String httpUrl;
-        if (url.startsWith("git@")) {
-            httpUrl = url.replace("git@", "http://");
-            log.info("httpUrl = " + httpUrl);
-        } else {
-            httpUrl = url;
-        }
-
         try {
-            File projectFiles = new File(getProjectPath(httpUrl));
+            File projectFiles = new File(getProjectPath(url));
             log.info("pull仓库地址：" + projectFiles.getAbsolutePath());
 
             Git git = Git.open(projectFiles);
