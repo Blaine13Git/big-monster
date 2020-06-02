@@ -124,13 +124,6 @@ public class ProjectsService {
      */
     public String getProjectPath(String url) {
 
-        Properties properties = new Properties();
-        try {
-            properties.load(new FileInputStream("monster-service/src/main/resources/services.properties"));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
         String basePath;
         if (System.getProperty("user.dir").contains("jenkins")) {
             basePath = "/home/jenkins/codes/";//properties.getProperty("basePathServer");
