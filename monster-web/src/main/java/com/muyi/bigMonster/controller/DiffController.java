@@ -1,5 +1,6 @@
 package com.muyi.bigMonster.controller;
 
+import com.muyi.bigMonster.result.PageResult;
 import com.muyi.bigMonster.result.Result;
 import com.muyi.bigMonster.service.DiffService;
 import org.eclipse.jgit.diff.DiffEntry;
@@ -83,6 +84,17 @@ public class DiffController {
 
         List<DiffEntry> delClassList = diffService.getDelete(projectPath, baseBranch, diffBranch);
         return Result.Success(delClassList);
+    }
+
+    @PostMapping("getDiffRecord")
+    @ResponseBody
+    public Result getDiffRecordByParams(@RequestParam String projectPath,
+                                        @RequestParam String baseBranch,
+                                        @RequestParam String diffBranch) {
+
+        PageResult pageResult = new PageResult();
+
+        return Result.Success(pageResult);
     }
 
 
