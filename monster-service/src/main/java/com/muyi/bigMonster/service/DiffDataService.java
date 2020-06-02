@@ -9,6 +9,7 @@ import com.muyi.bigMonster.model.daily2drds.PBuyerResource;
 import lombok.extern.slf4j.Slf4j;
 import org.eclipse.jgit.api.Git;
 import org.eclipse.jgit.api.errors.GitAPIException;
+import org.eclipse.jgit.lib.Ref;
 import org.eclipse.jgit.lib.Repository;
 import org.eclipse.jgit.revwalk.RevCommit;
 import org.eclipse.jgit.transport.CredentialsProvider;
@@ -17,8 +18,12 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.util.Date;
 import java.util.List;
+import java.util.Properties;
+import java.util.stream.Collectors;
 
 /**
  * 基础工程调试使用
@@ -118,12 +123,23 @@ public class DiffDataService {
      * @return
      */
     public String getProjectPath(String url) {
-//        String projectPathTemp = System.getProperty("user.dir");
-//        int index = projectPathTemp.lastIndexOf("/");
-//        String homeDirPath = projectPathTemp.substring(0, index + 1);
+
+        Properties properties = new Properties();
+        try {
+            properties.load(new FileInputStream("monster-service/src/main/resources/services.properties"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        String basePath;
+        if (System.getProperty("user.dir").contains("jenkins")) {
+            basePath = properties.getProperty("basePathServer");
+        } else {
+            basePath = properties.getProperty("basePathLocal");
+        }
 
         String projectName = url.substring(url.lastIndexOf("/") + 1, url.lastIndexOf("."));
-        String projectPath = "/home/jenkins/codes/" + projectName;
+        String projectPath = basePath + projectName;
 
         File projectFiles = new File(projectPath);
         if (!projectFiles.exists()) {
@@ -215,14 +231,30 @@ public class DiffDataService {
      *
      * @param url
      */
-    public void pullRepository(String url) {
+    public void pullRepository(String url, String branchName) {
 
         try {
             File projectFiles = new File(getProjectPath(url));
+
             log.info("pull仓库地址：" + projectFiles.getAbsolutePath());
 
-            Git git = Git.open(projectFiles);
-            git.pull().setCredentialsProvider(CP).call();
+            Git git = Git.open(projectFiles); // 打开仓库
+
+            List<Ref> branchList = git.branchList().call();
+
+            branchList.stream().forEach(ref -> System.out.println(ref.getName()));
+
+            List<Ref> collect = branchList.stream().filter(ref -> ref.toString().contains(branchName)).collect(Collectors.toList());
+
+            if (collect.isEmpty()) {
+                log.info("分支：" + branchName + "不存在");
+                git.checkout().setCreateBranch(true).setName(branchName).call(); // 切换分支
+            }
+
+            git.checkout().setCreateBranch(false).setName(branchName).call(); // 切换分支
+
+            git.pull().setCredentialsProvider(CP).call(); // 拉取代码  WrongRepositoryStateException:Cannot pull into a repository with state: MERGING
+
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -259,12 +291,15 @@ public class DiffDataService {
         }
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
+//        DiffDataService diffDataService = new DiffDataService();
+//        diffDataService.pullRepository("http://gitlab.ops.yangege.cn/zebra/live.git", "refs/heads/QA-for-test");
 
-        String projectPath = System.getProperty("user.dir");
-        int index = projectPath.lastIndexOf("/");
-        String homeDirPath = projectPath.substring(0, index + 1);
+        Properties properties = new Properties();
+        properties.load(new FileInputStream("monster-service/src/main/resources/services.properties"));
 
-        System.out.println(homeDirPath);
+        System.out.println(properties.getProperty("basePath"));
+
+
     }
 }
