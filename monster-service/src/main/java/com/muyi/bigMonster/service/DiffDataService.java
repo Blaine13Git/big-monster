@@ -118,12 +118,12 @@ public class DiffDataService {
      * @return
      */
     public String getProjectPath(String url) {
-        String projectPathTemp = System.getProperty("user.dir");
-        int index = projectPathTemp.lastIndexOf("/");
-        String homeDirPath = projectPathTemp.substring(0, index + 1);
+//        String projectPathTemp = System.getProperty("user.dir");
+//        int index = projectPathTemp.lastIndexOf("/");
+//        String homeDirPath = projectPathTemp.substring(0, index + 1);
 
         String projectName = url.substring(url.lastIndexOf("/") + 1, url.lastIndexOf("."));
-        String projectPath = homeDirPath + projectName;
+        String projectPath = "/home/jenkins/codes/" + projectName;
 
         File projectFiles = new File(projectPath);
         if (!projectFiles.exists()) {
@@ -151,7 +151,7 @@ public class DiffDataService {
         String projectPath = getProjectPath(url);
 
         if (projectPath == "") {
-            log.info("仓库已经不存在！");
+            log.info("仓库路径不存在！");
             return;
         }
 
@@ -187,7 +187,13 @@ public class DiffDataService {
     public void fetchRepository(String url) {
 
         try {
-            File projectFiles = new File(getProjectPath(url));
+            String projectPath = getProjectPath(url);
+
+            if (projectPath == "") {
+                log.info("仓库路径不存在！");
+                return;
+            }
+            File projectFiles = new File(projectPath);
 
             if (!projectFiles.exists()) {
                 log.info("fetch仓库：" + projectFiles.getAbsolutePath() + "不存在！");
