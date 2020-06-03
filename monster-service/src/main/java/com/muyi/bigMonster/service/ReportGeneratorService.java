@@ -53,17 +53,21 @@ public class ReportGeneratorService {
         // 项目文件夹名称作为报告的title
         title = diffCoverageReport.getProjectname();
 
+        String basePathReport;
+        String basePathClass;
+        if (System.getProperty("user.dir").startsWith("/home/jenkins")) {
+            basePathReport = BASE_PATH_SERVER;
+            basePathClass = "/home/jenkins/codes/";
+        } else {
+            basePathReport = BASE_PATH_LOCAL;
+            basePathClass = "/Users/changfeng/work/code/";
+        }
+
         // 指定class文件的路径和项目路径相同
-        String classesPath = "" + title;
+        String classesPath = basePathClass + title;
 
         // 指定报告存放的位置
-        String basePath;
-        if (System.getProperty("user.dir").startsWith("/home/jenkins")) {
-            basePath = BASE_PATH_SERVER;
-        } else {
-            basePath = BASE_PATH_LOCAL;
-        }
-        reportDirectory = new File(basePath + "/" + title);
+        reportDirectory = new File(basePathReport + "/" + title);
         if (!reportDirectory.exists()) {
             reportDirectory.mkdir();
         }
