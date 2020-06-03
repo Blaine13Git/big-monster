@@ -1,12 +1,12 @@
 package com.muyi.bigMonster.service;
 
 import com.muyi.bigMonster.mapper.daily1.ComplexMetricsProjectInfoMapper;
-import com.muyi.bigMonster.mapper.daily1.LiveVideoAttributeMapper;
-import com.muyi.bigMonster.mapper.daily2drds.PBuyerResourceMapper;
+import com.muyi.bigMonster.mapper.daily1.DiffCoverageReportMapper;
 import com.muyi.bigMonster.model.daily1.ComplexMetricsProjectInfo;
-import com.muyi.bigMonster.model.daily1.LiveVideoAttribute;
-import com.muyi.bigMonster.model.daily2drds.PBuyerResource;
+import com.muyi.bigMonster.model.daily1.DiffCoverageReport;
+import com.muyi.bigMonster.model.daily1.DiffCoverageReportExample;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.ibatis.session.RowBounds;
 import org.eclipse.jgit.api.Git;
 import org.eclipse.jgit.api.errors.GitAPIException;
 import org.eclipse.jgit.lib.Ref;
@@ -18,11 +18,8 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
 import java.util.Date;
 import java.util.List;
-import java.util.Properties;
 import java.util.stream.Collectors;
 
 /**
@@ -40,38 +37,56 @@ public class ProjectsService {
     private static final CredentialsProvider CP = new UsernamePasswordCredentialsProvider(username, password);
 
     @Resource
-    private LiveVideoAttributeMapper liveVideoAttributeMapper;
-
-    @Resource
-    private PBuyerResourceMapper pBuyerResourceMapper;
-
-    @Resource
     private ComplexMetricsProjectInfoMapper projectInfoMapper;
 
-    public void case01() {
-        LiveVideoAttribute liveVideoAttribute = liveVideoAttributeMapper.selectByPrimaryKey(1);
-        Integer accountId = liveVideoAttribute.getAccountId();
-        System.out.println("accountId:" + accountId);
 
+    @Resource
+    private DiffCoverageReportMapper diffCoverageReportMapper;
+
+
+    public long totalCoverageReport() {
+        DiffCoverageReportExample example = new DiffCoverageReportExample();
+        example.createCriteria().andIdIsNull();
+        long total = diffCoverageReportMapper.countByExample(example);
+        return total;
     }
 
-    public void case02() {
-        PBuyerResource pBuyerResource = pBuyerResourceMapper.selectByPrimaryKey(200468L);
-        Long accountId = pBuyerResource.getAccountId();
-        System.out.println("accountId:" + accountId);
+    /**
+     * @param currentPage
+     * @param pageSize
+     * @return
+     */
+    public List<DiffCoverageReport> getAllCoverageReports(String projectName, String baseBranch, String diffBranch, int currentPage, int pageSize) {
+        DiffCoverageReportExample example = new DiffCoverageReportExample();
+        example.setOrderByClause("id");
 
-    }
+        if (projectName == null) {
+            example.createCriteria().andProjectnameIsNull();
+        } else {
+            example.createCriteria().andProjectnameEqualTo(projectName);
+        }
 
-    public void case03(Integer buyerResourceId, String time) {
-        int number = pBuyerResourceMapper.updateById(1406249, "2020-05-23 23:00:00");
-        System.out.println("update number:" + number);
+        if (baseBranch == null) {
+            example.createCriteria().andBasebranchIsNull();
+        } else {
+            example.createCriteria().andBasebranchEqualTo(baseBranch);
+        }
+
+        if (diffBranch == null) {
+            example.createCriteria().andDiffbranchIsNull();
+        } else {
+            example.createCriteria().andDiffbranchEqualTo(diffBranch);
+        }
+
+        RowBounds rowBounds = new RowBounds(currentPage - 1, pageSize);
+        List<DiffCoverageReport> diffCoverageReports = diffCoverageReportMapper.selectByExampleWithRowbounds(example, rowBounds);
+        return diffCoverageReports;
     }
 
     /**
      * @return
      */
     public List<ComplexMetricsProjectInfo> getAllProjects() {
-
         return projectInfoMapper.selectAll();
     }
 

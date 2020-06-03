@@ -8,7 +8,10 @@ import java.net.Socket;
 import java.util.Date;
 
 import com.muyi.bigMonster.mapper.daily1.DiffCoverageReportMapper;
+import com.muyi.bigMonster.mapper.daily1.ProjectServerInfoMapper;
 import com.muyi.bigMonster.model.daily1.DiffCoverageReport;
+import com.muyi.bigMonster.model.daily1.ProjectServerInfo;
+import com.muyi.bigMonster.model.daily1.ProjectServerInfoExample;
 import lombok.extern.slf4j.Slf4j;
 import org.jacoco.core.data.ExecutionDataWriter;
 import org.jacoco.core.runtime.RemoteControlReader;
@@ -31,18 +34,27 @@ public final class ClientExecDataGenerateService {
     @Resource
     private DiffCoverageReportMapper diffCoverageReportMapper;
 
+    @Resource
+    private ProjectServerInfoMapper projectServerInfoMapper;
+
 
     public void execDataGenerate(String projectName, String baseBranch, String diffBranch) throws IOException {
 
         String basePath;
+        String ip;
+        int port;
         if (System.getProperty("user.dir").startsWith("/home/jenkins")) {
             basePath = BASE_PATH_SERVER;
+            ProjectServerInfoExample example = new ProjectServerInfoExample();
+            example.createCriteria().andProjectNameEqualTo(projectName);
+            ProjectServerInfo projectServerInfo = projectServerInfoMapper.selectByExample(example).get(0);
+            ip = projectServerInfo.getIp();
+            port = projectServerInfo.getPort();
         } else {
             basePath = BASE_PATH_LOCAL;
+            ip = "localhost";
+            port = 10000;
         }
-
-        String ip = "localhost";
-        int port = 10000;
 
         String destFilePathString = basePath + projectName;
         File destFilePath = new File(destFilePathString);

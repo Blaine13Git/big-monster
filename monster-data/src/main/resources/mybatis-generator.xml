@@ -43,7 +43,8 @@
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
 
-        <table tableName="complex_metrics_project_info"/>
+        <table tableName="project_server_info"/>
+<!--        <table tableName="complex_metrics_project_info"/>-->
 <!--        <table tableName="diff_coverage_report"/>-->
 
     </context>

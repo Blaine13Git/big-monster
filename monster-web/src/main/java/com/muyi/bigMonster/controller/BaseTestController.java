@@ -1,6 +1,7 @@
 package com.muyi.bigMonster.controller;
 
 import com.muyi.bigMonster.result.Result;
+import com.muyi.bigMonster.service.BaseTestService;
 import com.muyi.bigMonster.service.ProjectsService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,14 +19,14 @@ import org.springframework.web.bind.annotation.RestController;
 public class BaseTestController {
 
     @Autowired
-    private ProjectsService projectsService;
+    private BaseTestService baseTestService;
 
     @GetMapping("case01")
     @ResponseBody
     public Result case01() {
 
         try {
-            projectsService.case01();
+            baseTestService.case01();
             return Result.Success("OK");
         } catch (Exception e) {
             e.printStackTrace();
@@ -38,7 +39,7 @@ public class BaseTestController {
     public Result case02() {
 
         try {
-            projectsService.case02();
+            baseTestService.case02();
             return Result.Success("OK");
         } catch (Exception e) {
             e.printStackTrace();
@@ -51,7 +52,33 @@ public class BaseTestController {
     public Result case03() {
 
         try {
-            projectsService.case03(111, "2020-05-23 23:00:00");
+            baseTestService.case03(111, "2020-05-23 23:00:00");
+            return Result.Success("OK");
+        } catch (Exception e) {
+            e.printStackTrace();
+            return Result.Failure("服务异常：" + e.getMessage());
+        }
+    }
+
+    @GetMapping("case04")
+    @ResponseBody
+    public Result case04() {
+
+        try {
+            baseTestService.case04();
+            return Result.Success("OK");
+        } catch (Exception e) {
+            e.printStackTrace();
+            return Result.Failure("服务异常：" + e.getMessage());
+        }
+    }
+
+    @GetMapping("case05")
+    @ResponseBody
+    public Result case05() {
+
+        try {
+            baseTestService.case05(1, 10);
             return Result.Success("OK");
         } catch (Exception e) {
             e.printStackTrace();
