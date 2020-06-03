@@ -28,6 +28,13 @@ public class ProjectsController {
         return Result.Success(projectsService.getAllProjects());
     }
 
+    @PostMapping("getProjectBranchName")
+    @ResponseBody
+    public Result getProjectBranchName(@RequestParam String projectName){
+        List<String> branchesByProjectName = projectsService.getBranchesByProjectName(projectName);
+        return Result.Success(branchesByProjectName);
+    }
+
     /**
      * 获取项目信息
      *
