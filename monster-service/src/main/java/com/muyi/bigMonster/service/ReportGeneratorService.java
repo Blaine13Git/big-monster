@@ -43,7 +43,7 @@ public class ReportGeneratorService {
     // 报告生成3步走
     public void create(int id) throws IOException {
 
-                /*
+        /*
         ================数据准备================
          */
         DiffCoverageReport diffCoverageReport = diffCoverageReportMapper.selectByPrimaryKey(id);
@@ -79,7 +79,7 @@ public class ReportGeneratorService {
         final IBundleCoverage bundleCoverage = analyzeStructure(classesPath);
 
         // 3、创建报告
-        createReport(bundleCoverage, reportDirectory.getAbsolutePath());
+        createReport(bundleCoverage, classesPath);
 
     }
 
