@@ -99,14 +99,10 @@ public class DiffController {
                                         @RequestParam int currentPage,
                                         @RequestParam int pageSize) {
 
-
         List<DiffCoverageReport> allCoverageReports = projectsService.getDiffRecordByParams(projectName, baseBranch, diffBranch, currentPage, pageSize);
-        allCoverageReports.size();
-
         PageResult pageResult = new PageResult();
-        pageResult.setTotal(allCoverageReports.size());
+        pageResult.setTotal(projectsService.totalCoverageReport(projectName, baseBranch, diffBranch));
         pageResult.setList(allCoverageReports);
-
         return Result.Success(pageResult);
     }
 
