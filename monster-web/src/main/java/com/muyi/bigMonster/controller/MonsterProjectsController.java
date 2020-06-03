@@ -12,7 +12,7 @@ import java.util.List;
 @Slf4j
 @RestController
 @RequestMapping("projects")
-public class ProjectsController {
+public class MonsterProjectsController {
 
     @Autowired
     private ProjectsService projectsService;
@@ -28,10 +28,29 @@ public class ProjectsController {
         return Result.Success(projectsService.getAllProjects());
     }
 
+    /**
+     * 获取项目所有分支-远程
+     *
+     * @param projectName
+     * @return
+     */
     @PostMapping("getProjectBranchName")
     @ResponseBody
-    public Result getProjectBranchName(@RequestParam String projectName){
+    public Result getProjectBranchName(@RequestParam String projectName) {
         List<String> branchesByProjectName = projectsService.getBranchesByProjectName(projectName);
+        return Result.Success(branchesByProjectName);
+    }
+
+    /**
+     * 获取项目所有分支-远程
+     *
+     * @param projectPath
+     * @return
+     */
+    @PostMapping("getProjectBranchName")
+    @ResponseBody
+    public Result getProjectBranchNameByUrl(@RequestParam String projectPath) {
+        List<String> branchesByProjectName = projectsService.getBranchesByProjectName(projectPath);
         return Result.Success(branchesByProjectName);
     }
 
