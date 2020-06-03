@@ -48,19 +48,9 @@ public class ProjectsService {
      *
      * @return
      */
-    public long totalCoverageReport(String projectName, String baseBranch, String diffBranch) {
+    public long totalCoverageReport() {
         DiffCoverageReportExample example = new DiffCoverageReportExample();
-        if (!projectName.isEmpty()) {
-            example.createCriteria().andProjectnameEqualTo(projectName);
-        }
-
-        if (!baseBranch.isEmpty()) {
-            example.createCriteria().andBasebranchEqualTo(baseBranch);
-        }
-
-        if (!diffBranch.isEmpty()) {
-            example.createCriteria().andDiffbranchEqualTo(diffBranch);
-        }
+        example.createCriteria().andIdIsNull();
         long total = diffCoverageReportMapper.countByExample(example);
         return total;
     }
@@ -72,15 +62,23 @@ public class ProjectsService {
      */
     public List<DiffCoverageReport> getDiffRecordByParams(String projectName, String baseBranch, String diffBranch, int currentPage, int pageSize) {
         DiffCoverageReportExample example = new DiffCoverageReportExample();
-        if (!projectName.isEmpty()) {
+        example.setOrderByClause("id");
+
+        if (projectName == null) {
+            example.createCriteria().andProjectnameIsNull();
+        } else {
             example.createCriteria().andProjectnameEqualTo(projectName);
         }
 
-        if (!baseBranch.isEmpty()) {
+        if (baseBranch == null) {
+            example.createCriteria().andBasebranchIsNull();
+        } else {
             example.createCriteria().andBasebranchEqualTo(baseBranch);
         }
 
-        if (!diffBranch.isEmpty()) {
+        if (diffBranch == null) {
+            example.createCriteria().andDiffbranchIsNull();
+        } else {
             example.createCriteria().andDiffbranchEqualTo(diffBranch);
         }
 
