@@ -1,5 +1,7 @@
 package com.muyi.bigMonster.service;
 
+import com.muyi.bigMonster.mapper.daily1.DiffCoverageReportMapper;
+import com.muyi.bigMonster.model.daily1.DiffCoverageReport;
 import lombok.extern.slf4j.Slf4j;
 import org.jacoco.core.analysis.*;
 import org.jacoco.core.data.ExecutionDataStore;
@@ -11,6 +13,7 @@ import org.jacoco.report.MultiSourceFileLocator;
 import org.jacoco.report.html.HTMLFormatter;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -34,18 +37,24 @@ public class ReportGeneratorService {
 
     private ExecFileLoader execFileLoader;
 
-    // 报告生成3步走
-    public void create(String executionDataFilePath, String projectPath) throws IOException {
+    @Resource
+    private DiffCoverageReportMapper diffCoverageReportMapper;
 
-        /*
+    // 报告生成3步走
+    public void create(int id) throws IOException {
+
+                /*
         ================数据准备================
          */
+        DiffCoverageReport diffCoverageReport = diffCoverageReportMapper.selectByPrimaryKey(id);
+
+        String executionDataFilePath = diffCoverageReport.getExecfilepath();
 
         // 项目文件夹名称作为报告的title
-        title = new File(projectPath).getName();
+        title = diffCoverageReport.getProjectname();
 
         // 指定class文件的路径和项目路径相同
-        String classesPath = projectPath;
+        String classesPath = "" + title;
 
         // 指定报告存放的位置
         String basePath;
@@ -66,7 +75,7 @@ public class ReportGeneratorService {
         final IBundleCoverage bundleCoverage = analyzeStructure(classesPath);
 
         // 3、创建报告
-        createReport(bundleCoverage, projectPath);
+        createReport(bundleCoverage, reportDirectory.getAbsolutePath());
 
     }
 

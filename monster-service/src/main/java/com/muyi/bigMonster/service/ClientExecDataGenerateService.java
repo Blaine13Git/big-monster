@@ -5,6 +5,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.InetAddress;
 import java.net.Socket;
+import java.util.Date;
 
 import com.muyi.bigMonster.mapper.daily1.DiffCoverageReportMapper;
 import com.muyi.bigMonster.model.daily1.DiffCoverageReport;
@@ -76,6 +77,8 @@ public final class ClientExecDataGenerateService {
         record.setBasebranch(baseBranch);
         record.setDiffbranch(diffBranch);
         record.setExecfilepath(execFileName);
+        record.setCreatetime(new Date());
+        record.setUpdatetime(new Date());
 
         diffCoverageReportMapper.insert(record);
     }

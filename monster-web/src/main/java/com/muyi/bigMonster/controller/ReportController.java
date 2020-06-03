@@ -39,15 +39,14 @@ public class ReportController {
     }
 
     /**
-     * @param executionDataFilePath
-     * @param projectFilePath
+     * @param id
      * @return
      */
     @PostMapping("createReport")
     @ResponseBody
-    public Result createReport(String executionDataFilePath, String projectFilePath) {
+    public Result createReport(int id) {
         try {
-            reportGeneratorService.create(executionDataFilePath, projectFilePath);
+            reportGeneratorService.create(id);
         } catch (IOException e) {
             e.printStackTrace();
             return Result.Failure("failure");
