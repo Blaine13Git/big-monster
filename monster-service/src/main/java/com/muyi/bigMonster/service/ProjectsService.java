@@ -43,7 +43,11 @@ public class ProjectsService {
     @Resource
     private DiffCoverageReportMapper diffCoverageReportMapper;
 
-
+    /**
+     * 获取所有数据个数
+     *
+     * @return
+     */
     public long totalCoverageReport() {
         DiffCoverageReportExample example = new DiffCoverageReportExample();
         example.createCriteria().andIdIsNull();
@@ -56,7 +60,7 @@ public class ProjectsService {
      * @param pageSize
      * @return
      */
-    public List<DiffCoverageReport> getAllCoverageReports(String projectName, String baseBranch, String diffBranch, int currentPage, int pageSize) {
+    public List<DiffCoverageReport> getDiffRecordByParams(String projectName, String baseBranch, String diffBranch, int currentPage, int pageSize) {
         DiffCoverageReportExample example = new DiffCoverageReportExample();
         example.setOrderByClause("id");
 
@@ -78,7 +82,7 @@ public class ProjectsService {
             example.createCriteria().andDiffbranchEqualTo(diffBranch);
         }
 
-        RowBounds rowBounds = new RowBounds(currentPage - 1, pageSize);
+        RowBounds rowBounds = new RowBounds((currentPage - 1) * pageSize, pageSize);
         List<DiffCoverageReport> diffCoverageReports = diffCoverageReportMapper.selectByExampleWithRowbounds(example, rowBounds);
         return diffCoverageReports;
     }
