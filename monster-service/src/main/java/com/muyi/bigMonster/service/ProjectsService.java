@@ -8,16 +8,16 @@ import com.muyi.bigMonster.model.daily1.DiffCoverageReportExample;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.session.RowBounds;
 import org.eclipse.jgit.api.Git;
-import org.eclipse.jgit.api.ListBranchCommand;
 import org.eclipse.jgit.api.errors.GitAPIException;
 import org.eclipse.jgit.lib.Ref;
+import org.eclipse.jgit.lib.Repository;
+import org.eclipse.jgit.revwalk.RevCommit;
 import org.eclipse.jgit.transport.CredentialsProvider;
 import org.eclipse.jgit.transport.UsernamePasswordCredentialsProvider;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.io.File;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -259,10 +259,10 @@ public class ProjectsService {
 
             if (collect.isEmpty()) {
                 log.info("分支：" + branchName + "不存在");
-                git.checkout().setCreateBranch(true).setName(branchName).call(); // 切换创建分支并切换分支
-            } else {
-                git.checkout().setCreateBranch(false).setName(branchName).call(); // 切换分支
+                git.checkout().setCreateBranch(true).setName(branchName).call(); // 切换分支
             }
+
+            git.checkout().setCreateBranch(false).setName(branchName).call(); // 切换分支
 
             git.pull().setCredentialsProvider(CP).call(); // 拉取代码  WrongRepositoryStateException:Cannot pull into a repository with state: MERGING
 
@@ -271,31 +271,26 @@ public class ProjectsService {
         }
     }
 
-    /**
-     * 获取该项目的所有分支
-     *
-     * @param projectName
-     */
-    public List<String> getBranchesByProjectName(String projectName) {
-        String url = projectInfoMapper.selectByProjectName(projectName).get(0).getUrl();
-        List<String> branchNameList;
+
+    public void getBranches(String url) {
+
         try {
             File projectFiles = new File(getProjectPath(url));
             log.info("仓库地址：" + projectFiles.getAbsolutePath());
 
             Git git = Git.open(projectFiles);
 
-            List<Ref> branchListRef = git.branchList().setListMode(ListBranchCommand.ListMode.ALL).call(); // 所有分支，本地和远程
-//            List<Ref> branchListRef = git.branchList().call();// 本地分支
+            Iterable<RevCommit> commit_logs = git.log().all().call();
+            RevCommit latestCommit = commit_logs.iterator().next();
 
-            branchNameList = new ArrayList<>();
-            branchListRef.stream().filter(ref -> ref.getName().startsWith("refs/remotes/origin/")).forEach(ref -> branchNameList.add(ref.getName().replace("refs/remotes/origin/", "")));
+            Repository repo = git.getRepository();
+            String branch = repo.getBranch();
 
+            String name = latestCommit.getName();
+            String message = latestCommit.getFullMessage();
         } catch (Exception e) {
             e.printStackTrace();
-            return null;
         }
-        return branchNameList;
     }
 
     public static void main(String[] args) throws Exception {
