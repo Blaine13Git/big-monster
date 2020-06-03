@@ -23,6 +23,9 @@ import java.util.List;
 @Service
 public class ReportGeneratorService {
 
+    private static final String BASE_PATH_SERVER = "/home/jenkins/reports/htmlReports/";
+    private static final String BASE_PATH_LOCAL = "/Users/changfeng/work/jacoco/reports/htmlReports/";
+
     private static final String JAVA_SOURCE_PREFIX = "/src/main/java/";
 
     private String title;
@@ -45,7 +48,13 @@ public class ReportGeneratorService {
         String classesPath = projectPath;
 
         // 指定报告存放的位置
-        reportDirectory = new File(projectPath + "/coverageReport");
+        String basePath;
+        if (System.getProperty("user.dir").startsWith("/home/jenkins")) {
+            basePath = BASE_PATH_SERVER;
+        } else {
+            basePath = BASE_PATH_LOCAL;
+        }
+        reportDirectory = new File(basePath + "/" + title);
         if (!reportDirectory.exists()) {
             reportDirectory.mkdir();
         }

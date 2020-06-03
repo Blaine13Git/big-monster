@@ -24,7 +24,8 @@ import javax.annotation.Resource;
 @Service
 public final class ClientExecDataGenerateService {
 
-    private static final String BASE_PATH = "/home/jenkins/reports/execFiles/";
+    private static final String BASE_PATH_SERVER = "/home/jenkins/reports/execFiles/";
+    private static final String BASE_PATH_LOCAL = "/Users/changfeng/work/jacoco/reports/execFiles/";
 
     @Resource
     private DiffCoverageReportMapper diffCoverageReportMapper;
@@ -32,17 +33,24 @@ public final class ClientExecDataGenerateService {
 
     public void execDataGenerate(String projectName, String baseBranch, String diffBranch) throws IOException {
 
-        String ip = "192.168.2.26";
+        String basePath;
+        if (System.getProperty("user.dir").startsWith("/home/jenkins")) {
+            basePath = BASE_PATH_SERVER;
+        } else {
+            basePath = BASE_PATH_LOCAL;
+        }
+
+        String ip = "localhost";
         int port = 10000;
 
-        String destFilePathString = BASE_PATH + projectName;
+        String destFilePathString = basePath + projectName;
         File destFilePath = new File(destFilePathString);
 
         if (!destFilePath.exists()) {
             destFilePath.mkdir();
         }
 
-        String execFileName = destFilePathString + "jacoco_" + projectName + ".exec";
+        String execFileName = destFilePathString + "/jacoco_" + projectName + ".exec";
         System.out.println("execFileName: " + execFileName);
 
         final FileOutputStream localFile = new FileOutputStream(execFileName);
@@ -67,6 +75,7 @@ public final class ClientExecDataGenerateService {
         record.setProjectname(projectName);
         record.setBasebranch(baseBranch);
         record.setDiffbranch(diffBranch);
+        record.setExecfilepath(execFileName);
 
         diffCoverageReportMapper.insert(record);
     }

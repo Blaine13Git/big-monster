@@ -125,7 +125,7 @@ public class ProjectsService {
     public String getProjectPath(String url) {
 
         String basePath;
-        if (System.getProperty("user.dir").contains("jenkins")) {
+        if (System.getProperty("user.dir").startsWith("/home/jenkins")) {
             basePath = "/home/jenkins/codes/";//properties.getProperty("basePathServer");
         } else {
             basePath = "/Users/changfeng/work/code/";//properties.getProperty("basePathLocal");
