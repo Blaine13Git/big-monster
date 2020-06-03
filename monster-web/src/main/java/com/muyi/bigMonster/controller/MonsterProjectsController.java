@@ -47,7 +47,7 @@ public class MonsterProjectsController {
      * @param projectPath
      * @return
      */
-    @PostMapping("getProjectBranchName")
+    @PostMapping("getProjectBranchNameByUrl")
     @ResponseBody
     public Result getProjectBranchNameByUrl(@RequestParam String projectPath) {
         List<String> branchesByProjectName = projectsService.getBranchesByProjectName(projectPath);
