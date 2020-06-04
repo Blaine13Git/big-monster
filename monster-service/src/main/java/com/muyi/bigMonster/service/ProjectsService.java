@@ -182,18 +182,18 @@ public class ProjectsService {
      * @param url
      */
     public String cloneRepository(String url) {
-
+        log.info("开始clone");
         String projectPath = getProjectPath(url);
 
         if (projectPath == "") {
-            return "仓库路径不存在！";
+            return "clone失败，仓库路径不存在！";
         }
 
         File gitFile = new File(projectPath + "/.git");
 
         // 如果存在，fetch
         if (gitFile.exists()) {
-            return "clone仓库已经存在" + projectPath;
+            return "clone失败，仓库已经存在" + projectPath;
         }
 
         log.info("仓库不存在，开始clone：" + projectPath);
