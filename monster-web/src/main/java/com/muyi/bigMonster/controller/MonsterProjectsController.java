@@ -87,7 +87,12 @@ public class MonsterProjectsController {
             url = url.replace(":", "/");
             url = url.replace("git@", "http://");
         }
-        return Result.Success(projectsService.saveProjectInfo(url));
+        String message = projectsService.saveProjectInfo(url);
+        if (message.contains("失败")) {
+            return Result.Failure(message);
+        } else {
+            return Result.Success(message);
+        }
     }
 
     /**
@@ -105,8 +110,12 @@ public class MonsterProjectsController {
             url = url.replace("git@", "http://");
         }
 
-        projectsService.fetchRepository(url, "refs/heads/" + branchName);
-        return Result.Success("OK");
+        String message = projectsService.fetchRepository(url, "refs/heads/" + branchName);
+        if (message.contains("失败")) {
+            return Result.Failure(message);
+        } else {
+            return Result.Success(message);
+        }
     }
 
 

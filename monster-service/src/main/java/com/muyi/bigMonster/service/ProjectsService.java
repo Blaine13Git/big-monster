@@ -118,7 +118,7 @@ public class ProjectsService {
      * @param url
      * @return
      */
-    public int saveProjectInfo(String url) {
+    public String saveProjectInfo(String url) {
 
         String projectName = url.substring(url.lastIndexOf("/") + 1, url.lastIndexOf("."));
 
@@ -137,9 +137,9 @@ public class ProjectsService {
         log.info("项目已经存在：" + projectName);
 
         // 拉取项目到本地
-        cloneRepository(url);
+        String result = cloneRepository(url);
 
-        return 0;
+        return result;
     }
 
     /**
@@ -181,21 +181,19 @@ public class ProjectsService {
      *
      * @param url
      */
-    public void cloneRepository(String url) {
+    public String cloneRepository(String url) {
 
         String projectPath = getProjectPath(url);
 
         if (projectPath == "") {
-            log.info("仓库路径不存在！");
-            return;
+            return "仓库路径不存在！";
         }
 
         File gitFile = new File(projectPath + "/.git");
 
         // 如果存在，fetch
         if (gitFile.exists()) {
-            log.info("clone仓库已经存在" + projectPath);
-            return;
+            return "clone仓库已经存在" + projectPath;
         }
 
         log.info("仓库不存在，开始clone：" + projectPath);
@@ -207,9 +205,13 @@ public class ProjectsService {
                     .setDirectory(projectFiles)
                     .setCredentialsProvider(CP)
                     .call();
-        } catch (GitAPIException e) {
+        } catch (Exception e) {
+            String message = e.getMessage();
             e.printStackTrace();
+            return "获取代码失败：" + message;
         }
+
+        return "获取代码成功！";
 
     }
 
@@ -218,14 +220,13 @@ public class ProjectsService {
      *
      * @param url
      */
-    public void fetchRepository(String url, String branchName) {
+    public String fetchRepository(String url, String branchName) {
 
         try {
             String projectPath = getProjectPath(url);
 
             if (projectPath == "") {
-                log.info("仓库路径不存在！");
-                return;
+                return "仓库路径不存在！";
             }
             File projectFiles = new File(projectPath);
 
@@ -240,9 +241,10 @@ public class ProjectsService {
             Git git = Git.open(projectFiles);
             git.fetch().setCredentialsProvider(CP).call();
 
-            pullRepository(url, branchName);
+            return pullRepository(url, branchName);
         } catch (Exception e) {
             e.printStackTrace();
+            return "更新代码失败" + e.getMessage();
         }
     }
 
@@ -251,7 +253,7 @@ public class ProjectsService {
      *
      * @param url
      */
-    public void pullRepository(String url, String branchName) {
+    public String pullRepository(String url, String branchName) {
 
         try {
             File projectFiles = new File(getProjectPath(url));
@@ -275,7 +277,9 @@ public class ProjectsService {
 
         } catch (Exception e) {
             e.printStackTrace();
+            return "更新代码失败：" + e.getMessage();
         }
+        return "更新代码成功！";
     }
 
     /**
