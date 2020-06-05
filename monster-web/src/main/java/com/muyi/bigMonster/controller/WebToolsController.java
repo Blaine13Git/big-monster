@@ -48,6 +48,7 @@ public class WebToolsController {
     @PostMapping("getUsefulBuyerResource")
     @ResponseBody
     public Result getUsefulBuyerResource(@RequestParam Long accountId) {
+        log.info("accountId >>>" + accountId);
         List<PBuyerResource> usefulBuyerResource = webToolsService.getUsefulBuyerResource(accountId);
 
         return Result.Success(usefulBuyerResource);
@@ -62,6 +63,7 @@ public class WebToolsController {
     @PostMapping("getOverdueBuyerResource")
     @ResponseBody
     public Result getOverdueBuyerResource(@RequestParam Long accountId) {
+        log.info("accountId >>>" + accountId);
         List<PBuyerResource> usefulBuyerResource = webToolsService.getOverdueBuyerResource(accountId);
 
         return Result.Success(usefulBuyerResource);
