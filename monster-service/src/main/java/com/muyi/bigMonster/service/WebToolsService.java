@@ -1,10 +1,14 @@
 package com.muyi.bigMonster.service;
 
 import com.muyi.bigMonster.mapper.daily2drds.PBuyerResourceMapper;
+import com.muyi.bigMonster.model.daily2drds.PBuyerResource;
+import com.muyi.bigMonster.model.daily2drds.PBuyerResourceExample;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.Date;
+import java.util.List;
 
 @Slf4j
 @Service
@@ -25,6 +29,43 @@ public class WebToolsService {
         log.info("\nbuyerResourceId=" + buyerResourceId + "\ntime=" + time);
         int number = pBuyerResourceMapper.updateById(buyerResourceId, time);
         return number;
+    }
+
+    /**
+     * 获取用户未过期的券
+     *
+     * @param accountId
+     * @return
+     */
+    //查询红包记录
+    public List<PBuyerResource> getUsefulBuyerResource(Long accountId) {
+        PBuyerResourceExample example = new PBuyerResourceExample();
+        PBuyerResourceExample.Criteria criteria = example.createCriteria();
+        criteria.andAccountIdEqualTo(accountId);
+        criteria.andEndTimeGreaterThan(new Date());
+
+        Integer status = 0;
+        criteria.andStatusEqualTo(status.byteValue());
+        List<PBuyerResource> pBuyerResources = pBuyerResourceMapper.selectByExample(example);
+        return pBuyerResources;
+    }
+
+    /**
+     * 获取用户已过期的券
+     *
+     * @param accountId
+     * @return
+     */
+    //查询红包记录
+    public List<PBuyerResource> getOverdueBuyerResource(Long accountId) {
+        PBuyerResourceExample example = new PBuyerResourceExample();
+        PBuyerResourceExample.Criteria criteria = example.createCriteria();
+        criteria.andAccountIdEqualTo(accountId);
+        criteria.andEndTimeLessThan(new Date());
+        Integer status = 0;
+        criteria.andStatusEqualTo(status.byteValue());
+        List<PBuyerResource> pBuyerResources = pBuyerResourceMapper.selectByExample(example);
+        return pBuyerResources;
     }
 
     // 活动下的子活动
