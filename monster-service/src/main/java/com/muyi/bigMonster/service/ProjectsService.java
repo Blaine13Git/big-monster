@@ -9,7 +9,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.session.RowBounds;
 import org.eclipse.jgit.api.Git;
 import org.eclipse.jgit.api.ListBranchCommand;
-import org.eclipse.jgit.api.errors.GitAPIException;
 import org.eclipse.jgit.lib.Ref;
 import org.eclipse.jgit.transport.CredentialsProvider;
 import org.eclipse.jgit.transport.UsernamePasswordCredentialsProvider;
@@ -30,11 +29,11 @@ import java.util.stream.Collectors;
 @Service
 public class ProjectsService {
 
-    private static final String username = "qa-jenkins"; //qa-jenkins
+    private static final String USERNAME = "qa-jenkins"; //qa-jenkins
 
-    private static final String password = "*6OGZD9hY5Ylkk$d!Mjv"; //*6OGZD9hY5Ylkk$d!Mjv
+    private static final String PASSWORD = "*6OGZD9hY5Ylkk$d!Mjv"; //*6OGZD9hY5Ylkk$d!Mjv
 
-    private static final CredentialsProvider CP = new UsernamePasswordCredentialsProvider(username, password);
+    private static final CredentialsProvider CP = new UsernamePasswordCredentialsProvider(USERNAME, PASSWORD);
 
     @Resource
     private ComplexMetricsProjectInfoMapper projectInfoMapper;
@@ -44,13 +43,15 @@ public class ProjectsService {
     private DiffCoverageReportMapper diffCoverageReportMapper;
 
     /**
-     * 获取所有数据个数
+     * 根据参数-构建查询对象
      *
+     * @param projectName
+     * @param baseBranch
+     * @param diffBranch
      * @return
      */
-    public long totalCoverageReport(String projectName, String baseBranch, String diffBranch) {
+    private DiffCoverageReportExample getAllByParamsExample(String projectName, String baseBranch, String diffBranch) {
         DiffCoverageReportExample example = new DiffCoverageReportExample();
-
         DiffCoverageReportExample.Criteria criteria = example.createCriteria();
 
         if (!projectName.isEmpty()) {
@@ -64,41 +65,35 @@ public class ProjectsService {
         if (!diffBranch.isEmpty()) {
             criteria.andDiffbranchEqualTo(diffBranch);
         }
-
-
-        long total = diffCoverageReportMapper.countByExample(example);
-        return total;
+        return example;
     }
 
     /**
+     * 根据参数-获取个数
+     *
+     * @return
+     */
+    public long totalCoverageReport(String projectName, String baseBranch, String diffBranch) {
+        DiffCoverageReportExample example = getAllByParamsExample(projectName, baseBranch, diffBranch);
+        return diffCoverageReportMapper.countByExample(example);
+    }
+
+    /**
+     * 根据参数-获取数据
+     *
      * @param currentPage
      * @param pageSize
      * @return
      */
     public List<DiffCoverageReport> getDiffRecordByParams(String projectName, String baseBranch, String diffBranch, int currentPage, int pageSize) {
-
-        DiffCoverageReportExample example = new DiffCoverageReportExample();
-        example.setOrderByClause("id");
-        DiffCoverageReportExample.Criteria criteria = example.createCriteria();
-
-        if (!projectName.isEmpty()) {
-            criteria.andProjectnameEqualTo(projectName);
-        }
-
-        if (!baseBranch.isEmpty()) {
-            criteria.andBasebranchEqualTo(baseBranch);
-        }
-
-        if (!diffBranch.isEmpty()) {
-            criteria.andDiffbranchEqualTo(diffBranch);
-        }
-
+        DiffCoverageReportExample example = getAllByParamsExample(projectName, baseBranch, diffBranch);
         RowBounds rowBounds = new RowBounds((currentPage - 1) * pageSize, pageSize);
-        List<DiffCoverageReport> diffCoverageReports = diffCoverageReportMapper.selectByExampleWithRowbounds(example, rowBounds);
-        return diffCoverageReports;
+        return diffCoverageReportMapper.selectByExampleWithRowbounds(example, rowBounds);
     }
 
     /**
+     * 获取所有已经添加的项目
+     *
      * @return
      */
     public List<ComplexMetricsProjectInfo> getAllProjects() {
@@ -211,6 +206,9 @@ public class ProjectsService {
                     .call();
         } catch (Exception e) {
             String message = e.getMessage();
+            if (message.contains("Invalid remote: origin")) {
+                message = "获取代码失败：找对应项目的开发把 " + USERNAME + " 用户添加gitlab权限！";
+            }
             e.printStackTrace();
             return "获取代码失败：" + message;
         }
@@ -298,7 +296,6 @@ public class ProjectsService {
         }
 
         String url = projectInfoMapper.selectByProjectName(projectName).get(0).getUrl();
-        List<String> branchNameList;
         try {
             File projectFiles = new File(getProjectPath(url));
             log.info("仓库地址：" + projectFiles.getAbsolutePath());
@@ -308,24 +305,23 @@ public class ProjectsService {
             List<Ref> branchListRef = git.branchList().setListMode(ListBranchCommand.ListMode.ALL).call(); // 所有分支，本地和远程
 //            List<Ref> branchListRef = git.branchList().call();// 本地分支
 
-            branchNameList = new ArrayList<>();
+            List<String> branchNameList = new ArrayList<>();
             branchListRef.stream().filter(ref -> ref.getName().startsWith("refs/remotes/origin/")).forEach(ref -> branchNameList.add(ref.getName().replace("refs/remotes/origin/", "")));
 
+            return branchNameList;
         } catch (Exception e) {
             e.printStackTrace();
             return null;
         }
-        return branchNameList;
     }
 
-    public static void main(String[] args) throws Exception {
+//    public static void main(String[] args) throws Exception {
 //        DiffDataService diffDataService = new DiffDataService();
 //        diffDataService.pullRepository("http://gitlab.ops.yangege.cn/zebra/live.git", "refs/heads/QA-for-test");
-
+//
 //        Properties properties = new Properties();
 //        properties.load(new FileInputStream("monster-service/src/main/resources/services.properties"));
 //        System.out.println(properties.getProperty("basePath"));
+//    }
 
-
-    }
 }
