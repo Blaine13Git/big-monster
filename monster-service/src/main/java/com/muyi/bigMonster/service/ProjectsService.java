@@ -210,7 +210,7 @@ public class ProjectsService {
                 message = "获取代码失败：找对应项目的开发把 " + USERNAME + " 用户添加gitlab权限！";
             }
             e.printStackTrace();
-            return "获取代码失败：" + message;
+            return message;
         }
 
         return "获取代码成功！";
