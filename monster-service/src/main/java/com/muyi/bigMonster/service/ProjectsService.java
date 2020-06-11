@@ -291,6 +291,7 @@ public class ProjectsService {
      */
     public List<String> getBranchesByProjectName(String projectName) {
 
+
         if (projectName.startsWith("git@") || projectName.startsWith("http://")) {
             projectName = projectName.substring(projectName.lastIndexOf("/") + 1, projectName.lastIndexOf("."));
         }
@@ -310,8 +311,13 @@ public class ProjectsService {
 
             return branchNameList;
         } catch (Exception e) {
-            e.printStackTrace();
-            return null;
+            if (e.getMessage().contains("repository not found")) {
+                return null;
+            } else {
+                List<String> errorData = new ArrayList();
+                errorData.add("报错了");
+                return errorData;
+            }
         }
     }
 

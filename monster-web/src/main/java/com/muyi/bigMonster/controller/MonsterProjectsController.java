@@ -38,7 +38,11 @@ public class MonsterProjectsController {
     @ResponseBody
     public Result getProjectBranchName(@RequestParam String projectName) {
         List<String> branchesByProjectName = projectsService.getBranchesByProjectName(projectName);
-        return Result.Success(branchesByProjectName);
+        if (branchesByProjectName == null) {
+            return Result.Failure("仓库空了，重新添加项目");
+        } else {
+            return Result.Success(branchesByProjectName);
+        }
     }
 
     /**
