@@ -63,7 +63,7 @@ public class BaseTestService {
 
     public void case05(int currentPage, int pageSize) {
         DiffCoverageReportExample example = new DiffCoverageReportExample();
-        example.setOrderByClause("id");
+        example.setOrderByClause("id desc");
         example.createCriteria().andCreatetimeIsNotNull();
         RowBounds rowBounds = new RowBounds(currentPage - 1, pageSize);
         List<DiffCoverageReport> diffCoverageReports = diffCoverageReportMapper.selectByExampleWithRowbounds(example, rowBounds);

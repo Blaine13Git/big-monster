@@ -114,7 +114,7 @@ public interface ComplexMetricsProjectInfoMapper {
     })
     List<ComplexMetricsProjectInfo> selectByProjectName(String projectName);
 
-    @Select("select id, project_name, department_id, url, create_time, update_time from complex_metrics_project_info order by create_time desc")
+    @Select("select id, project_name, department_id, url, create_time, update_time from complex_metrics_project_info order by id desc")
     @Results({
             @Result(column = "id", property = "id", jdbcType = JdbcType.INTEGER, id = true),
             @Result(column = "project_name", property = "projectName", jdbcType = JdbcType.VARCHAR),

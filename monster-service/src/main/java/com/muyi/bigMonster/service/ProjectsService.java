@@ -52,6 +52,7 @@ public class ProjectsService {
      */
     private DiffCoverageReportExample getAllByParamsExample(String projectName, String baseBranch, String diffBranch) {
         DiffCoverageReportExample example = new DiffCoverageReportExample();
+        example.setOrderByClause("id desc");
         DiffCoverageReportExample.Criteria criteria = example.createCriteria();
 
         if (!projectName.isEmpty()) {
@@ -79,7 +80,7 @@ public class ProjectsService {
     }
 
     /**
-     * 根据参数-获取数据
+     * 根据参数-获取覆盖率文件数据
      *
      * @param currentPage
      * @param pageSize
