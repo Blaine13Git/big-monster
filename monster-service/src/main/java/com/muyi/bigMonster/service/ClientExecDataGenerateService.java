@@ -37,7 +37,6 @@ public final class ClientExecDataGenerateService {
     @Resource
     private ProjectServerInfoMapper projectServerInfoMapper;
 
-
     public void execDataGenerate(String projectName, String baseBranch, String diffBranch) throws IOException {
 
         String basePath;

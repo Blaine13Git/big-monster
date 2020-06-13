@@ -1,8 +1,11 @@
 package com.muyi.bigMonster.service;
 
 import com.muyi.bigMonster.mapper.daily2drds.PBuyerResourceMapper;
+import com.muyi.bigMonster.mapper.daily3.GoodsIndexDataMapper;
 import com.muyi.bigMonster.model.daily2drds.PBuyerResource;
 import com.muyi.bigMonster.model.daily2drds.PBuyerResourceExample;
+import com.muyi.bigMonster.model.daily3.GoodsIndexData;
+import com.muyi.bigMonster.model.daily3.GoodsIndexDataExample;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
@@ -16,6 +19,9 @@ public class WebToolsService {
 
     @Resource
     private PBuyerResourceMapper pBuyerResourceMapper;
+
+    @Resource
+    private GoodsIndexDataMapper goodsIndexDataMapper;
 
     /**
      * 更新优惠券的有效期
@@ -75,4 +81,18 @@ public class WebToolsService {
     // 活动对应的中奖情况
 
     // 红包对应中奖情况
+
+    /**
+     * 查询佣金比例
+     *
+     * @param itemId
+     * @return
+     */
+    public List<GoodsIndexData> getBrokerageByItemId(Long itemId) {
+        GoodsIndexDataExample example = new GoodsIndexDataExample();
+        GoodsIndexDataExample.Criteria criteria = example.createCriteria();
+        criteria.andItemIdEqualTo(itemId);
+        List<GoodsIndexData> goodsIndexData = goodsIndexDataMapper.selectByExample(example);
+        return goodsIndexData;
+    }
 }

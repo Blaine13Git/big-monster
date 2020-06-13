@@ -12,7 +12,7 @@ import java.util.List;
 @Slf4j
 @RestController
 @RequestMapping("projects")
-public class MonsterProjectsController {
+public class ProjectsController {
 
     @Autowired
     private ProjectsService projectsService;

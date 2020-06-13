@@ -1,9 +1,11 @@
 package com.muyi.bigMonster.controller;
 
 import com.muyi.bigMonster.model.daily2drds.PBuyerResource;
+import com.muyi.bigMonster.model.daily3.GoodsIndexData;
 import com.muyi.bigMonster.result.Result;
 import com.muyi.bigMonster.service.WebToolsService;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -16,7 +18,7 @@ import java.util.List;
 @RequestMapping("webtools")
 public class WebToolsController {
 
-    @Resource
+    @Autowired
     private WebToolsService webToolsService;
 
     @PostMapping("updateBuyerResourceEndTime")
@@ -68,4 +70,18 @@ public class WebToolsController {
 
         return Result.Success(usefulBuyerResource);
     }
+
+    /**
+     * 获取商品佣金比例
+     * @param itemId
+     * @return
+     */
+    @PostMapping("getBrokerageByItemId")
+    @ResponseBody
+    public Result getBrokerageByItemId(@RequestParam Long itemId) {
+        List<GoodsIndexData> brokerageByItemId = webToolsService.getBrokerageByItemId(itemId);
+        return Result.Success(brokerageByItemId.get(0).getBrokerage());
+    }
+
+
 }
