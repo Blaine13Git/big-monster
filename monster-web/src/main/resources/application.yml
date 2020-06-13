@@ -35,6 +35,11 @@ spring:
       jdbc-url: jdbc:mysql://drdshbga3gjsy83cpublic.drds.aliyuncs.com:3306/promotion_platform
       username: muyi
       password: k2Tp4SF834phWKO1
+    daily3:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      jdbc-url: jdbc:mysql://rm-bp1td245ijdcjcrz51o.mysql.rds.aliyuncs.com:3306/search_platform
+      username: muyi
+      password: k2Tp4SF834phWKO1
 
 # mybatis
 mybatis:
