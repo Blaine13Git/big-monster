@@ -86,4 +86,17 @@ public class BaseTestController {
         }
     }
 
+    @GetMapping("case06")
+    @ResponseBody
+    public Result case06() {
+
+        try {
+            baseTestService.case06(1);
+            return Result.Success("OK");
+        } catch (Exception e) {
+            e.printStackTrace();
+            return Result.Failure("服务异常：" + e.getMessage());
+        }
+    }
+
 }

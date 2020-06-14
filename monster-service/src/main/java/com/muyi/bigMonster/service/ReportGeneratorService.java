@@ -2,6 +2,7 @@ package com.muyi.bigMonster.service;
 
 import com.muyi.bigMonster.mapper.daily1.DiffCoverageReportMapper;
 import com.muyi.bigMonster.model.daily1.DiffCoverageReport;
+import com.muyi.bigMonster.model.daily1.DiffCoverageReportExample;
 import lombok.extern.slf4j.Slf4j;
 import org.jacoco.core.analysis.*;
 import org.jacoco.core.data.ExecutionDataStore;
@@ -31,6 +32,7 @@ public class ReportGeneratorService {
 
     private static final String JAVA_SOURCE_PREFIX = "/src/main/java/";
 
+    private int recordId;
     private String title;
 
     private File reportDirectory;
@@ -42,7 +44,7 @@ public class ReportGeneratorService {
 
     // 报告生成3步走
     public void create(int id) throws IOException {
-
+        recordId = id;
         /*
         ================数据准备================
          */
@@ -140,6 +142,13 @@ public class ReportGeneratorService {
 
         visitor.visitBundle(bundleCoverage, sourceLocator);
         visitor.visitEnd();
+
+        // 更新生成的报告
+        DiffCoverageReport record = new DiffCoverageReport();
+        record.setReporturl(reportDirectory + "/index.html");
+        record.withId(recordId);
+
+        diffCoverageReportMapper.updateByPrimaryKeySelective(record);
 
     }
 

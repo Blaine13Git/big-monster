@@ -70,4 +70,14 @@ public class BaseTestService {
 
         System.out.println(">>> " + diffCoverageReports.size());
     }
+
+    public void case06(int id) {
+        DiffCoverageReportExample example = new DiffCoverageReportExample();
+        DiffCoverageReport record = new DiffCoverageReport();
+        record.withId(id);
+        record.setExecfilepath("/Users/changfeng/work/jacoco/reports/execFiles/big-monster/jacoco_big-monster.exec");
+        record.setReporturl("1_3");
+        diffCoverageReportMapper.updateByPrimaryKeySelective(record);
+
+    }
 }
