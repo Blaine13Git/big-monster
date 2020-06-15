@@ -6,7 +6,9 @@ import java.io.IOException;
 import java.net.Inet4Address;
 import java.net.InetAddress;
 import java.net.Socket;
+import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.TimeZone;
 
 import com.muyi.bigMonster.mapper.daily1.DiffCoverageReportMapper;
 import com.muyi.bigMonster.mapper.daily1.ProjectServerInfoMapper;
@@ -90,6 +92,8 @@ public final class ClientExecDataGenerateService {
         record.setBasebranch(baseBranch);
         record.setDiffbranch(diffBranch);
         record.setExecfilepath(execFileName);
+
+
         record.setCreatetime(new Date());
         record.setUpdatetime(new Date());
 
@@ -98,14 +102,12 @@ public final class ClientExecDataGenerateService {
 
 
     public static void main(String[] args) throws Exception {
-        String ip = Inet4Address.getLocalHost().getHostAddress();
-        System.out.println(ip);
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+//        simpleDateFormat.setTimeZone(TimeZone.getTimeZone("Asia/Shanghai"));
 
-//        InetAddress byName = InetAddress.getByName("192.168.61.170");
-//        System.out.println(byName.getHostAddress());
-
-        Socket socket = new Socket(ip, 10000);
-        socket.close();
+        Date now = new Date();
+        String format = simpleDateFormat.format(now);
+        System.out.println(format);
 
     }
 
