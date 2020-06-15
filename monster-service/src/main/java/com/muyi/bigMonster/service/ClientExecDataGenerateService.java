@@ -3,6 +3,7 @@ package com.muyi.bigMonster.service;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.net.Inet4Address;
 import java.net.InetAddress;
 import java.net.Socket;
 import java.util.Date;
@@ -42,6 +43,7 @@ public final class ClientExecDataGenerateService {
         String basePath;
         String ip;
         int port;
+
         if (System.getProperty("user.dir").startsWith("/home/jenkins")) {
             basePath = BASE_PATH_SERVER;
             ProjectServerInfoExample example = new ProjectServerInfoExample();
@@ -51,7 +53,7 @@ public final class ClientExecDataGenerateService {
             port = projectServerInfo.getPort();
         } else {
             basePath = BASE_PATH_LOCAL;
-            ip = "localhost";
+            ip = Inet4Address.getLocalHost().getHostAddress();
             port = 10000;
         }
 
@@ -69,7 +71,7 @@ public final class ClientExecDataGenerateService {
         final ExecutionDataWriter localWriter = new ExecutionDataWriter(localFile);
 
         // Open a socket to the coverage agent:
-        final Socket socket = new Socket(InetAddress.getByName(ip), port);
+        final Socket socket = new Socket(ip, port);
         final RemoteControlWriter writer = new RemoteControlWriter(socket.getOutputStream());
         final RemoteControlReader reader = new RemoteControlReader(socket.getInputStream());
         reader.setSessionInfoVisitor(localWriter);
@@ -92,6 +94,19 @@ public final class ClientExecDataGenerateService {
         record.setUpdatetime(new Date());
 
         diffCoverageReportMapper.insert(record);
+    }
+
+
+    public static void main(String[] args) throws Exception {
+        String ip = Inet4Address.getLocalHost().getHostAddress();
+        System.out.println(ip);
+
+//        InetAddress byName = InetAddress.getByName("192.168.61.170");
+//        System.out.println(byName.getHostAddress());
+
+        Socket socket = new Socket(ip, 10000);
+        socket.close();
+
     }
 
 
