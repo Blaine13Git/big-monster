@@ -145,7 +145,7 @@ public class ReportGeneratorService {
 
         // 更新生成的报告
         DiffCoverageReport record = new DiffCoverageReport();
-        record.setReporturl(reportDirectory.getAbsolutePath().replace(title, "") + "/index.html");
+        record.setReporturl(title + "/index.html");
         record.withId(recordId);
 
         diffCoverageReportMapper.updateByPrimaryKeySelective(record);
