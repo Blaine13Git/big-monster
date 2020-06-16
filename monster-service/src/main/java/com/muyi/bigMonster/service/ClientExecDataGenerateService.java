@@ -63,7 +63,7 @@ public final class ClientExecDataGenerateService {
             destFilePath.mkdir();
         }
 
-        String execFileName = destFilePathString + projectName + ".exec";
+        String execFileName = destFilePathString + "/" + projectName + ".exec";
         System.out.println("execFileName: " + execFileName);
 
         final FileOutputStream localFile = new FileOutputStream(execFileName);
