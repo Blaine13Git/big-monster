@@ -1,15 +1,5 @@
 package com.muyi.bigMonster.service;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.net.Inet4Address;
-import java.net.InetAddress;
-import java.net.Socket;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.TimeZone;
-
 import com.muyi.bigMonster.mapper.daily1.DiffCoverageReportMapper;
 import com.muyi.bigMonster.mapper.daily1.ProjectServerInfoMapper;
 import com.muyi.bigMonster.model.daily1.DiffCoverageReport;
@@ -22,6 +12,13 @@ import org.jacoco.core.runtime.RemoteControlWriter;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.net.Inet4Address;
+import java.net.Socket;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  * agent config param output=tcpserver, the collected data is dumped to a local file.
@@ -31,8 +28,8 @@ import javax.annotation.Resource;
 @Service
 public final class ClientExecDataGenerateService {
 
-    private static final String BASE_PATH_SERVER = "/home/jenkins/reports/execFiles/";
-    private static final String BASE_PATH_LOCAL = "/Users/changfeng/work/jacoco/reports/execFiles/";
+    private static final String BASE_EXEC_PATH_SERVER = "/home/jenkins/reports/execFiles/";
+    private static final String BASE_EXEC_PATH_LOCAL = "/Users/changfeng/work/jacoco/reports/execFiles/";
 
     @Resource
     private DiffCoverageReportMapper diffCoverageReportMapper;
@@ -47,14 +44,14 @@ public final class ClientExecDataGenerateService {
         int port;
 
         if (System.getProperty("user.dir").startsWith("/home/jenkins")) {
-            basePath = BASE_PATH_SERVER;
+            basePath = BASE_EXEC_PATH_SERVER;
             ProjectServerInfoExample example = new ProjectServerInfoExample();
             example.createCriteria().andProjectNameEqualTo(projectName);
             ProjectServerInfo projectServerInfo = projectServerInfoMapper.selectByExample(example).get(0);
             ip = projectServerInfo.getIp();
             port = projectServerInfo.getPort();
         } else {
-            basePath = BASE_PATH_LOCAL;
+            basePath = BASE_EXEC_PATH_LOCAL;
             ip = Inet4Address.getLocalHost().getHostAddress();
             port = 10000;
         }
@@ -66,7 +63,7 @@ public final class ClientExecDataGenerateService {
             destFilePath.mkdir();
         }
 
-        String execFileName = destFilePathString + "/jacoco_" + projectName + ".exec";
+        String execFileName = destFilePathString + projectName + ".exec";
         System.out.println("execFileName: " + execFileName);
 
         final FileOutputStream localFile = new FileOutputStream(execFileName);
@@ -91,8 +88,7 @@ public final class ClientExecDataGenerateService {
         record.setProjectname(projectName);
         record.setBasebranch(baseBranch);
         record.setDiffbranch(diffBranch);
-        record.setExecfilepath(execFileName);
-
+        record.setExecfilepath(projectName + ".exec");
 
         record.setCreatetime(new Date());
         record.setUpdatetime(new Date());

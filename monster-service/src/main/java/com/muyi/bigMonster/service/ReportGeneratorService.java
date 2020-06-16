@@ -27,16 +27,14 @@ import java.util.List;
 @Service
 public class ReportGeneratorService {
 
-    private static final String BASE_PATH_SERVER = "/home/jenkins/reports/htmlReports/";
-    private static final String BASE_PATH_LOCAL = "/Users/changfeng/work/jacoco/reports/htmlReports/";
-
+    private static final String BASE_REPORT_PATH_SERVER = "/home/jenkins/reports/htmlReports/";
+    private static final String BASE_REPORT_PATH_LOCAL = "/Users/changfeng/work/jacoco/reports/htmlReports/";
+    private static final String BASE_EXEC_PATH_SERVER = "/home/jenkins/reports/execFiles/";
+    private static final String BASE_EXEC_PATH_LOCAL = "/Users/changfeng/work/jacoco/reports/execFiles/";
     private static final String JAVA_SOURCE_PREFIX = "/src/main/java/";
-
     private int recordId;
     private String title;
-
     private File reportDirectory;
-
     private ExecFileLoader execFileLoader;
 
     @Resource
@@ -50,7 +48,8 @@ public class ReportGeneratorService {
          */
         DiffCoverageReport diffCoverageReport = diffCoverageReportMapper.selectByPrimaryKey(id);
 
-        String executionDataFilePath = diffCoverageReport.getExecfilepath();
+        String executionDataFile = diffCoverageReport.getExecfilepath();
+        String executionDataFilePath;
 
         // 项目文件夹名称作为报告的title
         title = diffCoverageReport.getProjectname();
@@ -58,11 +57,13 @@ public class ReportGeneratorService {
         String basePathReport;
         String basePathClass;
         if (System.getProperty("user.dir").startsWith("/home/jenkins")) {
-            basePathReport = BASE_PATH_SERVER;
+            basePathReport = BASE_REPORT_PATH_SERVER;
             basePathClass = "/home/jenkins/codes/";
+            executionDataFilePath = BASE_EXEC_PATH_SERVER + title + executionDataFile;
         } else {
-            basePathReport = BASE_PATH_LOCAL;
+            basePathReport = BASE_REPORT_PATH_LOCAL;
             basePathClass = "/Users/changfeng/work/code/";
+            executionDataFilePath = BASE_EXEC_PATH_LOCAL + title + executionDataFile;
         }
 
         // 指定class文件的路径和项目路径相同
