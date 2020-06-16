@@ -28,14 +28,17 @@ import java.util.List;
 public class ReportGeneratorService {
 
     private static final String BASE_REPORT_PATH_SERVER = "/home/jenkins/reports/htmlReports/";
-    private static final String BASE_REPORT_PATH_LOCAL = "/Users/changfeng/work/jacoco/reports/htmlReports/";
     private static final String BASE_EXEC_PATH_SERVER = "/home/jenkins/reports/execFiles/";
+
+    private static final String BASE_REPORT_PATH_LOCAL = "/Users/changfeng/work/jacoco/reports/htmlReports/";
     private static final String BASE_EXEC_PATH_LOCAL = "/Users/changfeng/work/jacoco/reports/execFiles/";
+
     private static final String JAVA_SOURCE_PREFIX = "/src/main/java/";
+
+    private ExecFileLoader execFileLoader;
+    private File reportDirectory;
     private int recordId;
     private String title;
-    private File reportDirectory;
-    private ExecFileLoader execFileLoader;
 
     @Resource
     private DiffCoverageReportMapper diffCoverageReportMapper;
@@ -59,11 +62,11 @@ public class ReportGeneratorService {
         if (System.getProperty("user.dir").startsWith("/home/jenkins")) {
             basePathReport = BASE_REPORT_PATH_SERVER;
             basePathClass = "/home/jenkins/codes/";
-            executionDataFilePath = BASE_EXEC_PATH_SERVER + title + executionDataFile;
+            executionDataFilePath = BASE_EXEC_PATH_SERVER + title + "/" + executionDataFile;
         } else {
             basePathReport = BASE_REPORT_PATH_LOCAL;
             basePathClass = "/Users/changfeng/work/code/";
-            executionDataFilePath = BASE_EXEC_PATH_LOCAL + title + executionDataFile;
+            executionDataFilePath = BASE_EXEC_PATH_LOCAL + title + "/" + executionDataFile;
         }
 
         // 指定class文件的路径和项目路径相同
