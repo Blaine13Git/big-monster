@@ -2,10 +2,10 @@
 <configuration>
 
     <!--定义参数 log文件根目录-->
-    <property name="LOGS" value="./logs"/>
+<!--    <property name="LOGS" value="./logs"/>-->
 
     <!--server log dir:/logs/qa-big-monster-->
-<!--    <property name="LOGS" value="/logs/qa-big-monster"/>-->
+    <property name="LOGS" value="/logs/qa-big-monster"/>
 
     <property name="pattern"
               value="[%d{yyyy-MM-dd HH:mm:ss}] [%p] [%10.10t] [%X{sentryTraceId}] [%c{1}.%M] Line:[%L] - %m%n"/>
