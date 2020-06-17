@@ -256,22 +256,22 @@ public class ProjectsService {
      *
      * @param url
      */
-    public String pullRepository(String url, String branchName) { 
+    public String pullRepository(String url, String branchName) {
 
         try {
             File projectFiles = new File(getProjectPath(url));
 
             log.info("pull仓库地址：" + projectFiles.getAbsolutePath());
 
-            Git git = Git.open(projectFiles); // 打开仓库
+            Git git = Git.open(projectFiles);
 
             List<Ref> branchList = git.branchList().call();
 
             List<Ref> collect = branchList.stream().filter(ref -> ref.getName().equals("refs/heads/" + branchName)).collect(Collectors.toList());
 
             if (collect.isEmpty()) {
-                log.info("分支：" + branchName + "不存在");
-                git.checkout().setCreateBranch(true).setName(branchName).call(); // 切换创建分支并切换分支
+                log.info(branchName + " 不存在,创建该分支！");
+                git.checkout().setCreateBranch(true).setName(branchName).call(); // 创建分支并切换分支
             } else {
                 git.checkout().setCreateBranch(false).setName(branchName).call(); // 切换分支
             }
@@ -291,7 +291,6 @@ public class ProjectsService {
      * @param projectName
      */
     public List<String> getBranchesByProjectName(String projectName) {
-
 
         if (projectName.startsWith("git@") || projectName.startsWith("http://")) {
             projectName = projectName.substring(projectName.lastIndexOf("/") + 1, projectName.lastIndexOf("."));
