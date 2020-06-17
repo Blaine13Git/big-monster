@@ -95,4 +95,13 @@ public class WebToolsService {
         List<GoodsIndexData> goodsIndexData = goodsIndexDataMapper.selectByExample(example);
         return goodsIndexData;
     }
+
+    public static void main(String[] args) {
+        String data = "/Users/changfeng/work/jacoco/big-monster/monster-data/target/classes/mybatis-generator.xml";
+        int index1 = data.indexOf("/target/classes/");
+        int index2 = data.substring(0, index1).lastIndexOf("/") + 1;
+        data.substring(0,index2);
+
+        System.out.println();
+    }
 }
