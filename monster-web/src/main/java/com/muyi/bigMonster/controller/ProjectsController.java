@@ -114,7 +114,7 @@ public class ProjectsController {
             url = url.replace("git@", "http://");
         }
 
-        String message = projectsService.fetchRepository(url, "refs/heads/" + branchName);
+        String message = projectsService.fetchRepository(url, branchName);
         if (message.contains("失败")) {
             return Result.Failure(message);
         } else {

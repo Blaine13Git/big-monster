@@ -67,7 +67,7 @@ public class ReportGeneratorService {
             executionDataFilePath = BASE_EXEC_PATH_SERVER + title + "/" + executionDataFile;
         } else {
             basePathReport = BASE_REPORT_PATH_LOCAL;
-            basePathClass = "/Users/changfeng/work/jacoco/";
+            basePathClass = "/Users/changfeng/work/jacoco/codes/";
             executionDataFilePath = BASE_EXEC_PATH_LOCAL + title + "/" + executionDataFile;
         }
 

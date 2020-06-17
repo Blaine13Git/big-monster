@@ -154,7 +154,7 @@ public class ProjectsService {
         if (System.getProperty("user.dir").startsWith("/home/jenkins")) {
             basePath = "/home/jenkins/codes/";//properties.getProperty("basePathServer");
         } else {
-            basePath = "/Users/changfeng/work/code/";//properties.getProperty("basePathLocal");
+            basePath = "/Users/changfeng/work/jacoco/codes/";//properties.getProperty("basePathLocal");
         }
         log.info("basePath >>> " + basePath);
         String projectName = url.substring(url.lastIndexOf("/") + 1, url.lastIndexOf("."));
@@ -256,7 +256,7 @@ public class ProjectsService {
      *
      * @param url
      */
-    public String pullRepository(String url, String branchName) {
+    public String pullRepository(String url, String branchName) { 
 
         try {
             File projectFiles = new File(getProjectPath(url));
@@ -267,7 +267,7 @@ public class ProjectsService {
 
             List<Ref> branchList = git.branchList().call();
 
-            List<Ref> collect = branchList.stream().filter(ref -> ref.toString().contains(branchName)).collect(Collectors.toList());
+            List<Ref> collect = branchList.stream().filter(ref -> ref.getName().equals("refs/heads/" + branchName)).collect(Collectors.toList());
 
             if (collect.isEmpty()) {
                 log.info("分支：" + branchName + "不存在");
