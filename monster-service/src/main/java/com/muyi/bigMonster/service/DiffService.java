@@ -61,7 +61,6 @@ public class DiffService {
         GitTools gitTools = new GitTools(projectPath);
         List<DiffEntry> diffs = null;
         try {
-
             if (gitTools.repository.exactRef(PREFIX + diffBranch) == null) {
                 // first we need to ensure that the remote branch is visible locally
                 Ref ref = gitTools.git.branchCreate().setName(diffBranch).setStartPoint("origin/" + diffBranch).call();
@@ -76,13 +75,6 @@ public class DiffService {
                     .setNewTree(diffBranchTree)
                     .setPathFilter(PathSuffixFilter.create(".java"))
                     .call();
-
-//            System.out.println("\nFound All: " + diffs.size() + " differences");
-//            for (DiffEntry diff : diffs) {
-//                System.out.println("Diff: " + diff.getChangeType() + ": " +
-//                        (diff.getOldPath().equals(diff.getNewPath()) ? diff.getNewPath() : diff.getOldPath() + " -> " + diff.getNewPath()));
-//            }
-
         } catch (IOException e) {
             e.printStackTrace();
         } catch (GitAPIException e) {
@@ -101,12 +93,6 @@ public class DiffService {
     public List<DiffEntry> getModify(String projectPath, String baseBranch, String diffBranch) {
         List<DiffEntry> diffEntries = getDiffEntriesByBranch(projectPath, baseBranch, diffBranch);
         List<DiffEntry> modifyList = diffEntries.stream().filter(diffEntry -> diffEntry.getChangeType().toString().equals("MODIFY")).collect(Collectors.toList());
-
-//        System.out.println("\nFound modify: " + modifyList.size() + " differences");
-//        for (DiffEntry diff : modifyList) {
-//            System.out.println("Modify: " + diff.getNewPath());
-//        }
-
         return modifyList;
     }
 
@@ -120,12 +106,6 @@ public class DiffService {
     public List<DiffEntry> getAdd(String projectPath, String baseBranch, String diffBranch) {
         List<DiffEntry> diffEntries = getDiffEntriesByBranch(projectPath, baseBranch, diffBranch);
         List<DiffEntry> addList = diffEntries.stream().filter(diffEntry -> diffEntry.getChangeType().toString().equals("ADD")).collect(Collectors.toList());
-
-//        System.out.println("\nFound add: " + addList.size() + " differences");
-//        for (DiffEntry diff : addList) {
-//            System.out.println("Add: " + diff.getNewPath());
-//        }
-
         return addList;
     }
 
@@ -139,12 +119,6 @@ public class DiffService {
     public List<DiffEntry> getDelete(String projectPath, String baseBranch, String diffBranch) {
         List<DiffEntry> diffEntries = getDiffEntriesByBranch(projectPath, baseBranch, diffBranch);
         List<DiffEntry> deleteList = diffEntries.stream().filter(diffEntry -> diffEntry.getChangeType().toString().equals("DELETE")).collect(Collectors.toList());
-
-//        System.out.println("\nFound delete: " + deleteList.size() + " differences");
-//        for (DiffEntry diff : deleteList) {
-//            System.out.println("Delete: " + diff.getNewPath());
-//        }
-
         return deleteList;
     }
 
@@ -163,7 +137,6 @@ public class DiffService {
         for (DiffEntry diff : notDeleteList) {
             System.out.println("Not Delete: " + diff.getChangeType().toString() + " " + diff.getNewPath());
         }
-
         return notDeleteList;
     }
 
@@ -188,7 +161,7 @@ public class DiffService {
         DiffService diffService = new DiffService();
 //        diffService.getNotDelete("/Users/changfeng/work/code/webtools/", "master", "home");
 
-        diffService.getNotDelete(System.getProperty("user.dir"),"master","test");
+        diffService.getNotDelete(System.getProperty("user.dir"), "master", "test");
     }
 
 }

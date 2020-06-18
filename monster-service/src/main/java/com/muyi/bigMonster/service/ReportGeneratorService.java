@@ -3,6 +3,7 @@ package com.muyi.bigMonster.service;
 import com.muyi.bigMonster.mapper.daily1.DiffCoverageReportMapper;
 import com.muyi.bigMonster.model.daily1.DiffCoverageReport;
 import lombok.extern.slf4j.Slf4j;
+import org.eclipse.jgit.diff.DiffEntry;
 import org.jacoco.core.analysis.Analyzer;
 import org.jacoco.core.analysis.CoverageBuilder;
 import org.jacoco.core.analysis.IBundleCoverage;
@@ -14,6 +15,7 @@ import org.jacoco.report.FileMultiReportOutput;
 import org.jacoco.report.IReportVisitor;
 import org.jacoco.report.MultiSourceFileLocator;
 import org.jacoco.report.html.HTMLFormatter;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -44,6 +46,9 @@ public class ReportGeneratorService {
 
     @Resource
     private DiffCoverageReportMapper diffCoverageReportMapper;
+
+    @Autowired
+    private DiffService diffService;
 
     // 报告生成3步走
     public void create(int id) throws IOException {
@@ -91,6 +96,20 @@ public class ReportGeneratorService {
         // 3、创建报告
         createReport(bundleCoverage, classesPath);
 
+        // 4、部分信息入库
+        int diffSize = diffService.getDiffEntriesByBranch(classesPath, baseBranch, diffBranch).size();
+        int addSize = diffService.getAdd(classesPath, baseBranch, diffBranch).size();
+        int modifySize = diffService.getModify(classesPath, baseBranch, diffBranch).size();
+        int delSize = diffService.getDelete(classesPath, baseBranch, diffBranch).size();
+
+        DiffCoverageReport record = new DiffCoverageReport();
+        record.setDiffclassfilenumber(diffSize + "");
+        record.setAddfilenumber(addSize + "");
+        record.setModifyfilenumber(modifySize + "");
+        record.setDeletefilenumber(delSize + "");
+        record.withId(id);
+
+        diffCoverageReportMapper.updateByPrimaryKeySelective(record);
     }
 
     // 加载exec文件
