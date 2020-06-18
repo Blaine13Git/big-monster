@@ -340,7 +340,7 @@ public class ProjectsService {
         String pomFile = codeBaseDir + projectName + "/pom.xml";
         InvocationRequest request = new DefaultInvocationRequest();
         request.setPomFile(new File(pomFile));
-        request.setGoals(Collections.singletonList("compile"));
+        request.setGoals(Collections.singletonList("package"));
 
         Invoker invoker = new DefaultInvoker();
         invoker.setMavenHome(new File(mavenHome));
