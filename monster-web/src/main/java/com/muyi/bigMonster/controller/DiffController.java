@@ -1,20 +1,26 @@
 package com.muyi.bigMonster.controller;
 
+import com.muyi.bigMonster.model.daily1.DiffCoverageReport;
+import com.muyi.bigMonster.result.PageResult;
 import com.muyi.bigMonster.result.Result;
 import com.muyi.bigMonster.service.DiffService;
+import com.muyi.bigMonster.service.ProjectsService;
 import org.eclipse.jgit.diff.DiffEntry;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import javax.annotation.Resource;
 import java.util.List;
 
 
 @RestController
-@RequestMapping("diff")
+@RequestMapping("diffBranch")
 public class DiffController {
 
-    @Resource
+    @Autowired
     private DiffService diffService;
+
+    @Autowired
+    private ProjectsService projectsService;
 
     /**
      * 获取总 diff 的 class
@@ -83,6 +89,24 @@ public class DiffController {
 
         List<DiffEntry> delClassList = diffService.getDelete(projectPath, baseBranch, diffBranch);
         return Result.Success(delClassList);
+    }
+
+    @PostMapping("getDiffRecord")
+    @ResponseBody
+    public Result getDiffRecordByParams(@RequestParam String projectName,
+                                        @RequestParam String baseBranch,
+                                        @RequestParam String diffBranch,
+                                        @RequestParam int currentPage,
+                                        @RequestParam int pageSize) {
+
+
+        List<DiffCoverageReport> allCoverageReports = projectsService.getDiffRecordByParams(projectName, baseBranch, diffBranch, currentPage, pageSize);
+
+        PageResult pageResult = new PageResult();
+        pageResult.setTotal(projectsService.totalCoverageReport(projectName, baseBranch, diffBranch));
+        pageResult.setList(allCoverageReports);
+
+        return Result.Success(pageResult);
     }
 
 

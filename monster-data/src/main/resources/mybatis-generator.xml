@@ -5,7 +5,51 @@
 
 <generatorConfiguration>
 
-    <context id="daily1" targetRuntime="MyBatis3">
+    <!--    <context id="daily1" targetRuntime="MyBatis3">-->
+    <!--        <plugin type="org.mybatis.generator.plugins.FluentBuilderMethodsPlugin"/>-->
+    <!--        <plugin type="org.mybatis.generator.plugins.ToStringPlugin"/>-->
+    <!--        <plugin type="org.mybatis.generator.plugins.SerializablePlugin"/>-->
+    <!--        <plugin type="org.mybatis.generator.plugins.RowBoundsPlugin"/>-->
+
+    <!--        &lt;!&ndash;不要注释&ndash;&gt;-->
+    <!--        <commentGenerator>-->
+    <!--            <property name="suppressAllComments" value="true"/>-->
+    <!--        </commentGenerator>-->
+
+    <!--        &lt;!&ndash; 配置数据库连接 driverClass="org.gjt.mm.mysql.Driver" &ndash;&gt;-->
+    <!--        <jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"-->
+    <!--                        connectionURL="jdbc:mysql://rm-bp11d50m31tbdlv0h2o.mysql.rds.aliyuncs.com:3306/qamanager"-->
+    <!--                        userId="muyi"-->
+    <!--                        password="k2Tp4SF834phWKO1">-->
+    <!--        </jdbcConnection>-->
+
+    <!--        &lt;!&ndash; 生成模型-model-的包名和位置&ndash;&gt;-->
+    <!--        <javaModelGenerator targetPackage="com.muyi.bigMonster.model.daily1"-->
+    <!--                            targetProject="src/main/java">-->
+    <!--            <property name="enableSubPackages" value="true"/>-->
+    <!--            <property name="trimStrings" value="true"/>-->
+    <!--        </javaModelGenerator>-->
+
+    <!--        &lt;!&ndash; 生成映射文件-Mapper.xml-的包名和位置&ndash;&gt;-->
+    <!--        <sqlMapGenerator targetPackage="mapper.daily1"-->
+    <!--                         targetProject="src/main/resources">-->
+    <!--            <property name="enableSubPackages" value="true"/>-->
+    <!--        </sqlMapGenerator>-->
+
+    <!--        &lt;!&ndash; 数据访问对象-DAO-Java Mapper-生成的包名和位置&ndash;&gt;-->
+    <!--        <javaClientGenerator type="ANNOTATEDMAPPER"-->
+    <!--                             targetPackage="com.muyi.bigMonster.mapper.daily1"-->
+    <!--                             targetProject="src/main/java">-->
+    <!--            <property name="enableSubPackages" value="true"/>-->
+    <!--        </javaClientGenerator>-->
+
+    <!--        <table tableName="project_server_info"/>-->
+    <!--        <table tableName="complex_metrics_project_info"/>-->
+    <!--        <table tableName="diff_coverage_report"/>-->
+
+    <!--    </context>-->
+
+    <context id="daily3" targetRuntime="MyBatis3">
         <plugin type="org.mybatis.generator.plugins.FluentBuilderMethodsPlugin"/>
         <plugin type="org.mybatis.generator.plugins.ToStringPlugin"/>
         <plugin type="org.mybatis.generator.plugins.SerializablePlugin"/>
@@ -18,68 +62,69 @@
 
         <!-- 配置数据库连接 driverClass="org.gjt.mm.mysql.Driver" -->
         <jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
-                        connectionURL="jdbc:mysql://rm-bp11d50m31tbdlv0h2o.mysql.rds.aliyuncs.com:3306/qamanager"
+                        connectionURL="jdbc:mysql://rm-bp1td245ijdcjcrz51o.mysql.rds.aliyuncs.com:3306/search_platform"
                         userId="muyi"
                         password="k2Tp4SF834phWKO1">
         </jdbcConnection>
 
         <!-- 生成模型-model-的包名和位置-->
-        <javaModelGenerator targetPackage="com.muyi.bigMonster.model.daily1"
+        <javaModelGenerator targetPackage="com.muyi.bigMonster.model.daily3"
                             targetProject="src/main/java">
             <property name="enableSubPackages" value="true"/>
             <property name="trimStrings" value="true"/>
         </javaModelGenerator>
 
         <!-- 生成映射文件-Mapper.xml-的包名和位置-->
-        <sqlMapGenerator targetPackage="mapper.daily1"
+        <sqlMapGenerator targetPackage="mapper.daily3"
                          targetProject="src/main/resources">
             <property name="enableSubPackages" value="true"/>
         </sqlMapGenerator>
 
         <!-- 数据访问对象-DAO-Java Mapper-生成的包名和位置-->
         <javaClientGenerator type="ANNOTATEDMAPPER"
-                             targetPackage="com.muyi.bigMonster.mapper.daily1"
+                             targetPackage="com.muyi.bigMonster.mapper.daily3"
                              targetProject="src/main/java">
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
 
-        <table tableName="diff_coverage_report"/>
+        <table tableName="goods_index_data"/>
 
     </context>
 
+
     <!--daily2drds数据源-->
-    <context id="daily2drds" targetRuntime="MyBatis3">
+    <!--<context id="daily2drds" targetRuntime="MyBatis3">
         <plugin type="org.mybatis.generator.plugins.FluentBuilderMethodsPlugin"/>
         <plugin type="org.mybatis.generator.plugins.ToStringPlugin"/>
         <plugin type="org.mybatis.generator.plugins.SerializablePlugin"/>
         <plugin type="org.mybatis.generator.plugins.RowBoundsPlugin"/>
 
-        <!--不要注释-->
+        &lt;!&ndash;不要注释&ndash;&gt;
         <commentGenerator>
             <property name="suppressAllComments" value="true"/>
         </commentGenerator>
 
-        <!-- 配置数据库连接 driverClass="org.gjt.mm.mysql.Driver" -->
+        &lt;!&ndash; 配置数据库连接 driverClass="org.gjt.mm.mysql.Driver" &ndash;&gt;
         <jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
                         connectionURL="jdbc:mysql://drdshbga3gjsy83cpublic.drds.aliyuncs.com:3306/promotion_platform"
                         userId="muyi"
                         password="k2Tp4SF834phWKO1">
         </jdbcConnection>
 
-        <!-- 生成模型-model-的包名和位置-->
+        &lt;!&ndash; 生成模型-model-的包名和位置&ndash;&gt;
         <javaModelGenerator targetPackage="com.muyi.bigMonster.model.daily2drds"
                             targetProject="src/main/java">
             <property name="enableSubPackages" value="true"/>
             <property name="trimStrings" value="true"/>
         </javaModelGenerator>
 
-        <!-- 生成映射文件-Mapper.xml-的包名和位置-->
+        &lt;!&ndash; 生成映射文件-Mapper.xml-的包名和位置&ndash;&gt;
         <sqlMapGenerator targetPackage="mapper.daily2drds"
                          targetProject="src/main/resources">
             <property name="enableSubPackages" value="true"/>
         </sqlMapGenerator>
 
-        <!-- 数据访问对象-DAO-Java Mapper-生成的包名和位置-->
+        &lt;!&ndash; 数据访问对象-DAO-Java Mapper-生成的包名和位置&ndash;&gt;
         <javaClientGenerator type="ANNOTATEDMAPPER"
                              targetPackage="com.muyi.bigMonster.mapper.daily2drds"
                              targetProject="src/main/java">
@@ -88,6 +133,6 @@
 
         <table tableName="p_buyer_resource"/>
 
-    </context>
+    </context>-->
 
 </generatorConfiguration>

@@ -1,7 +1,12 @@
 package com.muyi.bigMonster.service;
 
+import com.muyi.bigMonster.mapper.daily1.DiffCoverageReportMapper;
+import com.muyi.bigMonster.model.daily1.DiffCoverageReport;
 import lombok.extern.slf4j.Slf4j;
-import org.jacoco.core.analysis.*;
+import org.jacoco.core.analysis.Analyzer;
+import org.jacoco.core.analysis.CoverageBuilder;
+import org.jacoco.core.analysis.IBundleCoverage;
+import org.jacoco.core.analysis.ICounter;
 import org.jacoco.core.data.ExecutionDataStore;
 import org.jacoco.core.tools.ExecFileLoader;
 import org.jacoco.report.DirectorySourceFileLocator;
@@ -11,39 +16,68 @@ import org.jacoco.report.MultiSourceFileLocator;
 import org.jacoco.report.html.HTMLFormatter;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-
+/**
+ * test
+ */
 @Slf4j
 @Service
 public class ReportGeneratorService {
 
+    private static final String BASE_REPORT_PATH_SERVER = "/home/jenkins/reports/htmlReports/";
+    private static final String BASE_EXEC_PATH_SERVER = "/home/jenkins/reports/execFiles/";
+
+    private static final String BASE_REPORT_PATH_LOCAL = "/Users/changfeng/work/jacoco/reports/htmlReports/";
+    private static final String BASE_EXEC_PATH_LOCAL = "/Users/changfeng/work/jacoco/reports/execFiles/";
+
     private static final String JAVA_SOURCE_PREFIX = "/src/main/java/";
 
+    private ExecFileLoader execFileLoader;
+    private File reportDirectory;
+    private int recordId;
     private String title;
 
-    private File reportDirectory;
-
-    private ExecFileLoader execFileLoader;
+    @Resource
+    private DiffCoverageReportMapper diffCoverageReportMapper;
 
     // 报告生成3步走
-    public void create(String executionDataFilePath, String projectPath) throws IOException {
-
+    public void create(int id) throws IOException {
+        recordId = id;
         /*
         ================数据准备================
          */
+        DiffCoverageReport diffCoverageReport = diffCoverageReportMapper.selectByPrimaryKey(id);
+        String executionDataFile = diffCoverageReport.getExecfilepath();
+        String baseBranch = diffCoverageReport.getBasebranch();
+        String diffBranch = diffCoverageReport.getDiffbranch();
+
+        String executionDataFilePath;
 
         // 项目文件夹名称作为报告的title
-        title = new File(projectPath).getName();
+        title = diffCoverageReport.getProjectname();
+
+        String basePathReport;
+        String basePathClass;
+        if (System.getProperty("user.dir").startsWith("/home/jenkins")) {
+            basePathReport = BASE_REPORT_PATH_SERVER;
+            basePathClass = "/home/jenkins/codes/";
+            executionDataFilePath = BASE_EXEC_PATH_SERVER + title + "/" + executionDataFile;
+        } else {
+            basePathReport = BASE_REPORT_PATH_LOCAL;
+            basePathClass = "/Users/changfeng/work/jacoco/codes/";
+            executionDataFilePath = BASE_EXEC_PATH_LOCAL + title + "/" + executionDataFile;
+        }
 
         // 指定class文件的路径和项目路径相同
-        String classesPath = projectPath;
+        String classesPath = basePathClass + title;
 
         // 指定报告存放的位置
-        reportDirectory = new File(projectPath + "/coverageReport");
+        reportDirectory = new File(basePathReport + "/" + title);
         if (!reportDirectory.exists()) {
             reportDirectory.mkdir();
         }
@@ -52,10 +86,10 @@ public class ReportGeneratorService {
         loadExecutionData(executionDataFilePath);
 
         // 2、分析
-        final IBundleCoverage bundleCoverage = analyzeStructure(classesPath);
+        final IBundleCoverage bundleCoverage = analyzeStructure(classesPath, baseBranch, diffBranch);
 
         // 3、创建报告
-        createReport(bundleCoverage, projectPath);
+        createReport(bundleCoverage, classesPath);
 
     }
 
@@ -67,7 +101,7 @@ public class ReportGeneratorService {
     }
 
     // 分析
-    private IBundleCoverage analyzeStructure(String classesPath) throws IOException {
+    private IBundleCoverage analyzeStructure(String classesPath, String baseBranch, String diffBranch) throws IOException {
 
         File classesDirectory = new File(classesPath);
 
@@ -77,7 +111,7 @@ public class ReportGeneratorService {
 
         final Analyzer analyzer = new Analyzer(executionDataStore, coverageBuilder);
 
-        analyzer.analyzeAll(classesDirectory, "master", "test");
+        analyzer.analyzeAll(classesDirectory, baseBranch, diffBranch);
 
 /*
         for (final IClassCoverage cc : coverageBuilder.getClasses()) {
@@ -116,6 +150,13 @@ public class ReportGeneratorService {
 
         visitor.visitBundle(bundleCoverage, sourceLocator);
         visitor.visitEnd();
+
+        // 更新生成的报告
+        DiffCoverageReport record = new DiffCoverageReport();
+        record.setReporturl(title + "/index.html");
+        record.withId(recordId);
+
+        diffCoverageReportMapper.updateByPrimaryKeySelective(record);
 
     }
 

@@ -14,7 +14,9 @@ dubbo:
     name: big-monster
     author: muyi
   registry:
+    protocol: zookeeper
     address: 47.99.2.51:2181,47.99.2.51:2182,47.99.2.51:2183
+    register: false
   consumer:
     timeout: 5000
 
@@ -25,12 +27,17 @@ spring:
   datasource:
     daily1:
       driver-class-name: com.mysql.cj.jdbc.Driver
-      jdbc-url: jdbc:mysql://rm-bp11d50m31tbdlv0h2o.mysql.rds.aliyuncs.com:3306/zebra
+      jdbc-url: jdbc:mysql://rm-bp11d50m31tbdlv0h2o.mysql.rds.aliyuncs.com:3306/qamanager
       username: muyi
       password: k2Tp4SF834phWKO1
     daily2drds:
       driver-class-name: com.mysql.cj.jdbc.Driver
       jdbc-url: jdbc:mysql://drdshbga3gjsy83cpublic.drds.aliyuncs.com:3306/promotion_platform
+      username: muyi
+      password: k2Tp4SF834phWKO1
+    daily3:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      jdbc-url: jdbc:mysql://rm-bp1td245ijdcjcrz51o.mysql.rds.aliyuncs.com:3306/search_platform
       username: muyi
       password: k2Tp4SF834phWKO1
 

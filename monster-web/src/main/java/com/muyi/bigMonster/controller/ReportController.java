@@ -19,39 +19,38 @@ public class ReportController {
     private ReportGeneratorService reportGeneratorService;
 
     /**
-     * @param ip
-     * @param port
-     * @param destFilePath
+     * @param projectName
+     * @param baseBranch
+     * @param diffBranch
      * @return
      */
     @PostMapping("createExec")
     @ResponseBody
-    public Result createExec(String ip, Integer port, String destFilePath) {
+    public Result createExec(@RequestParam String projectName,
+                             @RequestParam String baseBranch,
+                             @RequestParam String diffBranch) {
         try {
-            clientExecDataGenerateService.execDataGenerate(ip, port, destFilePath);
+            clientExecDataGenerateService.execDataGenerate(projectName, baseBranch, diffBranch);
         } catch (IOException e) {
             e.printStackTrace();
-            return Result.Failure("failure");
+            return Result.Failure("Failure");
         }
-
-        return Result.Success("success");
+        return Result.Success("Success");
     }
 
     /**
-     * @param executionDataFilePath
-     * @param projectFilePath
+     * @param id
      * @return
      */
     @PostMapping("createReport")
     @ResponseBody
-    public Result createReport(String executionDataFilePath, String projectFilePath) {
+    public Result createReport(int id) {
         try {
-            reportGeneratorService.create(executionDataFilePath, projectFilePath);
+            reportGeneratorService.create(id);
         } catch (IOException e) {
             e.printStackTrace();
             return Result.Failure("failure");
         }
-
         return Result.Success("success");
     }
 

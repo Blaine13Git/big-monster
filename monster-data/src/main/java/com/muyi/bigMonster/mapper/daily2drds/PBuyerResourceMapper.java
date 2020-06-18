@@ -174,4 +174,6 @@ public interface PBuyerResourceMapper {
     //
     @Update({"update p_buyer_resource set end_time = #{endTime} where id = #{id}"})
     int updateById(Integer id, String endTime);
+
+
 }
