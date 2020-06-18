@@ -52,8 +52,10 @@ public class ReportGeneratorService {
         ================数据准备================
          */
         DiffCoverageReport diffCoverageReport = diffCoverageReportMapper.selectByPrimaryKey(id);
-
         String executionDataFile = diffCoverageReport.getExecfilepath();
+        String baseBranch = diffCoverageReport.getBasebranch();
+        String diffBranch = diffCoverageReport.getDiffbranch();
+
         String executionDataFilePath;
 
         // 项目文件夹名称作为报告的title
@@ -84,7 +86,7 @@ public class ReportGeneratorService {
         loadExecutionData(executionDataFilePath);
 
         // 2、分析
-        final IBundleCoverage bundleCoverage = analyzeStructure(classesPath);
+        final IBundleCoverage bundleCoverage = analyzeStructure(classesPath, baseBranch, diffBranch);
 
         // 3、创建报告
         createReport(bundleCoverage, classesPath);
@@ -99,7 +101,7 @@ public class ReportGeneratorService {
     }
 
     // 分析
-    private IBundleCoverage analyzeStructure(String classesPath) throws IOException {
+    private IBundleCoverage analyzeStructure(String classesPath, String baseBranch, String diffBranch) throws IOException {
 
         File classesDirectory = new File(classesPath);
 
@@ -109,7 +111,7 @@ public class ReportGeneratorService {
 
         final Analyzer analyzer = new Analyzer(executionDataStore, coverageBuilder);
 
-        analyzer.analyzeAll(classesDirectory, "master", "test");
+        analyzer.analyzeAll(classesDirectory, baseBranch, diffBranch);
 
 /*
         for (final IClassCoverage cc : coverageBuilder.getClasses()) {
