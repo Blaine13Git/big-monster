@@ -49,6 +49,12 @@
             <version>8.0.1</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.apache.maven.shared</groupId>
+            <artifactId>maven-invoker</artifactId>
+            <version>3.0.1</version>
+        </dependency>
+
         <!-- ********************业务依赖******************** -->
 
         <!--直播依赖-->
