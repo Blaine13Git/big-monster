@@ -328,10 +328,13 @@ public class ProjectsService {
      */
     public int compileProjectRepository(String projectName) {
         String codeBaseDir;
+        String mavenHome;
         if (System.getProperty("user.dir").equals("/home/jenkins")) {
             codeBaseDir = "/home/jenkins/codes/";
+            mavenHome = "/var/lib/maven/apache-maven-3.5.4";
         } else {
             codeBaseDir = "/Users/changfeng/work/jacoco/codes/";
+            mavenHome = "/Users/changfeng/Programs/apache-maven-3.6.1";
         }
 
         String pomFile = codeBaseDir + projectName + "/pom.xml";
@@ -339,7 +342,6 @@ public class ProjectsService {
         request.setPomFile(new File(pomFile));
         request.setGoals(Collections.singletonList("compile"));
 
-        String mavenHome = "/Users/changfeng/Programs/apache-maven-3.6.1";
         Invoker invoker = new DefaultInvoker();
         invoker.setMavenHome(new File(mavenHome));
 
