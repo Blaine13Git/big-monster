@@ -16,7 +16,7 @@
         <dependency>
             <groupId>org.jacoco</groupId>
             <artifactId>org.jacoco.core</artifactId>
-            <version>13.1.14</version>
+            <version>13.1.15</version>
         </dependency>
 
         <dependency>
@@ -56,7 +56,7 @@
         </dependency>
 
         <!-- ********************业务依赖******************** -->
-
+        <!--暂时不接入-->
 
 
         <!-- ********************GGJ基础依赖******************** -->

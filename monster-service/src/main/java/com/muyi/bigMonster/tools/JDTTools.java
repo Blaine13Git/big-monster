@@ -17,7 +17,6 @@ import java.util.Arrays;
  */
 public class JDTTools {
 
-
     public static void main(String[] args) {
         JDTTools tools = new JDTTools();
         String fileName = "/Users/changfeng/work/code/big-monster/monster-service/src/main/java/com/muyi/bigMonster/tools/ForASTTest.java";
