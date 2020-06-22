@@ -4,14 +4,13 @@ import com.muyi.bigMonster.tools.GitTools;
 import lombok.extern.slf4j.Slf4j;
 import org.eclipse.jgit.api.errors.GitAPIException;
 import org.eclipse.jgit.diff.DiffEntry;
-import org.eclipse.jgit.lib.ObjectReader;
-import org.eclipse.jgit.lib.Ref;
-import org.eclipse.jgit.lib.Repository;
+import org.eclipse.jgit.lib.*;
 import org.eclipse.jgit.revwalk.RevCommit;
 import org.eclipse.jgit.revwalk.RevTree;
 import org.eclipse.jgit.revwalk.RevWalk;
 import org.eclipse.jgit.treewalk.AbstractTreeIterator;
 import org.eclipse.jgit.treewalk.CanonicalTreeParser;
+import org.eclipse.jgit.treewalk.TreeWalk;
 import org.eclipse.jgit.treewalk.filter.PathSuffixFilter;
 import org.springframework.stereotype.Service;
 
@@ -28,6 +27,11 @@ import java.util.stream.Collectors;
 public class DiffService {
 
     private static final String PREFIX = "refs/heads/";
+    private GitTools gitTools;
+
+    public DiffService() {
+
+    }
 
     /**
      * @param repository 代码仓库
@@ -58,7 +62,7 @@ public class DiffService {
      * @return Diff DiffEntry list
      */
     public List<DiffEntry> getDiffEntriesByBranch(String projectPath, String baseBranch, String diffBranch) {
-        GitTools gitTools = new GitTools(projectPath);
+        gitTools = new GitTools(projectPath);
         List<DiffEntry> diffs = null;
         try {
             if (gitTools.repository.exactRef(PREFIX + diffBranch) == null) {
@@ -154,6 +158,29 @@ public class DiffService {
             }
         }
         return false;
+    }
+
+    /**
+     * 获取指定分支--指定文件de内容
+     *
+     * @param projectPath
+     * @param branchName
+     * @param fileName
+     * @return
+     * @throws Exception
+     */
+    public String getFileContentByBranch(String projectPath, String branchName, String fileName) throws Exception {
+        gitTools = new GitTools(projectPath);
+        Ref branch = gitTools.repository.exactRef("refs/heads/" + branchName);
+        ObjectId objId = branch.getObjectId();
+        RevWalk walk = new RevWalk(gitTools.repository);
+        RevTree tree = walk.parseTree(objId);
+        TreeWalk treeWalk = TreeWalk.forPath(gitTools.repository, fileName, tree);
+        ObjectId objectId = treeWalk.getObjectId(0);
+        ObjectLoader loader = gitTools.repository.open(objectId);
+        byte[] bytes = loader.getBytes();
+        walk.dispose();
+        return new String(bytes);
     }
 
 
