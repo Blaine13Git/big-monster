@@ -85,7 +85,7 @@ public class JDTTools {
      * @return
      * @throws Exception
      */
-    public MethodDeclaration[] getMethods(String javaSource) throws Exception {
+    public MethodDeclaration[] getMethods(String javaSource) {
         TypeDeclaration typeDeclaration = getClass(javaSource);
         MethodDeclaration[] methods = typeDeclaration.getMethods();
         Arrays.stream(methods).forEach(methodDeclaration -> System.out.println("Method Name: " + methodDeclaration.getName()));
@@ -107,6 +107,7 @@ public class JDTTools {
         return md5String;
     }
 
+
     /**
      * @param fileName
      * @return
@@ -120,7 +121,6 @@ public class JDTTools {
         } catch (Exception e) {
 
         }
-
         return sourceString;
     }
 
