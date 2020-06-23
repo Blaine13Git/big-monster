@@ -28,9 +28,7 @@ public class ReportController {
     @ResponseBody
     public Result createExec(@RequestParam String projectName,
                              @RequestParam String baseBranch,
-                             @RequestParam String diffBranch,
-                             @RequestParam String execFileName,
-                             @RequestParam String common) {
+                             @RequestParam String diffBranch) {
         try {
             clientExecDataGenerateService.execDataGenerate(projectName, baseBranch, diffBranch);
         } catch (IOException e) {

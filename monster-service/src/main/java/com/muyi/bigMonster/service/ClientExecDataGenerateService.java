@@ -16,6 +16,8 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.Inet4Address;
+import java.net.Inet6Address;
+import java.net.InetAddress;
 import java.net.Socket;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -52,9 +54,12 @@ public final class ClientExecDataGenerateService {
             port = projectServerInfo.getPort();
         } else {
             basePath = BASE_EXEC_PATH_LOCAL;
-            ip = Inet4Address.getLocalHost().getHostAddress();
+            ip = "localhost";
             port = 10000;
         }
+
+        System.out.println("ip:" + ip);
+        System.out.println("port:" + port);
 
         String destFilePathString = basePath + projectName;
         File destFilePath = new File(destFilePathString);
@@ -98,12 +103,15 @@ public final class ClientExecDataGenerateService {
 
 
     public static void main(String[] args) throws Exception {
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+//        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 //        simpleDateFormat.setTimeZone(TimeZone.getTimeZone("Asia/Shanghai"));
+//
+//        Date now = new Date();
+//        String format = simpleDateFormat.format(now);
+//        System.out.println(format);
 
-        Date now = new Date();
-        String format = simpleDateFormat.format(now);
-        System.out.println(format);
+
+        System.out.println(InetAddress.getLocalHost().getHostAddress());
 
     }
 

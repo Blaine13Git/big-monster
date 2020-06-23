@@ -1,0 +1,414 @@
+2020-06-06 00:18:15,095 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-06-06 00:18:17,118 WARN com.zaxxer.hikari.pool.HikariPool$HouseKeeper [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h47m48s869ms).
+2020-06-06 00:18:30,083 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-06-06 00:18:33,235 ERROR com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] 连接出现异常:Operation timed out,e:{}
+java.io.IOException: Operation timed out
+	at sun.nio.ch.FileDispatcherImpl.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:39)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:253)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1133)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:350)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:148)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at java.lang.Thread.run(Thread.java:748)
+2020-06-06 00:18:33,876 WARN com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client->server 通道断开了
+2020-06-06 02:06:38,058 WARN com.zaxxer.hikari.pool.HikariPool$HouseKeeper [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h47m50s929ms).
+2020-06-06 02:06:51,007 WARN com.ggj.platform.xconf.client.netty.NettyClient [XconfClient-ScheduleSync-pool-0] serverChannel isn't active
+2020-06-06 02:06:51,023 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client->server 通道连接成功
+2020-06-06 02:06:51,023 INFO com.ggj.platform.xconf.client.netty.channel.ServerChannelHolder [XconfClient-ScheduleSync-pool-0] connect 120.55.196.18:16520 server success
+2020-06-06 02:06:51,027 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-06-06 02:06:51,034 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-06-06 02:06:51,035 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-06-06 03:54:54,949 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-06-06 03:54:56,981 WARN com.zaxxer.hikari.pool.HikariPool$HouseKeeper [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h47m48s913ms).
+2020-06-06 03:55:09,946 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-06-06 03:55:13,380 ERROR com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] 连接出现异常:Operation timed out,e:{}
+java.io.IOException: Operation timed out
+	at sun.nio.ch.FileDispatcherImpl.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:39)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:253)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1133)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:350)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:148)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at java.lang.Thread.run(Thread.java:748)
+2020-06-06 03:55:13,385 WARN com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client->server 通道断开了
+2020-06-06 05:43:17,914 WARN com.zaxxer.hikari.pool.HikariPool$HouseKeeper [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h47m50s927ms).
+2020-06-06 05:43:30,880 WARN com.ggj.platform.xconf.client.netty.NettyClient [XconfClient-ScheduleSync-pool-1] serverChannel isn't active
+2020-06-06 05:43:30,898 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client->server 通道连接成功
+2020-06-06 05:43:30,898 INFO com.ggj.platform.xconf.client.netty.channel.ServerChannelHolder [XconfClient-ScheduleSync-pool-1] connect 120.55.196.18:16520 server success
+2020-06-06 05:43:30,901 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-06-06 05:43:30,908 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:483
+2020-06-06 05:43:30,941 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-06-06 06:04:13,844 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-06-06 06:04:15,821 WARN com.zaxxer.hikari.pool.HikariPool$HouseKeeper [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=20m27s897ms).
+2020-06-06 06:04:28,835 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-06-06 06:04:31,887 ERROR com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] 连接出现异常:Operation timed out,e:{}
+java.io.IOException: Operation timed out
+	at sun.nio.ch.FileDispatcherImpl.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:39)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:253)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1133)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:350)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:148)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at java.lang.Thread.run(Thread.java:748)
+2020-06-06 06:04:31,902 WARN com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client->server 通道断开了
+2020-06-06 07:52:04,301 WARN com.zaxxer.hikari.pool.HikariPool$HouseKeeper [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h47m48s480ms).
+2020-06-06 07:52:47,313 WARN com.ggj.platform.xconf.client.netty.NettyClient [XconfClient-ScheduleSync-pool-1] serverChannel isn't active
+2020-06-06 07:52:47,351 INFO com.ggj.platform.xconf.client.netty.channel.ServerChannelHolder [XconfClient-ScheduleSync-pool-1] connect 120.55.196.18:16520 server success
+2020-06-06 07:52:47,351 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client->server 通道连接成功
+2020-06-06 07:52:47,358 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-06-06 07:52:47,365 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-06-06 07:52:47,367 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-06-06 09:15:09,217 WARN com.zaxxer.hikari.pool.HikariPool$HouseKeeper [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h22m34s906ms).
+2020-06-06 09:15:37,266 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-06-06 09:15:52,258 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-06-06 09:15:55,291 ERROR com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] 连接出现异常:Operation timed out,e:{}
+java.io.IOException: Operation timed out
+	at sun.nio.ch.FileDispatcherImpl.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:39)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:253)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1133)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:350)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:148)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at java.lang.Thread.run(Thread.java:748)
+2020-06-06 09:15:55,295 WARN com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client->server 通道断开了
+2020-06-06 09:16:52,261 WARN com.ggj.platform.xconf.client.netty.NettyClient [XconfClient-ScheduleSync-pool-1] serverChannel isn't active
+2020-06-06 09:16:52,278 INFO com.ggj.platform.xconf.client.netty.channel.ServerChannelHolder [XconfClient-ScheduleSync-pool-1] connect 120.55.196.18:16520 server success
+2020-06-06 09:16:52,278 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client->server 通道连接成功
+2020-06-06 09:16:52,282 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-06-06 09:16:52,293 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-06-06 09:16:52,294 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-06-06 09:17:37,301 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-06-06 09:17:52,294 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-06-06 09:17:52,308 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-06-06 09:17:52,310 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-06-06 09:18:37,316 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-06-06 09:18:52,310 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-06-06 09:18:52,320 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-06-06 09:18:52,322 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-06-06 09:19:37,333 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-06-06 09:19:52,317 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-06-06 09:19:52,328 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-06-06 09:19:52,330 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-06-06 09:20:37,341 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-06-06 09:20:52,324 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-06-06 09:20:52,334 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-06-06 09:20:52,337 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-06-06 09:21:37,341 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-06-06 09:21:52,326 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-06-06 09:21:52,335 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-06-06 09:21:52,336 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-06-06 09:22:37,340 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-06-06 09:22:52,330 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-06-06 09:22:52,341 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-06-06 09:22:52,342 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-06-06 09:23:37,350 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-06-06 09:23:52,342 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-06-06 09:23:52,356 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-06-06 09:23:52,361 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-06-06 09:24:37,367 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-06-06 09:24:52,358 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-06-06 09:24:52,372 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-06-06 09:24:52,373 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-06-06 09:25:37,376 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-06-06 09:25:52,366 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-06-06 09:25:52,375 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-06-06 09:25:52,380 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-06-06 09:26:37,390 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-06-06 09:26:52,375 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-06-06 09:26:52,392 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-06-06 09:26:52,393 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-06-06 09:27:37,399 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-06-06 09:27:52,390 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-06-06 09:27:52,404 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-06-06 09:27:52,405 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-06-06 09:28:37,415 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-06-06 09:28:52,406 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-06-06 09:28:52,454 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-06-06 09:28:52,458 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-06-06 09:29:37,465 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-06-06 09:29:52,418 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-06-06 09:29:52,436 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-06-06 09:29:52,438 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-06-06 09:30:37,442 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-06-06 09:30:52,434 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-06-06 09:30:52,450 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-06-06 09:30:52,450 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-06-06 09:31:37,458 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-06-06 09:31:52,465 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-06-06 09:31:52,479 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-06-06 09:31:52,480 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-06-06 09:32:37,483 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-06-06 09:32:52,475 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-06-06 09:32:52,491 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-06-06 09:32:52,492 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-06-06 09:33:37,498 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-06-06 09:33:52,489 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-06-06 09:33:52,499 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-06-06 09:33:52,500 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-06-06 09:34:37,509 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-06-06 09:34:52,497 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-06-06 09:34:52,507 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-06-06 09:34:52,508 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-06-06 09:35:37,518 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-06-06 09:35:52,506 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-06-06 09:35:52,520 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-06-06 09:35:52,521 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-06-06 09:36:37,531 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-06-06 09:36:52,520 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-06-06 09:36:52,530 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-06-06 09:36:52,531 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-06-06 09:37:37,541 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-06-06 09:37:52,526 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-06-06 09:37:52,599 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-06-06 09:37:52,599 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-06-06 09:38:37,606 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-06-06 09:38:52,533 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-06-06 09:38:52,612 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-06-06 09:38:52,612 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-06-06 09:39:37,624 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-06-06 09:39:52,534 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-06-06 09:39:52,564 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-06-06 09:39:52,565 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-06-06 09:40:37,572 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-06-06 09:40:52,539 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-06-06 09:40:52,574 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-06-06 09:40:52,575 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-06-06 09:41:37,581 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-06-06 09:41:52,553 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-06-06 09:41:52,608 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-06-06 09:41:52,610 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-06-06 09:42:37,625 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-06-06 09:42:52,592 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-06-06 09:42:52,628 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-06-06 09:42:52,629 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-06-06 09:43:37,633 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-06-06 09:43:52,604 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-06-06 09:43:52,662 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-06-06 09:43:52,663 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-06-06 09:44:37,674 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-06-06 09:44:52,612 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-06-06 09:44:52,624 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-06-06 09:44:52,625 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-06-06 09:45:37,632 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-06-06 09:45:52,618 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-06-06 09:45:52,672 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-06-06 09:45:52,676 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-06-06 09:46:37,679 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-06-06 09:46:52,631 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-06-06 09:46:52,644 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-06-06 09:46:52,644 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-06-06 09:47:37,654 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-06-06 09:47:52,639 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-06-06 09:47:52,649 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-06-06 09:47:52,650 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-06-06 09:48:39,834 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-06-06 09:48:54,817 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-06-06 09:48:54,896 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-06-06 09:48:54,896 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-06-06 09:49:39,900 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-06-06 09:49:54,823 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-06-06 09:49:54,862 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-06-06 09:49:54,866 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-06-06 09:50:39,872 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-06-06 09:50:54,828 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-06-06 09:50:54,920 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-06-06 09:50:54,921 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-06-06 09:51:39,927 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-06-06 09:51:54,842 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-06-06 09:51:54,850 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-06-06 09:51:54,851 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-06-06 09:52:39,853 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-06-06 09:52:54,851 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-06-06 09:52:54,861 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-06-06 09:52:54,862 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-06-06 09:53:39,871 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-06-06 09:53:54,855 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-06-06 09:53:54,865 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-06-06 09:53:54,866 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-06-06 09:54:39,870 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-06-06 09:54:54,862 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-06-06 09:54:54,878 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-06-06 09:54:54,885 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-06-06 09:55:39,888 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-06-06 09:55:54,874 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-06-06 09:55:54,887 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-06-06 09:55:54,889 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-06-06 09:56:39,897 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-06-06 09:56:54,888 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-06-06 09:56:54,898 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-06-06 09:56:54,899 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-06-06 09:57:39,906 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-06-06 09:57:54,894 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-06-06 09:57:54,929 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-06-06 09:57:54,931 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-06-06 09:58:39,935 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-06-06 09:58:54,907 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-06-06 09:58:55,022 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-06-06 09:58:55,023 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-06-06 09:59:40,030 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-06-06 09:59:54,913 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-06-06 09:59:54,928 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-06-06 09:59:54,929 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-06-06 10:00:39,934 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-06-06 10:00:54,925 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-06-06 10:00:54,937 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-06-06 10:00:54,939 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-06-06 10:01:39,942 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-06-06 10:01:54,935 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-06-06 10:01:54,949 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-06-06 10:01:54,951 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-06-06 10:02:39,959 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-06-06 10:02:54,944 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-06-06 10:02:54,954 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-06-06 10:02:54,955 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-06-06 10:03:39,960 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-06-06 10:03:54,952 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-06-06 10:03:55,013 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-06-06 10:03:55,014 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-06-06 10:04:40,037 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-06-06 10:04:54,975 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-06-06 10:04:54,990 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-06-06 10:04:54,990 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-06-06 10:05:39,998 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-06-06 10:05:54,983 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-06-06 10:05:54,991 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-06-06 10:05:54,992 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-06-06 10:06:39,999 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-06-06 10:06:54,992 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-06-06 10:06:55,007 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-06-06 10:06:55,007 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-06-06 10:07:40,014 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-06-06 10:07:54,999 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-06-06 10:07:55,094 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-06-06 10:07:55,094 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-06-06 10:08:40,100 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-06-06 10:08:55,012 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-06-06 10:08:55,020 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-06-06 10:08:55,021 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-06-06 10:09:40,029 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-06-06 10:09:55,022 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-06-06 10:09:55,046 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-06-06 10:09:55,046 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-06-06 10:10:40,055 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-06-06 10:10:55,026 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-06-06 10:10:55,036 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-06-06 10:10:55,038 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-06-06 10:11:40,040 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-06-06 10:11:55,031 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-06-06 10:11:55,042 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-06-06 10:11:55,043 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-06-06 10:12:40,048 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-06-06 10:12:55,039 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-06-06 10:12:55,047 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-06-06 10:12:55,048 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-06-06 10:13:40,057 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-06-06 10:13:55,054 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-06-06 10:13:55,068 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-06-06 10:13:55,068 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-06-06 10:14:40,079 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-06-06 10:14:55,071 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-06-06 10:14:55,079 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-06-06 10:14:55,080 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-06-06 10:15:40,091 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-06-06 10:15:55,082 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-06-06 10:15:55,099 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-06-06 10:15:55,100 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-06-06 10:16:40,113 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-06-06 10:16:55,094 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-06-06 10:16:55,103 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-06-06 10:16:55,104 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-06-06 10:17:40,113 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-06-06 10:17:55,105 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-06-06 10:17:55,114 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-06-06 10:17:55,115 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-06-06 10:18:40,121 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-06-06 10:18:55,117 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-06-06 10:18:55,124 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-06-06 10:18:55,127 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-06-06 10:19:40,129 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-06-06 10:19:55,123 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-06-06 10:19:55,164 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-06-06 10:19:55,165 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-06-06 10:20:40,170 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-06-06 10:20:55,130 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-06-06 10:20:55,149 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-06-06 10:20:55,150 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-06-06 10:21:40,154 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-06-06 10:21:55,143 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-06-06 10:21:55,152 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-06-06 10:21:55,153 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-06-06 10:22:40,160 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-06-06 10:22:55,149 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-06-06 10:22:55,157 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-06-06 10:22:55,159 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-06-06 10:23:40,164 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-06-06 10:23:55,156 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-06-06 10:23:55,164 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-06-06 10:23:55,169 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-06-06 10:24:40,173 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-06-06 10:24:55,164 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-06-06 10:24:55,172 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-06-06 10:24:55,174 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-06-06 10:25:40,177 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-06-06 10:25:55,169 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-06-06 10:25:55,178 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-06-06 10:25:55,179 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-06-06 10:26:40,184 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-06-06 10:26:55,177 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-06-06 10:26:55,191 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-06-06 10:26:55,191 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-06-06 10:27:40,198 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-06-06 10:27:55,188 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-06-06 10:27:55,197 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-06-06 10:27:55,200 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-06-06 10:28:40,207 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-06-06 10:28:55,196 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-06-06 10:28:55,262 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-06-06 10:28:55,263 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-06-06 10:29:40,272 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-06-06 10:29:55,205 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:95
+2020-06-06 10:29:55,214 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageDecoder [XconfClient-NioEventLoopGroup-pool-0] 接受的数据包大小为:118
+2020-06-06 10:29:55,215 INFO com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client send msg:null
+2020-06-06 10:30:40,221 INFO com.ggj.platform.xconf.common.protocol.codec.CommandMessageEncoder [XconfClient-NioEventLoopGroup-pool-0] 发送的数据包大小为:147
+2020-06-06 10:30:54,383 WARN com.ggj.platform.xconf.client.netty.handler.ClientHandler [XconfClient-NioEventLoopGroup-pool-0] client->server 通道断开了
+2020-06-06 10:30:54,386 WARN com.ggj.platform.xconf.client.netty.NettyClient [Thread-132] client socket close
+2020-06-06 10:30:54,875 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
+2020-06-06 10:30:54,889 INFO com.zaxxer.hikari.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown initiated...
+2020-06-06 10:30:54,906 INFO com.zaxxer.hikari.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown completed.
+2020-06-06 10:30:54,915 WARN com.ggj.platform.xconf.client.entry.connection.XconfClient [SpringContextShutdownHook] xconfClient destory
