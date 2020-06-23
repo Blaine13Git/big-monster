@@ -122,5 +122,16 @@ public class ProjectsController {
         }
     }
 
+    @PostMapping("compileProjectRepository")
+    @ResponseBody
+    public Result compileProjectRepository(@RequestParam String projectName) {
+
+        int resultCode = projectsService.compileProjectRepository(projectName);
+        if (resultCode == 0) {
+            return Result.Success("编译成功");
+        } else {
+            return Result.Failure("编译失败");
+        }
+    }
 
 }

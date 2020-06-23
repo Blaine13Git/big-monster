@@ -16,7 +16,7 @@
         <dependency>
             <groupId>org.jacoco</groupId>
             <artifactId>org.jacoco.core</artifactId>
-            <version>13.1.14</version>
+            <version>13.1.15</version>
         </dependency>
 
         <dependency>
@@ -49,9 +49,14 @@
             <version>8.0.1</version>
         </dependency>
 
-        <!-- ********************业务依赖******************** -->
+        <dependency>
+            <groupId>org.apache.maven.shared</groupId>
+            <artifactId>maven-invoker</artifactId>
+            <version>3.0.1</version>
+        </dependency>
 
-        <!--直播依赖-->
+        <!-- ********************业务依赖******************** -->
+        <!--暂时不接入-->
 
 
         <!-- ********************GGJ基础依赖******************** -->
@@ -103,6 +108,12 @@
             <groupId>org.eclipse.jgit</groupId>
             <artifactId>org.eclipse.jgit</artifactId>
             <version>5.7.0.202003110725-r</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.eclipse.jdt</groupId>
+            <artifactId>org.eclipse.jdt.core</artifactId>
+            <version>3.21.0</version>
         </dependency>
 
         <dependency>

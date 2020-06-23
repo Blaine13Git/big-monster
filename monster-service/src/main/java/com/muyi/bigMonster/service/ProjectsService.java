@@ -7,6 +7,7 @@ import com.muyi.bigMonster.model.daily1.DiffCoverageReport;
 import com.muyi.bigMonster.model.daily1.DiffCoverageReportExample;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.session.RowBounds;
+import org.apache.maven.shared.invoker.*;
 import org.eclipse.jgit.api.Git;
 import org.eclipse.jgit.api.ListBranchCommand;
 import org.eclipse.jgit.lib.Ref;
@@ -16,9 +17,8 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.io.File;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.io.FileInputStream;
+import java.util.*;
 import java.util.stream.Collectors;
 
 /**
@@ -321,13 +321,52 @@ public class ProjectsService {
         }
     }
 
-//    public static void main(String[] args) throws Exception {
-//        DiffDataService diffDataService = new DiffDataService();
-//        diffDataService.pullRepository("http://gitlab.ops.yangege.cn/zebra/live.git", "refs/heads/QA-for-test");
-//
+    /**
+     * 编译项目
+     *
+     * @param projectName
+     */
+    public int compileProjectRepository(String projectName) {
+        String codeBaseDir;
+        String mavenHome;
+        if (System.getProperty("user.dir").equals("/home/jenkins")) {
+            codeBaseDir = "/home/jenkins/codes/";
+            mavenHome = "/var/lib/maven/apache-maven-3.5.4";
+        } else {
+            codeBaseDir = "/Users/changfeng/work/jacoco/codes/";
+            mavenHome = "/Users/changfeng/Programs/apache-maven-3.6.1";
+        }
+
+        String pomFile = codeBaseDir + projectName + "/pom.xml";
+        InvocationRequest request = new DefaultInvocationRequest();
+        request.setPomFile(new File(pomFile));
+        request.setGoals(Collections.singletonList("package"));
+
+        Invoker invoker = new DefaultInvoker();
+        invoker.setMavenHome(new File(mavenHome));
+
+        try {
+            InvocationResult invocationResult = invoker.execute(request);
+            int exitCode = invocationResult.getExitCode();
+            System.out.println(exitCode);
+            return exitCode;
+        } catch (MavenInvocationException e) {
+            e.printStackTrace();
+        }
+        return 1;
+
+    }
+
+    public static void main(String[] args) throws Exception {
+
 //        Properties properties = new Properties();
 //        properties.load(new FileInputStream("monster-service/src/main/resources/services.properties"));
 //        System.out.println(properties.getProperty("basePath"));
-//    }
+
+        ProjectsService projectsService = new ProjectsService();
+        projectsService.compileProjectRepository("big-monster");
+
+
+    }
 
 }

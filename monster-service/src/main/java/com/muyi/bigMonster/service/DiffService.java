@@ -1,22 +1,27 @@
 package com.muyi.bigMonster.service;
 
+import com.muyi.bigMonster.mapper.daily1.ComplexMetricsProjectInfoMapper;
 import com.muyi.bigMonster.tools.GitTools;
+import com.muyi.bigMonster.tools.JDTTools;
 import lombok.extern.slf4j.Slf4j;
-import org.eclipse.jgit.api.errors.GitAPIException;
+import org.eclipse.jdt.core.dom.MethodDeclaration;
 import org.eclipse.jgit.diff.DiffEntry;
-import org.eclipse.jgit.lib.ObjectReader;
-import org.eclipse.jgit.lib.Ref;
-import org.eclipse.jgit.lib.Repository;
+import org.eclipse.jgit.lib.*;
 import org.eclipse.jgit.revwalk.RevCommit;
 import org.eclipse.jgit.revwalk.RevTree;
 import org.eclipse.jgit.revwalk.RevWalk;
 import org.eclipse.jgit.treewalk.AbstractTreeIterator;
 import org.eclipse.jgit.treewalk.CanonicalTreeParser;
+import org.eclipse.jgit.treewalk.TreeWalk;
 import org.eclipse.jgit.treewalk.filter.PathSuffixFilter;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 /**
@@ -27,7 +32,57 @@ import java.util.stream.Collectors;
 @Service
 public class DiffService {
 
+    @Autowired
+    private ProjectsService projectsService;
+
+    @Resource
+    private ComplexMetricsProjectInfoMapper complexMetricsProjectInfoMapper;
+
     private static final String PREFIX = "refs/heads/";
+
+    public DiffService() {
+
+    }
+
+    private String getProjectUrl(String projectPath) {
+        int index = projectPath.lastIndexOf("/") + 1;
+        String url = complexMetricsProjectInfoMapper.selectByProjectName(projectPath.substring(index)).get(0).getUrl();
+        return url;
+    }
+
+    /**
+     * diff by branch
+     *
+     * @param baseBranch
+     * @param diffBranch
+     * @return Diff DiffEntry list
+     */
+    public List<DiffEntry> getDiffEntriesByBranch(String projectPath, String baseBranch, String diffBranch) {
+        String url = getProjectUrl(projectPath);
+        projectsService.pullRepository(url, diffBranch);
+        GitTools gitTools = new GitTools(projectPath);
+        List<DiffEntry> diffs = null;
+        try {
+            if (gitTools.repository.exactRef(PREFIX + diffBranch) == null) {
+                // first we need to ensure that the remote branch is visible locally
+                Ref ref = gitTools.git.branchCreate().setName(diffBranch).setStartPoint("origin/" + diffBranch).call();
+                System.out.println("Created local branch with ref: " + ref);
+            }
+
+            AbstractTreeIterator baseBranchTree = prepareTreeParserBranch(gitTools.repository, PREFIX + baseBranch);
+            AbstractTreeIterator diffBranchTree = prepareTreeParserBranch(gitTools.repository, PREFIX + diffBranch);
+
+            diffs = gitTools.git.diff()
+                    .setOldTree(baseBranchTree)
+                    .setNewTree(diffBranchTree)
+                    .setPathFilter(PathSuffixFilter.create(".java"))
+                    .call();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return diffs;
+    }
+
 
     /**
      * @param repository 代码仓库
@@ -51,47 +106,6 @@ public class DiffService {
     }
 
     /**
-     * diff by branch
-     *
-     * @param baseBranch
-     * @param diffBranch
-     * @return Diff DiffEntry list
-     */
-    public List<DiffEntry> getDiffEntriesByBranch(String projectPath, String baseBranch, String diffBranch) {
-        GitTools gitTools = new GitTools(projectPath);
-        List<DiffEntry> diffs = null;
-        try {
-
-            if (gitTools.repository.exactRef(PREFIX + diffBranch) == null) {
-                // first we need to ensure that the remote branch is visible locally
-                Ref ref = gitTools.git.branchCreate().setName(diffBranch).setStartPoint("origin/" + diffBranch).call();
-                System.out.println("Created local branch with ref: " + ref);
-            }
-
-            AbstractTreeIterator baseBranchTree = prepareTreeParserBranch(gitTools.repository, PREFIX + baseBranch);
-            AbstractTreeIterator diffBranchTree = prepareTreeParserBranch(gitTools.repository, PREFIX + diffBranch);
-
-            diffs = gitTools.git.diff()
-                    .setOldTree(baseBranchTree)
-                    .setNewTree(diffBranchTree)
-                    .setPathFilter(PathSuffixFilter.create(".java"))
-                    .call();
-
-//            System.out.println("\nFound All: " + diffs.size() + " differences");
-//            for (DiffEntry diff : diffs) {
-//                System.out.println("Diff: " + diff.getChangeType() + ": " +
-//                        (diff.getOldPath().equals(diff.getNewPath()) ? diff.getNewPath() : diff.getOldPath() + " -> " + diff.getNewPath()));
-//            }
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (GitAPIException e) {
-            e.printStackTrace();
-        }
-        return diffs;
-    }
-
-    /**
      * 获取修改
      *
      * @param baseBranch
@@ -101,12 +115,6 @@ public class DiffService {
     public List<DiffEntry> getModify(String projectPath, String baseBranch, String diffBranch) {
         List<DiffEntry> diffEntries = getDiffEntriesByBranch(projectPath, baseBranch, diffBranch);
         List<DiffEntry> modifyList = diffEntries.stream().filter(diffEntry -> diffEntry.getChangeType().toString().equals("MODIFY")).collect(Collectors.toList());
-
-//        System.out.println("\nFound modify: " + modifyList.size() + " differences");
-//        for (DiffEntry diff : modifyList) {
-//            System.out.println("Modify: " + diff.getNewPath());
-//        }
-
         return modifyList;
     }
 
@@ -120,12 +128,6 @@ public class DiffService {
     public List<DiffEntry> getAdd(String projectPath, String baseBranch, String diffBranch) {
         List<DiffEntry> diffEntries = getDiffEntriesByBranch(projectPath, baseBranch, diffBranch);
         List<DiffEntry> addList = diffEntries.stream().filter(diffEntry -> diffEntry.getChangeType().toString().equals("ADD")).collect(Collectors.toList());
-
-//        System.out.println("\nFound add: " + addList.size() + " differences");
-//        for (DiffEntry diff : addList) {
-//            System.out.println("Add: " + diff.getNewPath());
-//        }
-
         return addList;
     }
 
@@ -139,12 +141,6 @@ public class DiffService {
     public List<DiffEntry> getDelete(String projectPath, String baseBranch, String diffBranch) {
         List<DiffEntry> diffEntries = getDiffEntriesByBranch(projectPath, baseBranch, diffBranch);
         List<DiffEntry> deleteList = diffEntries.stream().filter(diffEntry -> diffEntry.getChangeType().toString().equals("DELETE")).collect(Collectors.toList());
-
-//        System.out.println("\nFound delete: " + deleteList.size() + " differences");
-//        for (DiffEntry diff : deleteList) {
-//            System.out.println("Delete: " + diff.getNewPath());
-//        }
-
         return deleteList;
     }
 
@@ -158,12 +154,6 @@ public class DiffService {
     public List<DiffEntry> getNotDelete(String projectPath, String baseBranch, String diffBranch) {
         List<DiffEntry> diffEntries = getDiffEntriesByBranch(projectPath, baseBranch, diffBranch);
         List<DiffEntry> notDeleteList = diffEntries.stream().filter(diffEntry -> !(diffEntry.getChangeType().toString().equals("DELETE"))).collect(Collectors.toList());
-
-        System.out.println("\nFound not delete: " + notDeleteList.size() + " differences");
-        for (DiffEntry diff : notDeleteList) {
-            System.out.println("Not Delete: " + diff.getChangeType().toString() + " " + diff.getNewPath());
-        }
-
         return notDeleteList;
     }
 
@@ -183,13 +173,84 @@ public class DiffService {
         return false;
     }
 
+    /**
+     * 获取指定分支--指定文件de内容
+     *
+     * @param projectPath
+     * @param branchName
+     * @param fileName
+     * @return
+     * @throws Exception
+     */
+    public String getFileContentByBranch(String projectPath, String branchName, String fileName) {
+        String url = getProjectUrl(projectPath);
+        projectsService.pullRepository(url, branchName);
+        try {
+            GitTools gitTools = new GitTools(projectPath);
+            Ref branch = gitTools.repository.exactRef("refs/heads/" + branchName);
+            ObjectId objId = branch.getObjectId();
+            RevWalk walk = new RevWalk(gitTools.repository);
+            RevTree tree = walk.parseTree(objId);
+            TreeWalk treeWalk = TreeWalk.forPath(gitTools.repository, fileName, tree);
+            ObjectId objectId = treeWalk.getObjectId(0);
+            ObjectLoader loader = gitTools.repository.open(objectId);
+            byte[] bytes = loader.getBytes();
+            walk.dispose();
+            return new String(bytes);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "";
+        }
+    }
+
+    /**
+     * 获取变更类的所有方法的MD5值
+     *
+     * @param projectPath
+     * @param branchName
+     * @param fileName
+     * @return
+     */
+    public Map<String, String> getMD5s(String projectPath, String branchName, String fileName) {
+
+        Map<String, String> methodMD5s = new HashMap<>();
+
+        String fileContentByBranch = getFileContentByBranch(projectPath, branchName, fileName);
+
+        JDTTools jdtTools = new JDTTools();
+        MethodDeclaration[] methods = jdtTools.getMethods(fileContentByBranch);
+
+        for (MethodDeclaration methodDeclaration : methods) {
+            String methodMD5 = jdtTools.getMethodMD5(methodDeclaration);
+            methodMD5s.put(methodDeclaration.getName().toString(), methodMD5);
+        }
+
+        // test
+        /*methodMD5s.entrySet().stream().forEach(md5 -> {
+            System.out.println("MethodName：" + md5.getKey());
+            System.out.println("MD5值：" + md5.getValue());
+        });*/
+
+        return methodMD5s;
+    }
+
 
     public static void main(String[] args) {
         DiffService diffService = new DiffService();
 //        diffService.getNotDelete("/Users/changfeng/work/code/webtools/", "master", "home");
 
-        diffService.getNotDelete(System.getProperty("user.dir"),"master","test");
+        String projectPath = "/Users/changfeng/work/jacoco/codes/big-monster";
+
+        List<DiffEntry> notDeletes = diffService.getNotDelete(projectPath, "master", "test");
+
+        for (DiffEntry diffEntry : notDeletes) {
+            String newPath = diffEntry.getNewPath();
+            diffService.getMD5s(projectPath, "master", newPath);
+        }
+
     }
 
 }
+
+
 
