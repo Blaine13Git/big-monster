@@ -30,9 +30,9 @@ public class ReportController {
                              @RequestParam String baseBranch,
                              @RequestParam String diffBranch,
                              @RequestParam String execFileName,
-                             @RequestParam String commoent) {
+                             @RequestParam String comment) {
         try {
-            clientExecDataGenerateService.execDataGenerate(projectName, baseBranch, diffBranch,execFileName,commoent);
+            clientExecDataGenerateService.execDataGenerate(projectName, baseBranch, diffBranch,execFileName,comment);
         } catch (IOException e) {
             e.printStackTrace();
             return Result.Failure("Failure");
