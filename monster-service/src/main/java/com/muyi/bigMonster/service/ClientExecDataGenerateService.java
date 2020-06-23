@@ -37,7 +37,7 @@ public final class ClientExecDataGenerateService {
     @Resource
     private ProjectServerInfoMapper projectServerInfoMapper;
 
-    public void execDataGenerate(String projectName, String baseBranch, String diffBranch) throws IOException {
+    public void execDataGenerate(String projectName, String baseBranch, String diffBranch, String execFileName, String comment) throws IOException {
 
         String basePath;
         String ip;
@@ -63,10 +63,10 @@ public final class ClientExecDataGenerateService {
             destFilePath.mkdir();
         }
 
-        String execFileName = destFilePathString + "/" + projectName + ".exec";
-        System.out.println("execFileName: " + execFileName);
+        String execFilePath = destFilePathString + "/" + projectName + "_" + execFileName + ".exec";
+        System.out.println("execFileName: " + execFilePath);
 
-        final FileOutputStream localFile = new FileOutputStream(execFileName);
+        final FileOutputStream localFile = new FileOutputStream(execFilePath);
         final ExecutionDataWriter localWriter = new ExecutionDataWriter(localFile);
 
         // Open a socket to the coverage agent:
@@ -88,7 +88,7 @@ public final class ClientExecDataGenerateService {
         record.setProjectname(projectName);
         record.setBasebranch(baseBranch);
         record.setDiffbranch(diffBranch);
-        record.setExecfilepath(projectName + ".exec");
+        record.setExecfilepath(projectName + "_" + execFileName + ".exec");
 
         record.setCreatetime(new Date());
         record.setUpdatetime(new Date());
