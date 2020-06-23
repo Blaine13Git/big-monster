@@ -14,46 +14,45 @@
     <dependencies>
 
         <dependency>
+            <groupId>org.jacoco</groupId>
+            <artifactId>org.jacoco.core</artifactId>
+            <version>13.1.14</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.jacoco</groupId>
+            <artifactId>org.jacoco.report</artifactId>
+            <version>13.1.14</version>
+        </dependency>
+
+        <dependency>
             <groupId>com.muyi</groupId>
             <artifactId>monster-data</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.ow2.asm</groupId>
+            <artifactId>asm</artifactId>
+            <version>8.0.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.ow2.asm</groupId>
+            <artifactId>asm-tree</artifactId>
+            <version>8.0.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.ow2.asm</groupId>
+            <artifactId>asm-commons</artifactId>
+            <version>8.0.1</version>
+        </dependency>
+
         <!-- ********************业务依赖******************** -->
-        <!--抽奖依赖-->
-        <!--        <dependency>-->
-        <!--            <groupId>com.ggj.center</groupId>-->
-        <!--            <artifactId>lottery-center-service</artifactId>-->
-        <!--            <version>1.3-SNAPSHOT</version>-->
-        <!--        </dependency>-->
 
         <!--直播依赖-->
-        <dependency>
-            <groupId>com.ggj.live</groupId>
-            <artifactId>live-api</artifactId>
-            <version>1.0.1-SNAPSHOT</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>com.alibaba</groupId>
-                    <artifactId>dubbo</artifactId>
-                </exclusion>
 
-                <exclusion>
-                    <groupId>org.projectlombok</groupId>
-                    <artifactId>lombok</artifactId>
-                </exclusion>
-
-                <exclusion>
-                    <groupId>org.apache.zookeeper</groupId>
-                    <artifactId>zookeeper</artifactId>
-                </exclusion>
-
-                <exclusion>
-                    <groupId>com.ggj.platform</groupId>
-                    <artifactId>gsf</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
 
         <!-- ********************GGJ基础依赖******************** -->
         <dependency>
@@ -64,23 +63,6 @@
                 <exclusion>
                     <groupId>org.slf4j</groupId>
                     <artifactId>slf4j-log4j12</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-
-        <dependency>
-            <groupId>com.ggj.platform</groupId>
-            <artifactId>adonis-spring-boot-dubbo</artifactId>
-            <version>3.1.0</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.projectlombok</groupId>
-                    <artifactId>lombok</artifactId>
-                </exclusion>
-
-                <exclusion>
-                    <groupId>org.apache.zookeeper</groupId>
-                    <artifactId>zookeeper</artifactId>
                 </exclusion>
             </exclusions>
         </dependency>
@@ -100,10 +82,6 @@
                     <artifactId>javax.el-api</artifactId>
                 </exclusion>
 
-                <exclusion>
-                    <groupId>com.alibaba</groupId>
-                    <artifactId>fastjson</artifactId>
-                </exclusion>
             </exclusions>
         </dependency>
 
@@ -136,7 +114,7 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.10</version>
+            <version>1.18.12</version>
         </dependency>
 
     </dependencies>

@@ -30,4 +30,7 @@ build/
 ### VS Code ###
 .vscode/
 
-logs/logger\.log
+*.log
+logs/
+reportCoverage/
+coverageReport/
