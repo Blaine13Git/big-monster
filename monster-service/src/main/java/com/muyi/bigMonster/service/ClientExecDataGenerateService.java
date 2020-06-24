@@ -15,10 +15,11 @@ import javax.annotation.Resource;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.net.Inet4Address;
+import java.net.InetAddress;
+import java.net.NetworkInterface;
 import java.net.Socket;
-import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Enumeration;
 
 /**
  * agent config param output=tcpserver, the collected data is dumped to a local file.
@@ -52,7 +53,7 @@ public final class ClientExecDataGenerateService {
             port = projectServerInfo.getPort();
         } else {
             basePath = BASE_EXEC_PATH_LOCAL;
-            ip = Inet4Address.getLocalHost().getHostAddress();
+            ip = "localhost";
             port = 10000;
         }
 
@@ -98,12 +99,20 @@ public final class ClientExecDataGenerateService {
 
 
     public static void main(String[] args) throws Exception {
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-//        simpleDateFormat.setTimeZone(TimeZone.getTimeZone("Asia/Shanghai"));
 
-        Date now = new Date();
-        String format = simpleDateFormat.format(now);
-        System.out.println(format);
+        System.out.println("HostAddress: " + InetAddress.getLocalHost().getHostAddress());
+
+        Enumeration<NetworkInterface> networkInterfaces = NetworkInterface.getNetworkInterfaces();
+
+        for (; networkInterfaces.hasMoreElements(); ) {
+            NetworkInterface e = networkInterfaces.nextElement();
+
+            Enumeration<InetAddress> a = e.getInetAddresses();
+            for (; a.hasMoreElements(); ) {
+                InetAddress addr = a.nextElement();
+                System.out.println("  " + addr.getHostAddress());
+            }
+        }
 
     }
 

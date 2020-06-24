@@ -1,6 +1,8 @@
 package com.muyi.bigMonster.service;
 
+import com.muyi.bigMonster.mapper.daily1.ComplexMetricsProjectInfoMapper;
 import com.muyi.bigMonster.mapper.daily1.DiffCoverageReportMapper;
+import com.muyi.bigMonster.model.daily1.ComplexMetricsProjectInfo;
 import com.muyi.bigMonster.model.daily1.DiffCoverageReport;
 import lombok.extern.slf4j.Slf4j;
 import org.eclipse.jgit.diff.DiffEntry;
@@ -43,9 +45,13 @@ public class ReportGeneratorService {
     private File reportDirectory;
     private int recordId;
     private String title;
+    private String url;
 
     @Resource
     private DiffCoverageReportMapper diffCoverageReportMapper;
+
+    @Resource
+    private ComplexMetricsProjectInfoMapper projectInfoMapper;
 
     @Autowired
     private DiffService diffService;
@@ -60,6 +66,10 @@ public class ReportGeneratorService {
         String executionDataFile = diffCoverageReport.getExecfilepath();
         String baseBranch = diffCoverageReport.getBasebranch();
         String diffBranch = diffCoverageReport.getDiffbranch();
+        String projectName = diffCoverageReport.getProjectname();
+
+        List<ComplexMetricsProjectInfo> projectInfos = projectInfoMapper.selectByProjectName(projectName);
+        url = projectInfos.get(0).getUrl();
 
         String executionDataFilePath;
 
@@ -124,13 +134,15 @@ public class ReportGeneratorService {
 
         File classesDirectory = new File(classesPath);
 
-        final CoverageBuilder coverageBuilder = new CoverageBuilder();
+//        final CoverageBuilder coverageBuilder = new CoverageBuilder();
+        final CoverageBuilder coverageBuilder = new CoverageBuilder(url, diffBranch, baseBranch);
 
         ExecutionDataStore executionDataStore = execFileLoader.getExecutionDataStore();
 
         final Analyzer analyzer = new Analyzer(executionDataStore, coverageBuilder);
 
-        analyzer.analyzeAll(classesDirectory, baseBranch, diffBranch);
+//        analyzer.analyzeAll(classesDirectory, baseBranch, diffBranch);
+        analyzer.analyzeAll(classesDirectory);
 
 /*
         for (final IClassCoverage cc : coverageBuilder.getClasses()) {

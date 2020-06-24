@@ -49,7 +49,7 @@ public class JDTTools {
      */
 
     /**
-     * 通过源码获取一个编译单元
+     * 通过解析源码获取一个编译单元
      *
      * @param javaSource
      * @return
