@@ -87,7 +87,7 @@
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
 
-        <table tableName="goods_index_data"/>
+        <table tableName="lottery_winning_record"/>
 
     </context>
 

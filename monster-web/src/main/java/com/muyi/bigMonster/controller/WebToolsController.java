@@ -2,6 +2,7 @@ package com.muyi.bigMonster.controller;
 
 import com.muyi.bigMonster.model.daily2drds.PBuyerResource;
 import com.muyi.bigMonster.model.daily3.GoodsIndexData;
+import com.muyi.bigMonster.model.daily3.LotteryWinningRecord;
 import com.muyi.bigMonster.result.Result;
 import com.muyi.bigMonster.service.WebToolsService;
 import lombok.extern.slf4j.Slf4j;
@@ -72,6 +73,7 @@ public class WebToolsController {
 
     /**
      * 获取商品佣金比例
+     *
      * @param itemId
      * @return
      */
@@ -80,6 +82,20 @@ public class WebToolsController {
     public Result getBrokerageByItemId(@RequestParam Long itemId) {
         List<GoodsIndexData> brokerageByItemId = webToolsService.getBrokerageByItemId(itemId);
         return Result.Success(brokerageByItemId.get(0).getBrokerage());
+    }
+
+    /**
+     * 获取商品佣金比例
+     *
+     * @param accountId
+     * @param lotteryId
+     * @return
+     */
+    @PostMapping("getWinnerRecord")
+    @ResponseBody
+    public Result getWinnerRecord(@RequestParam Integer accountId, @RequestParam Long lotteryId) {
+        List<LotteryWinningRecord> winnerRecord = webToolsService.getWinnerRecord(accountId, lotteryId);
+        return Result.Success(winnerRecord);
     }
 
 

@@ -2,10 +2,13 @@ package com.muyi.bigMonster.service;
 
 import com.muyi.bigMonster.mapper.daily2drds.PBuyerResourceMapper;
 import com.muyi.bigMonster.mapper.daily3.GoodsIndexDataMapper;
+import com.muyi.bigMonster.mapper.daily3.LotteryWinningRecordMapper;
 import com.muyi.bigMonster.model.daily2drds.PBuyerResource;
 import com.muyi.bigMonster.model.daily2drds.PBuyerResourceExample;
 import com.muyi.bigMonster.model.daily3.GoodsIndexData;
 import com.muyi.bigMonster.model.daily3.GoodsIndexDataExample;
+import com.muyi.bigMonster.model.daily3.LotteryWinningRecord;
+import com.muyi.bigMonster.model.daily3.LotteryWinningRecordExample;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
@@ -22,6 +25,9 @@ public class WebToolsService {
 
     @Resource
     private GoodsIndexDataMapper goodsIndexDataMapper;
+
+    @Resource
+    private LotteryWinningRecordMapper lotteryWinningRecordMapper;
 
     /**
      * 更新优惠券的有效期
@@ -83,7 +89,7 @@ public class WebToolsService {
     // 红包对应中奖情况
 
     /**
-     * 查询佣金比例
+     * 查询商品统计信息
      *
      * @param itemId
      * @return
@@ -96,12 +102,20 @@ public class WebToolsService {
         return goodsIndexData;
     }
 
-    public static void main(String[] args) {
-        String data = "/Users/changfeng/work/jacoco/big-monster/monster-data/target/classes/mybatis-generator.xml";
-        int index1 = data.indexOf("/target/classes/");
-        int index2 = data.substring(0, index1).lastIndexOf("/") + 1;
-        data.substring(0,index2);
-
-        System.out.println();
+    /**
+     * 根据抽奖活动id查询用户中得的奖励
+     *
+     * @param accountId
+     */
+    public List<LotteryWinningRecord> getWinnerRecord(Integer accountId, Long lotteryId) {
+        LotteryWinningRecordExample example = new LotteryWinningRecordExample();
+        LotteryWinningRecordExample.Criteria criteria = example.createCriteria();
+        criteria.andAccountIdEqualTo(accountId);
+        if (lotteryId != null || !lotteryId.toString().isEmpty()) {
+            criteria.andLotteryIdEqualTo(lotteryId);
+        }
+        List<LotteryWinningRecord> lotteryWinningRecords = lotteryWinningRecordMapper.selectByExample(example);
+        return lotteryWinningRecords;
     }
+
 }
