@@ -134,15 +134,15 @@ public class ReportGeneratorService {
 
         File classesDirectory = new File(classesPath);
 
-//        final CoverageBuilder coverageBuilder = new CoverageBuilder();
-        final CoverageBuilder coverageBuilder = new CoverageBuilder(url, diffBranch, baseBranch);
+        final CoverageBuilder coverageBuilder = new CoverageBuilder();
+//        final CoverageBuilder coverageBuilder = new CoverageBuilder("", diffBranch, baseBranch);
 
         ExecutionDataStore executionDataStore = execFileLoader.getExecutionDataStore();
 
         final Analyzer analyzer = new Analyzer(executionDataStore, coverageBuilder);
 
-//        analyzer.analyzeAll(classesDirectory, baseBranch, diffBranch);
-        analyzer.analyzeAll(classesDirectory);
+        analyzer.analyzeAll(classesDirectory, baseBranch, diffBranch);
+//        analyzer.analyzeAll(classesDirectory);
 
 /*
         for (final IClassCoverage cc : coverageBuilder.getClasses()) {
