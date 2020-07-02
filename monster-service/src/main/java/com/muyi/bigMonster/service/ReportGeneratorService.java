@@ -5,7 +5,6 @@ import com.muyi.bigMonster.mapper.daily1.DiffCoverageReportMapper;
 import com.muyi.bigMonster.model.daily1.ComplexMetricsProjectInfo;
 import com.muyi.bigMonster.model.daily1.DiffCoverageReport;
 import lombok.extern.slf4j.Slf4j;
-import org.eclipse.jgit.diff.DiffEntry;
 import org.jacoco.core.analysis.Analyzer;
 import org.jacoco.core.analysis.CoverageBuilder;
 import org.jacoco.core.analysis.IBundleCoverage;
@@ -134,15 +133,17 @@ public class ReportGeneratorService {
 
         File classesDirectory = new File(classesPath);
 
-        final CoverageBuilder coverageBuilder = new CoverageBuilder();
-//        final CoverageBuilder coverageBuilder = new CoverageBuilder("", diffBranch, baseBranch);
+        String gitPath = classesPath + "/.git";
+
+//        final CoverageBuilder coverageBuilder = new CoverageBuilder();
+        final CoverageBuilder coverageBuilder = new CoverageBuilder(gitPath, diffBranch, baseBranch);
 
         ExecutionDataStore executionDataStore = execFileLoader.getExecutionDataStore();
 
         final Analyzer analyzer = new Analyzer(executionDataStore, coverageBuilder);
 
-        analyzer.analyzeAll(classesDirectory, baseBranch, diffBranch);
-//        analyzer.analyzeAll(classesDirectory);
+//        analyzer.analyzeAll(classesDirectory, baseBranch, diffBranch);
+        analyzer.analyzeAll(classesDirectory);
 
 /*
         for (final IClassCoverage cc : coverageBuilder.getClasses()) {
