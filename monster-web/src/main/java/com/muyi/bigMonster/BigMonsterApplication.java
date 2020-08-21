@@ -14,6 +14,8 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 public class BigMonsterApplication extends WebMvcConfigurerAdapter {
 
     public static void main(String[] args) {
+
+
         SpringApplication.run(BigMonsterApplication.class, args);
     }
 
